@@ -1,9 +1,9 @@
 # Who's got dirt? A federated search API for people and organizations
 
-[![Dependency Status](https://gemnasium.com/jpmckinney/whos_got_dirt-server.png)](https://gemnasium.com/jpmckinney/whos_got_dirt-server)
-[![Code Climate](https://codeclimate.com/github/jpmckinney/whos_got_dirt-server.png)](https://codeclimate.com/github/jpmckinney/whos_got_dirt-server)
+[![Dependency Status](https://gemnasium.com/influencemapping/whos_got_dirt-server.png)](https://gemnasium.com/influencemapping/whos_got_dirt-server)
+[![Code Climate](https://codeclimate.com/github/influencemapping/whos_got_dirt-server.png)](https://codeclimate.com/github/influencemapping/whos_got_dirt-server)
 
-See the [Ruby gem](https://github.com/jpmckinney/whos_got_dirt-gem) for details.
+See the [Ruby gem](https://github.com/influencemapping/whos_got_dirt-gem) for details.
 
 ## Usage
 
