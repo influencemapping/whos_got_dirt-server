@@ -84,6 +84,13 @@ results = JSON.load(body)
 #    ...]
 ```
 
+## Deployment
+
+```
+heroku apps:create
+git push heroku master
+```
+
 ## Acknowledgements
 
 Most terms are from [Popolo](http://www.popoloproject.com/). The request and response formats are inspired from the [Metaweb Query Language (MQL)](http://mql.freebaseapps.com/index.html) and the [OpenRefine Reconciliation Service API](https://github.com/OpenRefine/OpenRefine/wiki/Reconciliation-Service-API). Differences from MQL are [documented](/docs/differences-from-freebase.md).
