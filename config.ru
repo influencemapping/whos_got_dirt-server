@@ -62,8 +62,8 @@ get '/people' do
         type = query.delete('type')
         if %w(Person Organization).include?(type)
           queries[query_id] = {count: 0, result: []}
-          # @see https://github.com/influencemapping/whos_got_dirt-server/issues/3
-          # @see https://github.com/influencemapping/whos_got_dirt-server/issues/4
+          # @todo https://github.com/influencemapping/whos_got_dirt-server/issues/3
+          # @todo https://github.com/influencemapping/whos_got_dirt-server/issues/4
           APIS[type].each do |api|
             url = WhosGotDirt::Requests.const_get(type).const_get(api).new(query).to_s
             responses << [query_id, type, api, Faraday.get(url)]
