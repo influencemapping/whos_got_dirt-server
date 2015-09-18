@@ -129,6 +129,8 @@ module WhosGotDirt
           result = WhosGotDirt::Responses.const_get(type).const_get(api).new(response)
           queries[query_id][:count] += result.count
           queries[query_id][:result] += result.to_a
+        else
+          queries[query_id] = {error: {message: response.body}}
         end
       end
 
