@@ -9,3 +9,10 @@ gem 'sinatra'
 gem 'sinatra-cross_origin'
 # Waiting for first release.
 gem 'whos_got_dirt', git: 'https://github.com/influencemapping/whos_got_dirt-gem.git'
+
+group :test do
+  gem 'coveralls'
+  gem 'rack-test'
+  gem 'rake'
+  gem 'rspec', '~> 3.1'
+end
