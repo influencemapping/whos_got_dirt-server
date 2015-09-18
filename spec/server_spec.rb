@@ -10,6 +10,17 @@ RSpec.describe do
   end
 
   describe 'GET people' do
+    context 'when successful' do
+      it 'should return results' do
+        get '/people', queries: '{"q0":{"query":{"type":"Person"}}}'
+        expect(data.keys).to eq(['q0'])
+        expect(data['q0'].keys).to eq(['count', 'result'])
+        expect(data['q0']['count']).to be > 100_000_000
+        expect(data['q0']['result'].all?{|result| result['@type'] == 'Person'}).to eq(true)
+        expect(last_response.status).to eq(200)
+      end
+    end
+
     context "when validating 'queries' parameter" do
       it "should 422 on missing 'queries'" do
         get '/people'
