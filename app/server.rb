@@ -29,27 +29,6 @@ module WhosGotDirt
     end
 
     helpers do
-      # Returns an HTTP/HTTPS client.
-      #
-      # @return [Faraday::Connection] an HTTP/HTTPS client
-      def client
-        @client ||= Faraday.new do |connection|
-          connection.request :url_encoded
-          connection.use FaradayMiddleware::Gzip
-          connection.adapter :typhoeus
-        end
-      end
-
-      # Sets the `Content-Type` and `ETag` headers and returns the response as a JSON string.
-      #
-      # @param [Hash] a JSON-serializable hash
-      # @return [String] a JSON string
-      def etag_and_return(response)
-        content_type 'application/json'
-        etag Digest::MD5.hexdigest(response.inspect)
-        JSON.dump(response)
-      end
-
       # Returns an HTTP status code with an error message.
       #
       # @param [Fixnum] status_code a status code
@@ -78,13 +57,30 @@ module WhosGotDirt
           "query 'type' is invalid: expected 'Person' or 'Organization', got '#{parameters['query']['type']}'"
         end
       end
+
+      # Returns an HTTP/HTTPS client.
+      #
+      # @return [Faraday::Connection] an HTTP/HTTPS client
+      def client
+        @client ||= Faraday.new do |connection|
+          connection.request :url_encoded
+          connection.use FaradayMiddleware::Gzip
+          connection.adapter :typhoeus
+        end
+      end
+
+      # Sets the `Content-Type` and `ETag` headers and returns the response as a JSON string.
+      #
+      # @param [Hash] a JSON-serializable hash
+      # @return [String] a JSON string
+      def etag_and_return(response)
+        content_type 'application/json'
+        etag Digest::MD5.hexdigest(response.inspect)
+        JSON.dump(response)
+      end
     end
 
     get '/people' do
-      manager = Typhoeus::Hydra.new
-      queries = {}
-      responses = []
-
       if !params.key?('queries')
         return error(422, "parameter 'queries' must be provided")
       end
@@ -99,6 +95,10 @@ module WhosGotDirt
       if !data.is_a?(Hash)
         return error(422, "parameter 'queries' is invalid: expected Hash, got #{data.class.name}")
       end
+
+      manager = Typhoeus::Hydra.new
+      queries = {}
+      responses = []
 
       client.in_parallel(manager) do
         begin

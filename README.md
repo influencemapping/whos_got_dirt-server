@@ -1,6 +1,8 @@
 # Who's got dirt? A federated search API for people and organizations
 
+[![Build Status](https://secure.travis-ci.org/influencemapping/whos_got_dirt-server.png)](https://travis-ci.org/influencemapping/whos_got_dirt-server)
 [![Dependency Status](https://gemnasium.com/influencemapping/whos_got_dirt-server.png)](https://gemnasium.com/influencemapping/whos_got_dirt-server)
+[![Coverage Status](https://coveralls.io/repos/influencemapping/whos_got_dirt-server/badge.svg)](https://coveralls.io/r/influencemapping/whos_got_dirt-server)
 [![Code Climate](https://codeclimate.com/github/influencemapping/whos_got_dirt-server.png)](https://codeclimate.com/github/influencemapping/whos_got_dirt-server)
 
 See the [Ruby gem](https://github.com/influencemapping/whos_got_dirt-gem) for details.
