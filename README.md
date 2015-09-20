@@ -57,10 +57,12 @@ queries = <<-EOL
 EOL
 
 value = JSON.dump(JSON.load(queries))
+#=> {"q0":{"query":{"type":"Person","name~=":"John Smith","jurisdiction_code|=":["gb","ie"],"memberships":[{"role":"director","inactive":false}]}}}
 
-body = open("http://localhost:9292/people?queries=#{CGI.escape(value)}").read
+url = "http://localhost:9292/people?queries=#{CGI.escape(value)}"
+#=> http://localhost:9292/people?queries=%7B%22q0%22%3A%7B%22query%22%3A%7B%22type%22%3A%22Person%22%2C%22name%7E%3D%22%3A%22John+Smith%22%2C%22jurisdiction_code%7C%3D%22%3A%5B%22gb%22%2C%22ie%22%5D%2C%22memberships%22%3A%5B%7B%22role%22%3A%22director%22%2C%22inactive%22%3Afalse%7D%5D%7D%7D%7D
 
-results = JSON.load(body)
+results = JSON.load(open(url).read)
 #=> {"q0"=>
 #  {"count"=>3915,
 #   "result"=>
