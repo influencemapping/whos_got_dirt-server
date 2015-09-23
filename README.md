@@ -5,7 +5,7 @@
 [![Coverage Status](https://coveralls.io/repos/influencemapping/whos_got_dirt-server/badge.svg)](https://coveralls.io/r/influencemapping/whos_got_dirt-server)
 [![Code Climate](https://codeclimate.com/github/influencemapping/whos_got_dirt-server.png)](https://codeclimate.com/github/influencemapping/whos_got_dirt-server)
 
-See the [Ruby gem](https://github.com/influencemapping/whos_got_dirt-gem) for details.
+This server provides a single access point to some public data on the web. See the [Ruby gem](https://github.com/influencemapping/whos_got_dirt-gem) for details.
 
 ## Usage
 
