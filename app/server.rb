@@ -24,9 +24,8 @@ module WhosGotDirt
       ],
     }
 
-    configure do
-      enable :cross_origin
-    end
+    register Sinatra::CrossOrigin
+    enable :cross_origin
 
     helpers do
       # Returns an HTTP status code with an error message.
