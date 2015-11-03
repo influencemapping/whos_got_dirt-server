@@ -96,6 +96,7 @@ If you are concerned about the privacy or security of this API, deploy your own.
 
 ```
 heroku apps:create
+heroku addons:create memcachier:dev
 git push heroku master
 ```
 

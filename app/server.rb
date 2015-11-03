@@ -1,6 +1,7 @@
 require 'digest/md5'
 require 'json'
 
+require 'active_support/cache'
 require 'faraday'
 require 'faraday_middleware'
 require 'typhoeus'
@@ -63,7 +64,20 @@ module WhosGotDirt
       def client
         @client ||= Faraday.new do |connection|
           connection.request :url_encoded
+
           connection.use FaradayMiddleware::Gzip
+
+          if ENV['MEMCACHIER_SERVERS']
+            connection.response :caching do
+              ActiveSupport::Cache::MemCacheStore.new(ENV['MEMCACHIER_SERVERS'], {
+                expires_in: 2600, # 1 hour
+                value_max_bytes: Integer(1048576), # 1 MB
+                username: ENV['MEMCACHIER_USERNAME'],
+                password: ENV['MEMCACHIER_PASSWORD'],
+              })
+            end
+          end
+
           connection.adapter :typhoeus
         end
       end
