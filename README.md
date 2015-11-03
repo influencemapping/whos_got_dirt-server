@@ -90,6 +90,8 @@ results = JSON.load(open(url).read)
 
 ## Deployment
 
+If you are concerned about the privacy or security of this API, deploy your own.
+
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
 
 ```
