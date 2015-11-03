@@ -12,7 +12,7 @@ RSpec.describe do
   describe 'GET people' do
     context 'when successful' do
       it 'should return results' do
-        get '/people', queries: '{"q0":{"query":{"type":"Person","name":"John Smith"}}}'
+        get '/entities', queries: '{"q0":{"query":{"type":"Person","name":"John Smith"}}}'
         expect(data.keys).to eq(['q0'])
         expect(data['q0'].keys).to eq(['count', 'result'])
         expect(data['q0']['count']).to be > 10_000
@@ -23,31 +23,31 @@ RSpec.describe do
 
     context "when validating 'queries' parameter" do
       it "should 422 on missing 'queries'" do
-        get '/people'
+        get '/entities'
         expect(data).to eq({'error' => {'message' => "parameter 'queries' must be provided"}})
         expect(last_response.status).to eq(422)
       end
 
       it "should 422 on nil 'queries'" do
-        get '/people?queries'
+        get '/entities?queries'
         expect(data).to eq({'error' => {'message' => "parameter 'queries' can't be blank"}})
         expect(last_response.status).to eq(422)
       end
 
       it "should 422 on empty 'queries'" do
-        get '/people', queries: ''
+        get '/entities', queries: ''
         expect(data).to eq({'error' => {'message' => "parameter 'queries' can't be blank"}})
         expect(last_response.status).to eq(422)
       end
 
       it 'should 400 on invalid JSON' do
-        get '/people', queries: '['
+        get '/entities', queries: '['
         expect(data).to eq({'error' => {'message' => "parameter 'queries' is invalid: invalid JSON: 399: unexpected token at ''"}})
         expect(last_response.status).to eq(400)
       end
 
       it "should 400 on non-Hash 'queries'" do
-        get '/people', queries: '[]'
+        get '/entities', queries: '[]'
         expect(data).to eq({'error' => {'message' => "parameter 'queries' is invalid: expected Hash, got Array"}})
         expect(last_response.status).to eq(422)
       end
@@ -55,37 +55,37 @@ RSpec.describe do
 
     context "when validating MQL parameters" do
       it "should error on non-Hash query" do
-        get '/people', queries: '{"q0":[]}'
+        get '/entities', queries: '{"q0":[]}'
         expect(data).to eq({'q0' => {'error' => {'message' => "query is invalid: expected Hash, got Array"}}})
         expect(last_response.status).to eq(200)
       end
 
       it "should error on missing 'query'" do
-        get '/people', queries: '{"q0":{}}'
+        get '/entities', queries: '{"q0":{}}'
         expect(data).to eq({'q0' => {'error' => {'message' => "'query' must be provided"}}})
         expect(last_response.status).to eq(200)
       end
 
       it "should error on non-Hash 'query'" do
-        get '/people', queries: '{"q0":{"query":[]}}'
+        get '/entities', queries: '{"q0":{"query":[]}}'
         expect(data).to eq({'q0' => {'error' => {'message' => "'query' is invalid: expected Hash, got Array"}}})
         expect(last_response.status).to eq(200)
       end
 
       it "should error on missing 'type'" do
-        get '/people', queries: '{"q0":{"query":{}}}'
+        get '/entities', queries: '{"q0":{"query":{}}}'
         expect(data).to eq({'q0' => {'error' => {'message' => "query 'type' must be provided"}}})
         expect(last_response.status).to eq(200)
       end
 
       it "should error on non-String 'type'" do
-        get '/people', queries: '{"q0":{"query":{"type":[]}}}'
+        get '/entities', queries: '{"q0":{"query":{"type":[]}}}'
         expect(data).to eq({'q0' => {'error' => {'message' => "query 'type' is invalid: expected String, got Array"}}})
         expect(last_response.status).to eq(200)
       end
 
       it "should error on unknown 'type'" do
-        get '/people', queries: '{"q0":{"query":{"type":"Unknown"}}}'
+        get '/entities', queries: '{"q0":{"query":{"type":"Unknown"}}}'
         expect(data).to eq({'q0' => {'error' => {'message' => "query 'type' is invalid: expected 'Person' or 'Organization', got 'Unknown'"}}})
         expect(last_response.status).to eq(200)
       end

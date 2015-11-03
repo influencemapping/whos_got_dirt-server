@@ -97,7 +97,7 @@ module WhosGotDirt
       redirect 'https://github.com/influencemapping/whos_got_dirt-server#usage'
     end
 
-    get '/people' do
+    get '/entities' do
       if !params.key?('queries')
         return error(422, "parameter 'queries' must be provided")
       end
