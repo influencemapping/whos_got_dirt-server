@@ -90,6 +90,8 @@ results = JSON.load(open(url).read)
 
 ## Deployment
 
+[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
+
 ```
 heroku apps:create
 git push heroku master
