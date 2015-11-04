@@ -1,140 +1,100 @@
 <!DOCTYPE html>
 <html lang="en-us">
-  <head>
-    <meta charset="UTF-8">
-    <title>Who&#39;s got dirt? Server by influencemapping</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
-  </head>
-  <body>
-    <section class="page-header">
-      <h1 class="project-name">Who&#39;s got dirt? Server</h1>
-      <h2 class="project-tagline">A federated search API for people and organizations</h2>
-      <a href="https://github.com/influencemapping/whos_got_dirt-server" class="btn">View on GitHub</a>
-      <a href="https://github.com/influencemapping/whos_got_dirt-server/zipball/master" class="btn">Download .zip</a>
-      <a href="https://github.com/influencemapping/whos_got_dirt-server/tarball/master" class="btn">Download .tar.gz</a>
-    </section>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>Who's got dirt? Server</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/normalize.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700">
+<link rel="stylesheet" href="css/stylesheet.css">
+<link rel="stylesheet" href="css/github-light.css">
+</head>
 
-    <section class="main-content">
-      <h1>
-<a id="whos-got-dirt-a-federated-search-api-for-people-and-organizations" class="anchor" href="#whos-got-dirt-a-federated-search-api-for-people-and-organizations" aria-hidden="true"><span class="octicon octicon-link"></span></a>Who's got dirt? A federated search API for people and organizations</h1>
+<body>
+<section class="page-header">
+  <h1 class="project-name">Who&#39;s got dirt? Server</h1>
+  <h2 class="project-tagline">A federated search API for people and organizations</h2>
+</section>
 
-<p><a href="https://travis-ci.org/influencemapping/whos_got_dirt-server"><img src="https://secure.travis-ci.org/influencemapping/whos_got_dirt-server.png" alt="Build Status"></a>
-<a href="https://gemnasium.com/influencemapping/whos_got_dirt-server"><img src="https://gemnasium.com/influencemapping/whos_got_dirt-server.png" alt="Dependency Status"></a>
-<a href="https://coveralls.io/r/influencemapping/whos_got_dirt-server"><img src="https://coveralls.io/repos/influencemapping/whos_got_dirt-server/badge.svg" alt="Coverage Status"></a>
-<a href="https://codeclimate.com/github/influencemapping/whos_got_dirt-server"><img src="https://codeclimate.com/github/influencemapping/whos_got_dirt-server.png" alt="Code Climate"></a></p>
+<section class="main-content">
+  <h2>Usage</h2>
 
-<p>This server provides a single access point to some public data on the web. See the <a href="https://github.com/influencemapping/whos_got_dirt-gem">Ruby gem</a> for details.</p>
+  <h3>People</h3>
 
-<h2>
-<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h2>
+  <p><code>GET /entities?queries=&lt;queries&gt;</code> where <code>&lt;queries&gt;</code> looks like:</p>
 
-<h3>
-<a id="people" class="anchor" href="#people" aria-hidden="true"><span class="octicon octicon-link"></span></a>People</h3>
-
-<p><code>GET /entities?queries=&lt;queries&gt;</code> where <code>&lt;queries&gt;</code> looks like:</p>
-
-<div class="highlight highlight-source-json"><pre>{
-  <span class="pl-s"><span class="pl-pds">"</span>q0<span class="pl-pds">"</span></span>: {
-    <span class="pl-s"><span class="pl-pds">"</span>query<span class="pl-pds">"</span></span>: {
-      <span class="pl-s"><span class="pl-pds">"</span>type<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>Person<span class="pl-pds">"</span></span>,
-      <span class="pl-s"><span class="pl-pds">"</span>name~=<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>John Smith<span class="pl-pds">"</span></span>,
-      <span class="pl-s"><span class="pl-pds">"</span>jurisdiction_code|=<span class="pl-pds">"</span></span>: [<span class="pl-s"><span class="pl-pds">"</span>gb<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>ie<span class="pl-pds">"</span></span>],
-      <span class="pl-s"><span class="pl-pds">"</span>memberships<span class="pl-pds">"</span></span>: [{
-        <span class="pl-s"><span class="pl-pds">"</span>role<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>director<span class="pl-pds">"</span></span>,
-        <span class="pl-s"><span class="pl-pds">"</span>inactive<span class="pl-pds">"</span></span>: <span class="pl-c1">false</span>
-      }]
-    }
-  }
+  <div class="highlight highlight-source-json"><pre>{
+<span class="pl-s"><span class="pl-pds">"</span>q0<span class="pl-pds">"</span></span>: {
+<span class="pl-s"><span class="pl-pds">"</span>query<span class="pl-pds">"</span></span>: {
+  <span class="pl-s"><span class="pl-pds">"</span>type<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>Person<span class="pl-pds">"</span></span>,
+  <span class="pl-s"><span class="pl-pds">"</span>name~=<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>John Smith<span class="pl-pds">"</span></span>,
+  <span class="pl-s"><span class="pl-pds">"</span>jurisdiction_code|=<span class="pl-pds">"</span></span>: [<span class="pl-s"><span class="pl-pds">"</span>gb<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>ie<span class="pl-pds">"</span></span>],
+  <span class="pl-s"><span class="pl-pds">"</span>memberships<span class="pl-pds">"</span></span>: [{
+    <span class="pl-s"><span class="pl-pds">"</span>role<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>director<span class="pl-pds">"</span></span>,
+    <span class="pl-s"><span class="pl-pds">"</span>inactive<span class="pl-pds">"</span></span>: <span class="pl-c1">false</span>
+  }]
+}
+}
 }</pre></div>
 
-<p>You may use any query ID instead of <code>q0</code>. Not all APIs support every parameter and operator. <strong>If a parameter or operator is unsupported, it is silently ignored.</strong> See more in the <a href="http://www.rubydoc.info/gems/whos_got_dirt/WhosGotDirt/Requests/Person">documentation</a>.</p>
+  <p>You may use any query ID instead of <code>q0</code>. Not all APIs support every parameter and operator. <strong>If a parameter or operator is unsupported, it is silently ignored.</strong> See more in the <a href="http://www.rubydoc.info/gems/whos_got_dirt/WhosGotDirt/Requests/Person">documentation</a>.</p>
 
-<p><strong>If an API returns an error, its response is silently ignored.</strong> See more in the <a href="http://www.rubydoc.info/gems/whos_got_dirt/WhosGotDirt/Responses/Person">documentation</a>.</p>
+  <p><strong>If an API returns an error, its response is silently ignored.</strong> See more in the <a href="http://www.rubydoc.info/gems/whos_got_dirt/WhosGotDirt/Responses/Person">documentation</a>.</p>
 
-<p>For example, run <code>bundle exec rackup</code> in a Unix shell, and run the following in a Ruby shell:</p>
+  <p>For example, run <code>bundle exec rackup</code> in a Unix shell, and run the following in a Ruby shell:</p>
 
-<div class="highlight highlight-source-ruby"><pre><span class="pl-k">require</span> <span class="pl-s"><span class="pl-pds">'</span>cgi<span class="pl-pds">'</span></span>
-<span class="pl-k">require</span> <span class="pl-s"><span class="pl-pds">'</span>open-uri<span class="pl-pds">'</span></span>
-<span class="pl-k">require</span> <span class="pl-s"><span class="pl-pds">'</span>json<span class="pl-pds">'</span></span>
+  <div class="highlight highlight-source-ruby"><pre><span class="pl-k">require</span> <span class="pl-s"><span class="pl-pds">'</span>cgi<span class="pl-pds">'</span></span>
+  <span class="pl-k">require</span> <span class="pl-s"><span class="pl-pds">'</span>open-uri<span class="pl-pds">'</span></span>
+  <span class="pl-k">require</span> <span class="pl-s"><span class="pl-pds">'</span>json<span class="pl-pds">'</span></span>
 
-queries <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">&lt;&lt;-EOL</span></span>
-<span class="pl-s">{</span>
-<span class="pl-s">  "q0": {</span>
-<span class="pl-s">    "query": {</span>
-<span class="pl-s">      "type": "Person",</span>
-<span class="pl-s">      "name~=": "John Smith",</span>
-<span class="pl-s">      "jurisdiction_code|=": ["gb", "ie"],</span>
-<span class="pl-s">      "memberships": [{</span>
-<span class="pl-s">        "role": "director",</span>
-<span class="pl-s">        "inactive": false</span>
-<span class="pl-s">      }]</span>
-<span class="pl-s">    }</span>
-<span class="pl-s">  }</span>
-<span class="pl-s">}</span>
-<span class="pl-s"><span class="pl-pds">EOL</span></span>
+  queries <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">&lt;&lt;-EOL</span></span>
+  <span class="pl-s">{</span>
+  <span class="pl-s">  "q0": {</span>
+  <span class="pl-s">    "query": {</span>
+  <span class="pl-s">      "type": "Person",</span>
+  <span class="pl-s">      "name~=": "John Smith",</span>
+  <span class="pl-s">      "jurisdiction_code|=": ["gb", "ie"],</span>
+  <span class="pl-s">      "memberships": [{</span>
+  <span class="pl-s">        "role": "director",</span>
+  <span class="pl-s">        "inactive": false</span>
+  <span class="pl-s">      }]</span>
+  <span class="pl-s">    }</span>
+  <span class="pl-s">  }</span>
+  <span class="pl-s">}</span>
+  <span class="pl-s"><span class="pl-pds">EOL</span></span>
 
-value <span class="pl-k">=</span> <span class="pl-c1">JSON</span>.dump(<span class="pl-c1">JSON</span>.load(queries))
-<span class="pl-c">#=&gt; {"q0":{"query":{"type":"Person","name~=":"John Smith","jurisdiction_code|=":["gb","ie"],"memberships":[{"role":"director","inactive":false}]}}}</span>
+  value <span class="pl-k">=</span> <span class="pl-c1">JSON</span>.dump(<span class="pl-c1">JSON</span>.load(queries))
+  <span class="pl-c">#=&gt; {"q0":{"query":{"type":"Person","name~=":"John Smith","jurisdiction_code|=":["gb","ie"],"memberships":[{"role":"director","inactive":false}]}}}</span>
 
-url <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">"</span>http://localhost:9292/entities?queries=<span class="pl-pse">#{</span><span class="pl-s1"><span class="pl-c1">CGI</span>.escape(value)</span><span class="pl-pse"><span class="pl-s1">}</span></span><span class="pl-pds">"</span></span>
-<span class="pl-c">#=&gt; http://localhost:9292/entities?queries=%7B%22q0%22%3A%7B%22query%22%3A%7B%22type%22%3A%22Person%22%2C%22name%7E%3D%22%3A%22John+Smith%22%2C%22jurisdiction_code%7C%3D%22%3A%5B%22gb%22%2C%22ie%22%5D%2C%22memberships%22%3A%5B%7B%22role%22%3A%22director%22%2C%22inactive%22%3Afalse%7D%5D%7D%7D%7D</span>
+  url <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">"</span>http://localhost:9292/entities?queries=<span class="pl-pse">#{</span><span class="pl-s1"><span class="pl-c1">CGI</span>.escape(value)</span><span class="pl-pse"><span class="pl-s1">}</span></span><span class="pl-pds">"</span></span>
+  <span class="pl-c">#=&gt; http://localhost:9292/entities?queries=%7B%22q0%22%3A%7B%22query%22%3A%7B%22type%22%3A%22Person%22%2C%22name%7E%3D%22%3A%22John+Smith%22%2C%22jurisdiction_code%7C%3D%22%3A%5B%22gb%22%2C%22ie%22%5D%2C%22memberships%22%3A%5B%7B%22role%22%3A%22director%22%2C%22inactive%22%3Afalse%7D%5D%7D%7D%7D</span>
 
-results <span class="pl-k">=</span> <span class="pl-c1">JSON</span>.load(open(url).read)
-<span class="pl-c">#=&gt; {"q0"=&gt;</span>
-<span class="pl-c">#  {"count"=&gt;3915,</span>
-<span class="pl-c">#   "result"=&gt;</span>
-<span class="pl-c">#    [{"@type"=&gt;"Person",</span>
-<span class="pl-c">#      "name"=&gt;"JOHN SMITH",</span>
-<span class="pl-c">#      "updated_at"=&gt;"2014-10-25T00:34:16+00:00",</span>
-<span class="pl-c">#      "identifiers"=&gt;[{"identifier"=&gt;"46065070", "scheme"=&gt;"OpenCorporates"}],</span>
-<span class="pl-c">#      "contact_details"=&gt;[],</span>
-<span class="pl-c">#      "links"=&gt;[{"url"=&gt;"https://opencorporates.com/officers/46065070", "note"=&gt;"OpenCorporates URL"}],</span>
-<span class="pl-c">#      "memberships"=&gt;</span>
-<span class="pl-c">#       [{"role"=&gt;"director",</span>
-<span class="pl-c">#         "start_date"=&gt;"2006-11-24",</span>
-<span class="pl-c">#         "organization"=&gt;</span>
-<span class="pl-c">#          {"name"=&gt;"EVOLUTION (GB) LIMITED",</span>
-<span class="pl-c">#           "identifiers"=&gt;[{"identifier"=&gt;"05997209", "scheme"=&gt;"Company Register"}],</span>
-<span class="pl-c">#           "links"=&gt;[{"url"=&gt;"https://opencorporates.com/companies/gb/05997209", "note"=&gt;"OpenCorporates URL"}],</span>
-<span class="pl-c">#           "jurisdiction_code"=&gt;"gb"}}],</span>
-<span class="pl-c">#      "current_status"=&gt;"CURRENT",</span>
-<span class="pl-c">#      "jurisdiction_code"=&gt;"gb",</span>
-<span class="pl-c">#      "occupation"=&gt;"MANAGER",</span>
-<span class="pl-c">#      "sources"=&gt;</span>
-<span class="pl-c">#       [{"url"=&gt;"https://api.opencorporates.com/officers/search?inactive=false&amp;jurisdiction_code=gb%7Cie&amp;order=score&amp;position=director&amp;q=John+Smith", "note"=&gt;"OpenCorporates"}]},</span>
-<span class="pl-c">#    ...]</span></pre></div>
+  results <span class="pl-k">=</span> <span class="pl-c1">JSON</span>.load(open(url).read)
+  <span class="pl-c">#=&gt; {"q0"=&gt;</span>
+  <span class="pl-c">#  {"count"=&gt;3915,</span>
+  <span class="pl-c">#   "result"=&gt;</span>
+  <span class="pl-c">#    [{"@type"=&gt;"Person",</span>
+  <span class="pl-c">#      "name"=&gt;"JOHN SMITH",</span>
+  <span class="pl-c">#      "updated_at"=&gt;"2014-10-25T00:34:16+00:00",</span>
+  <span class="pl-c">#      "identifiers"=&gt;[{"identifier"=&gt;"46065070", "scheme"=&gt;"OpenCorporates"}],</span>
+  <span class="pl-c">#      "contact_details"=&gt;[],</span>
+  <span class="pl-c">#      "links"=&gt;[{"url"=&gt;"https://opencorporates.com/officers/46065070", "note"=&gt;"OpenCorporates URL"}],</span>
+  <span class="pl-c">#      "memberships"=&gt;</span>
+  <span class="pl-c">#       [{"role"=&gt;"director",</span>
+  <span class="pl-c">#         "start_date"=&gt;"2006-11-24",</span>
+  <span class="pl-c">#         "organization"=&gt;</span>
+  <span class="pl-c">#          {"name"=&gt;"EVOLUTION (GB) LIMITED",</span>
+  <span class="pl-c">#           "identifiers"=&gt;[{"identifier"=&gt;"05997209", "scheme"=&gt;"Company Register"}],</span>
+  <span class="pl-c">#           "links"=&gt;[{"url"=&gt;"https://opencorporates.com/companies/gb/05997209", "note"=&gt;"OpenCorporates URL"}],</span>
+  <span class="pl-c">#           "jurisdiction_code"=&gt;"gb"}}],</span>
+  <span class="pl-c">#      "current_status"=&gt;"CURRENT",</span>
+  <span class="pl-c">#      "jurisdiction_code"=&gt;"gb",</span>
+  <span class="pl-c">#      "occupation"=&gt;"MANAGER",</span>
+  <span class="pl-c">#      "sources"=&gt;</span>
+  <span class="pl-c">#       [{"url"=&gt;"https://api.opencorporates.com/officers/search?inactive=false&amp;jurisdiction_code=gb%7Cie&amp;order=score&amp;position=director&amp;q=John+Smith", "note"=&gt;"OpenCorporates"}]},</span>
+  <span class="pl-c">#    ...]</span></pre></div>
+</section>
 
-<h2>
-<a id="deployment" class="anchor" href="#deployment" aria-hidden="true"><span class="octicon octicon-link"></span></a>Deployment</h2>
-
-<p>If you are concerned about the privacy or security of this API, deploy your own.</p>
-
-<p><a href="https://heroku.com/deploy"><img src="https://www.herokucdn.com/deploy/button.png" alt="Deploy"></a></p>
-
-<pre><code>heroku apps:create
-heroku addons:create memcachier:dev
-git push heroku master
-</code></pre>
-
-<h2>
-<a id="acknowledgements" class="anchor" href="#acknowledgements" aria-hidden="true"><span class="octicon octicon-link"></span></a>Acknowledgements</h2>
-
-<p>Most terms are from <a href="http://www.popoloproject.com/">Popolo</a>. The request and response formats are inspired from the <a href="http://mql.freebaseapps.com/index.html">Metaweb Query Language (MQL)</a> and the <a href="https://github.com/OpenRefine/OpenRefine/wiki/Reconciliation-Service-API">OpenRefine Reconciliation Service API</a>. Differences from MQL are <a href="/docs/differences-from-freebase.md">documented</a>.</p>
-
-<p>Copyright (c) 2015 James McKinney, released under the MIT license</p>
-
-      <footer class="site-footer">
-        <span class="site-footer-owner"><a href="https://github.com/influencemapping/whos_got_dirt-server">Who&#39;s got dirt? Server</a> is maintained by <a href="https://github.com/influencemapping">influencemapping</a>.</span>
-
-        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
-      </footer>
-
-    </section>
-
-  
-  </body>
+</body>
 </html>
