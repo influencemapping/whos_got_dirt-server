@@ -94,7 +94,7 @@ module WhosGotDirt
     end
 
     get '/' do
-      redirect 'https://github.com/influencemapping/whos_got_dirt-server#usage'
+      redirect 'https://influencemapping.github.io/whos_got_dirt-server/'
     end
 
     get '/entities' do
