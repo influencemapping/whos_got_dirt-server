@@ -1,0 +1,4 @@
+markdown: redcarpet
+exclude:
+- Gemfile
+- Gemfile.lock

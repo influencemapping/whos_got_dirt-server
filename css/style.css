@@ -1,0 +1,25 @@
+@media screen and (min-width: 64em) {
+  .page-header {
+    padding: 2rem 6rem; } } /* 5rem 6rem */
+@media screen and (min-width: 42em) and (max-width: 64em) {
+  .page-header {
+    padding: 2rem 4rem; } } /* 3rem 4rem */
+.project-tagline {
+  margin-bottom: 0; /* margin-bottom: 2rem; */
+}
+.main-content h3 code {
+  padding: 0; /* 2px 4px */
+  font-size: 1.1rem; /* 0.9 rem */
+  color: #159957; /* #383e41 */
+  background-color: transparent; /* #f3f6fa */
+}
+.main-content table th {
+  font-size: 0.9rem;
+  padding: 0.5rem 0; /* 0.5rem 1rem */
+}
+.main-content table td {
+  font-size: 0.9rem;
+}
+th.api {
+  width: 7.7rem;
+}
