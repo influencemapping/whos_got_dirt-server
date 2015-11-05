@@ -7,7 +7,7 @@
 
 This server provides a single access point to some public data on the web.
 
-* [API documentation](https://influencemapping.github.io/whos_got_dirt-server/)
+Read the [API documentation](https://influencemapping.github.io/whos_got_dirt-server/).
 
 ## Development
 
