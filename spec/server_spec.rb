@@ -11,8 +11,17 @@ RSpec.describe do
 
   describe 'GET people' do
     context 'when successful' do
-      it 'should return results' do
+      it 'should return results for GET request' do
         get '/entities', queries: '{"q0":{"query":{"type":"Person","name":"John Smith"}}}'
+        expect(data.keys).to eq(['q0'])
+        expect(data['q0'].keys).to eq(['count', 'result'])
+        expect(data['q0']['count']).to be > 10_000
+        expect(data['q0']['result'].all?{|result| result['@type'] == 'Person'}).to eq(true)
+        expect(last_response.status).to eq(200)
+      end
+
+      it 'should return results for POST request' do
+        post '/entities', queries: '{"q0":{"query":{"type":"Person","name":"John Smith"}}}'
         expect(data.keys).to eq(['q0'])
         expect(data['q0'].keys).to eq(['count', 'result'])
         expect(data['q0']['count']).to be > 10_000

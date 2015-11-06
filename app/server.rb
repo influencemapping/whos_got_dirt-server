@@ -8,6 +8,7 @@ require 'typhoeus'
 require 'typhoeus/adapters/faraday'
 require 'sinatra'
 require 'sinatra/cross_origin'
+require 'sinatra/multi_route'
 require 'whos_got_dirt'
 
 module WhosGotDirt
@@ -97,7 +98,7 @@ module WhosGotDirt
       redirect 'https://influencemapping.github.io/whos_got_dirt-server/'
     end
 
-    get '/entities' do
+    route :get, :post, '/entities' do
       if !params.key?('queries')
         return error(422, "parameter 'queries' must be provided")
       end
