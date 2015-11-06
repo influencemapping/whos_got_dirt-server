@@ -4,8 +4,8 @@
       <th>Parameter</th>
       <th>Definition</th>
       <th>Example</th>
-      <th class="api">OpenCorporates</th>
-      <th class="api">OpenOil</th>
+      <th class="api"><div><div>OpenCorporates</div></div></th>
+      <th class="api"><div><div>OpenOil</div></div></th>
     </tr>
   </thead>
   <tbody>
@@ -24,7 +24,7 @@
       <td><code>=</code></td>
     </tr>
     <tr>
-      <td><code>subject<br>.name</code></td>
+      <td><code>subject.name</code></td>
       <td>Find related entities by name.</td>
       <td class="example"><pre>
 "subject": [{
@@ -34,7 +34,7 @@
       <td><code>=</code></td>
     </tr>
     <tr>
-      <td><code>subject<br>.birth_date</code></td>
+      <td><code>subject.birth_date</code></td>
       <td>Find related people by birth date.</td>
       <td class="example"><pre>
 "subject": [{
@@ -44,7 +44,7 @@
       <td></td>
     </tr>
     <tr>
-      <td><code>subject<br>.contact_details<br>.value</code> <a href="#note2"><sup>2</sup></a></td>
+      <td><code>subject.contact_details<br>.value</code> <a href="#note2"><sup>2</sup></a></td>
       <td>Find related entities by address.</td>
       <td class="example"><pre>
 "subject": [{

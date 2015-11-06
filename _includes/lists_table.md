@@ -4,8 +4,8 @@
       <th>Parameter</th>
       <th>Definition</th>
       <th>Example</th>
-      <th class="api">LittleSis</th>
-      <th class="api">OpenCorporates</th>
+      <th class="api"><div><div>LittleSis</div></div></th>
+      <th class="api"><div><div>OpenCorporates</div></div></th>
     </tr>
   </thead>
   <tbody>

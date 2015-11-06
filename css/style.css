@@ -28,27 +28,56 @@
   background-color: transparent; /* #F3F6FA */
 }
 
-.table-responsive {
+/* @see http://stackoverflow.com/questions/3402295/html-table-with-horizontal-scrolling-first-column-fixed */
+.table-scroll-outer {
+  position: relative;
+}
+.table-scroll-inner {
   overflow-x: scroll;
   -ms-overflow-style: -ms-autohiding-scrollbar;
   -webkit-overflow-scrolling: touch;
+  margin-left: 10rem;
 }
-.table-responsive table {
-  width: 81rem;
+.table-scroll-outer table {
+  table-layout: fixed;
+  width: 52.5rem;
+}
+.table-scroll-outer th {
+  vertical-align: top;
+}
+.table-scroll-outer .api {
+  vertical-align: middle;
+}
+.table-scroll-outer .parameter {
+  position: absolute;
+  left: 0;
+  width: 10rem;
+  margin-top: -1px;
+  border-left: 0;
+  border-right: 0;
+  border-bottom: 0;
 }
 
-th.parameter {
-  width: 11rem;
-}
-th.definition {
-  width: 13rem;
-}
-th.example {
-  width: 18.5rem;
-}
 th.api {
-  width: 7.7rem;
+  width: 3.75rem;
 }
+/* @see http://stackoverflow.com/questions/7076052/vertically-rotate-text-inside-an-html-table-header-cell */
+th.api > div {
+  display: inline-block;
+  overflow: hidden;
+  width: 3.75rem;
+}
+th.api > div > div {
+  display: inline-block;
+  transform: translate(1rem,100%) rotate(-90deg);
+  transform-origin: 0 0;
+}
+th.api > div > div:after {
+  content: "";
+  display: block;
+  margin: -1rem auto 100%;
+}
+
 td.example {
   background-color: #F3F6FA;
 }
