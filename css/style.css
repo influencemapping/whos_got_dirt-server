@@ -19,7 +19,36 @@
 }
 .main-content table td {
   font-size: 0.9rem;
+  padding: 0.5rem; /* 0.5rem 1rem */
+}
+.main-content pre {
+  margin-bottom: 0; /* 1rem */
+  padding: 0; /* 0.8rem */
+  border: 0; /* 1px solid #DCE6F0 */
+  background-color: transparent; /* #F3F6FA */
+}
+
+.table-responsive {
+  overflow-x: scroll;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  -webkit-overflow-scrolling: touch;
+}
+.table-responsive table {
+  width: 81rem;
+}
+
+th.parameter {
+  width: 11rem;
+}
+th.definition {
+  width: 13rem;
+}
+th.example {
+  width: 18.5rem;
 }
 th.api {
   width: 7.7rem;
+}
+td.example {
+  background-color: #F3F6FA;
 }

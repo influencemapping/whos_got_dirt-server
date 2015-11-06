@@ -69,7 +69,7 @@ Not every API supports every parameter (for example, `name`) and operator (for e
 
 This table documents which operators, if any, are supported by each API for each parameter.
 
-{% include entities_table.html %}
+{% include entities_table.md %}
 
 #### Example of sending a request in Ruby
 
@@ -79,13 +79,25 @@ This table documents which operators, if any, are supported by each API for each
 
 #### API Parameters Support
 
-{% include relations_table.html %}
+{% include relations_table.md %}
 
 ### `GET /lists?queries=<queries>`
 
 #### API Parameters Support
 
-{% include lists_table.html %}
+{% include lists_table.md %}
+
+#### Notes
+
+<p id="note1">1. Each API has its own API key parameter:</p>
+
+* `corp_watch_api_key`
+* `little_sis_api_key`
+* `open_corporates_api_key`
+* `open_duka_api_key`
+* `poderopedia_api_key`
+
+<p id="note2">2. Only <code>contact_details</code> with a <code>type</code> of <code>address</code> are supported.</p>
 
 ### Differences from the Metaweb Query Language (MQL)
 
