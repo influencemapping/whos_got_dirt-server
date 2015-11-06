@@ -2,9 +2,26 @@
 layout: default
 title: Who's got dirt?
 ---
-## Supported APIs
+The <i>Who's got dirt?</i> API provides a single access point to multiple APIs of influence data on the web. It proxies requests to the supported APIs, so that users only need to learn a single request format and a single response format.
 
-<i>Who's got dirt?</i> supports these APIs:
+<h1>Documentation</h1>
+
+1. [Supported APIs](#supported-apis)
+  1. [API keys](#api-keys)
+  1. [API security](#api-security)
+  1. [API terms & conditions](#api-terms-and-conditions)
+1. [Usage](#usage)
+  1. [Entities](#entities)
+      1. [Ruby example](#entities-example-ruby)
+  1. [Relations](#relations)
+  1. [Lists](#lists)
+  1. [Notes](#notes)
+  1. [Differences from the Metaweb Query Language (MQL)](#differences-from-mql)
+
+
+<h2 id="supported-apis">Supported APIs</h2>
+
+<i>Who's got dirt?</i> supports these APIs of influence data:
 
 * [CorpWatch](http://corpwatch.org/) ([docs](http://api.corpwatch.org/))
 * [LittleSis](http://littlesis.org/) ([docs](https://api.littlesis.org/))
@@ -15,9 +32,10 @@ title: Who's got dirt?
 
 Don't see an API you use? Please request its support in [this issue](https://github.com/influencemapping/whos_got_dirt-gem/issues/3).
 
-### API Keys
 
-An API key is required to submit requests to some APIs. You may register for API keys at:
+<h3 id="api-keys">API Keys</h3>
+
+An API key is required to proxy requests to some APIs. You may register for API keys at:
 
 * [CorpWatch](http://api.corpwatch.org/register.php)
 * [LittleSis](http://api.littlesis.org/register) (required)
@@ -26,7 +44,8 @@ An API key is required to submit requests to some APIs. You may register for API
 * [OpenOil](http://openoil.net/openoil-api/) (required)
 * [Poderopedia](https://poderopedia.3scale.net/login) (required)
 
-## API Security
+
+<h3 id="api-security">API Security</h3>
 
 Some APIs do not support HTTPS:
 
@@ -34,9 +53,10 @@ Some APIs do not support HTTPS:
 * OpenDuka
 * Poderopedia
 
-If you do not trust the public API at [`https://whosgotdirt.herokuapp.com/`](https://whosgotdirt.herokuapp.com/), please read the [technical documentation](https://github.com/influencemapping/whos_got_dirt-server#deployment) to deploy your own private API.
+Also, if you do not trust the public API at [https://whosgotdirt.herokuapp.com/](https://whosgotdirt.herokuapp.com/), please read the [technical documentation](https://github.com/influencemapping/whos_got_dirt-server#deployment) to deploy your own private API.
 
-### API Terms & Conditions
+
+<h3 id="api-terms-and-conditions">API Terms &amp; Conditions</h3>
 
 Please be aware of each API's terms and conditions:
 
@@ -51,43 +71,96 @@ Please be aware of each API's terms and conditions:
 * [CrunchBase](http://data.crunchbase.com/page/accessing-the-dataset) ([CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/))
 {% endcomment %}
 
-## Usage
 
-### `GET /entities?queries=<queries>`
+<h2 id="usage">Usage</h2>
 
-`<queries>` looks like:
+The <i>Who's got dirt?</i> API's base URL is [https://whosgotdirt.herokuapp.com/](https://whosgotdirt.herokuapp.com/).
 
-{% include entities_request.md %}
+Each endpoint (`/entities`, for example) accepts a single query string parameter `queries`.
+
+You may use the `POST` HTTP method if the query string is too long.
+
+For the request `GET /entities?queries=<queries>`, `<queries>` may look like:
+
+{% include request.md %}
 
 You may use any query ID instead of `q0`. You may submit multiple queries with different query IDs.
 
-Not every API supports every parameter (for example, `name`) and operator (for example, `~=`). **If a parameter or operator is unsupported, it is silently ignored** ([issue #1](https://github.com/influencemapping/whos_got_dirt-server/issues/1)).
+The format of `query` within each query is inspired from the [Metaweb Query Language](http://mql.freebaseapps.com/index.html). Each property name (`name`, for example) in `query` may be followed by an [MQL operator](http://mql.freebaseapps.com/ch03.html#operators) (`~=`, for example). If no operator follows a property name, the operator is equality. (In the tables below, `=` denotes equality, but you should never append `=` to a property name: for example, use `name`, not `name=`.) The other operators are:
+
+<dl>
+  <dt><code>~=</code></dt>
+  <dd>
+    The pattern matching operator tests whether a property contains a word or phrase.<br>
+    <code>"name~=": "ACME Inc."</code>
+  </dd>
+  <dt><code>|=</code></dt>
+  <dd>
+    The "one of" operator tests whether a property is equal to any value in an array.<br>
+    <code>"country_code|=": ["gb", "us"]</code>
+  </dd>
+  <dt><code>&gt;=</code></dt>
+  <dd>
+    The greater-than-or-equal operators tests whether a property is greater than or equal to a value.<br>
+    <code>"founding_date&gt;=": "2010-01-01"</code>
+  </dd>
+  <dt><code>&gt;</code></dt>
+  <dd>
+    The greater-than operators tests whether a property is greater than a value.<br>
+    <code>"founding_date&gt;": "2010-01-01"</code>
+  </dd>
+  <dt><code>&lt;=</code></dt>
+  <dd>
+    The less-than-or-equal operators tests whether a property is less than or equal to a value.<br>
+    <code>"founding_date&lt;=": "2010-01-01"</code>
+  </dd>
+  <dt><code>&lt;</code></dt>
+  <dd>
+    The less-than operators tests whether a property is less than a value.<br>
+    <code>"founding_date&lt;": "2010-01-01"</code>
+  </dd>
+  <dt><code>a:</code></dt>
+  <dd>
+    While not an operator, a property prefix (<code>a:</code>, for example) can be used to express the <code>AND</code> operator.<br>
+    <code>"a:industry_code": "be_nace_2008-66191", "b:industry_code": "be_nace_2008-66199"</code>
+  </dd>
+</dl>
+
+Not all APIs support all parameters (`created_at`, for example) and operators (`|=`, for example). See the tables below for each API's support for parameters and operators.
+
+**If a parameter or operator is unsupported, it is silently ignored** ([issue #1](https://github.com/influencemapping/whos_got_dirt-server/issues/1)).
 
 **If an API returns an error, its response is silently ignored** ([issue #2](https://github.com/influencemapping/whos_got_dirt-server/issues/2)).
 
-#### API Parameters Support
+
+<h3 id="entities">Entities</h3>
+
+The endpoint is `GET /entities?queries=<queries>`.
 
 This table documents which operators, if any, are supported by each API for each parameter.
 
 {% include entities_table.md %}
 
-#### Example of sending a request in Ruby
+<h4 id="entities-example-ruby">Ruby Example</h4>
 
 {% include entities_ruby.md %}
 
-### `GET /relations?queries=<queries>`
 
-#### API Parameters Support
+<h3 id="relations">Relations</h3>
+
+The API endpoint is `GET /relations?queries=<queries>`.
 
 {% include relations_table.md %}
 
-### `GET /lists?queries=<queries>`
 
-#### API Parameters Support
+<h3 id="lists">Lists</h3>
+
+The endpoint is `GET /lists?queries=<queries>`.
 
 {% include lists_table.md %}
 
-#### Notes
+
+<h3 id="notes">Notes</h3>
 
 <p id="note1">1. Each API has its own API key parameter:</p>
 
@@ -99,7 +172,8 @@ This table documents which operators, if any, are supported by each API for each
 
 <p id="note2">2. Only <code>contact_details</code> with a <code>type</code> of <code>address</code> are supported.</p>
 
-### Differences from the Metaweb Query Language (MQL)
+
+<h3 id="differences-from-mql">Differences from the Metaweb Query Language (MQL)</h3>
 
 The API's request and response formats are inspired from the [Metaweb Query Language](http://mql.freebaseapps.com/index.html) and the [OpenRefine Reconciliation Service API](https://github.com/OpenRefine/OpenRefine/wiki/Reconciliation-Service-API). The differences are:
 

@@ -21,7 +21,7 @@
   font-size: 0.9rem;
   padding: 0.5rem; /* 0.5rem 1rem */
 }
-.main-content pre {
+.main-content table pre {
   margin-bottom: 0; /* 1rem */
   padding: 0; /* 0.8rem */
   border: 0; /* 1px solid #DCE6F0 */
