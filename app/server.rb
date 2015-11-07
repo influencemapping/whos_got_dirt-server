@@ -27,6 +27,7 @@ module WhosGotDirt
     }
 
     register Sinatra::CrossOrigin
+    register Sinatra::MultiRoute
     enable :cross_origin
 
     helpers do
