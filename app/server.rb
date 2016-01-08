@@ -72,7 +72,7 @@ module WhosGotDirt
           if ENV['MEMCACHIER_SERVERS']
             connection.response :caching do
               ActiveSupport::Cache::MemCacheStore.new(ENV['MEMCACHIER_SERVERS'], {
-                expires_in: 2600, # 1 hour
+                expires_in: 3600, # 1 hour
                 value_max_bytes: Integer(2097152), # 2 MB, OpenDuka can respond with >1 MB
                 username: ENV['MEMCACHIER_USERNAME'],
                 password: ENV['MEMCACHIER_PASSWORD'],
