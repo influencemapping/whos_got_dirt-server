@@ -1,4 +1,4 @@
-# Who's got dirt? A federated search API for people and organizations
+# Who's got dirt? A federated search API for influence data
 
 [![Build Status](https://secure.travis-ci.org/influencemapping/whos_got_dirt-server.png)](https://travis-ci.org/influencemapping/whos_got_dirt-server)
 [![Dependency Status](https://gemnasium.com/influencemapping/whos_got_dirt-server.png)](https://gemnasium.com/influencemapping/whos_got_dirt-server)
