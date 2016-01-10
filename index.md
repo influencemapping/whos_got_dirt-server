@@ -34,20 +34,20 @@ The <i>Who's got dirt?</i> API provides a single access point to multiple APIs o
 <i>Who's got dirt?</i> supports these endpoints of these APIs of influence data:
 
 * [CorpWatch](http://corpwatch.org/) ([docs](http://api.corpwatch.org/))
-  * [/companies.json](http://api.corpwatch.org/documentation/api_examples.html#A17) on [`/entities`](#entities)
+  * [/companies.json](http://api.corpwatch.org/documentation/api_examples.html#A17), queried via [`/entities`](#entities)
 * [LittleSis](http://littlesis.org/) ([docs](https://api.littlesis.org/))
-  * [/entities.xml](http://api.littlesis.org/documentation#entities) on [`/entities`](#entities)
-  * [/lists.xml](http://api.littlesis.org/documentation#lists) on [`/lists`](#lists)
+  * [/entities.xml](http://api.littlesis.org/documentation#entities), queried via[`/entities`](#entities)
+  * [/lists.xml](http://api.littlesis.org/documentation#lists), queried via[`/lists`](#lists)
 * [OpenCorporates](https://opencorporates.com/) ([docs](https://api.opencorporates.com/))
-  * [/companies/search](https://api.opencorporates.com/documentation/API-Reference) on [`/entities`](#entities)
-  * [/corporate_groupings/search](https://api.opencorporates.com/documentation/API-Reference) on [`/lists`](#lists)
-  * [/officers/search](https://api.opencorporates.com/documentation/API-Reference) on [`/relations`](#relations)
+  * [/companies/search](https://api.opencorporates.com/documentation/API-Reference), queried via[`/entities`](#entities)
+  * [/corporate_groupings/search](https://api.opencorporates.com/documentation/API-Reference), queried via[`/lists`](#lists)
+  * [/officers/search](https://api.opencorporates.com/documentation/API-Reference), queried via[`/relations`](#relations)
 * [OpenDuka](http://www.openduka.org/) ([docs](http://www.openduka.org/index.php/api/documentation))
-  * [/search](http://www.openduka.org/index.php/api/documentation) on [`/entities`](#entities)
+  * [/search](http://www.openduka.org/index.php/api/documentation), queried via[`/entities`](#entities)
 * [OpenOil](http://openoil.net/) ([docs](http://openoil.net/openoil-api/))
-  * [/concession/search](http://openoil.net/openoil-api/) on [`/relations`](#relations)
+  * [/concession/search](http://openoil.net/openoil-api/), queried via[`/relations`](#relations)
 * [Poderopedia](http://www.poderopedia.org/) ([docs](http://api.poderopedia.org/))
-  * [/search](http://api.poderopedia.org/search) on [`/entities`](#entities)
+  * [/search](http://api.poderopedia.org/search), queried via[`/entities`](#entities)
 
 Don't see an API you use? Please request its support in [this issue](https://github.com/influencemapping/whos_got_dirt-gem/issues/3).
 
