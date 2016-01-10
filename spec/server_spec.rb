@@ -9,16 +9,17 @@ RSpec.describe do
     JSON.load(last_response.body)
   end
 
-  let :queries do
-    JSON.dump({
-      q0: {
-        query: {
-          name: 'John Smith',
-          type: 'Person',
-          little_sis_api_key: ENV['LITTLE_SIS_API_KEY'],
-          poderopedia_api_key: ENV['PODEROPEDIA_API_KEY'],
-        },
-      },
+  let :query_without_keys do
+    {
+      type: 'Person',
+      name: 'John Smith',
+    }
+  end
+
+  let :query_with_keys do
+    query_without_keys.merge({
+      little_sis_api_key: ENV['LITTLE_SIS_API_KEY'],
+      poderopedia_api_key: ENV['PODEROPEDIA_API_KEY'],
     })
   end
 
@@ -34,18 +35,46 @@ RSpec.describe do
   end
 
   [:get, :post].each do |method|
-    describe 'entities', vcr: {cassette_name: 'entities'} do
+    describe 'entities' do
       context 'when successful' do
         it 'should return results' do
-          send(method, '/entities', queries: queries)
-          expect(data.keys).to eq(['status', 'q0'])
-          expect(data['status']).to eq('200 OK')
-          expect(data['q0'].keys).to eq(['count', 'result', 'messages'])
-          expect(data['q0']['messages']).to eq([])
-          expect(data['q0']['result'].all?{|result| result['@type'] == 'Entity'}).to eq(true)
-          expect(data['q0']['count']).to be > 100
-          expect(last_response.status).to eq(200)
-          expect(last_response.content_type).to eq('application/json')
+          VCR.use_cassette('entities_with_keys') do
+            send(method, '/entities', queries: JSON.dump(q0: {query: query_with_keys}))
+            expect(data.keys).to eq(['status', 'q0'])
+            expect(data['status']).to eq('200 OK')
+            expect(data['q0'].keys).to eq(['count', 'result', 'messages'])
+            expect(data['q0']['count']).to be > 100
+            expect(data['q0']['result'].all?{|result| result['@type'] == 'Entity'}).to eq(true)
+            expect(data['q0']['messages']).to eq([])
+            expect(last_response.status).to eq(200)
+            expect(last_response.content_type).to eq('application/json')
+          end
+        end
+
+        it 'should return results and errors' do
+          VCR.use_cassette('entities_without_keys') do
+            send(method, '/entities', queries: JSON.dump(q0: {query: query_without_keys}))
+            expect(data.keys).to eq(['status', 'q0'])
+            expect(data['status']).to eq('200 OK')
+            expect(data['q0'].keys).to eq(['count', 'result', 'messages'])
+            expect(data['q0']['count']).to be > 100
+            expect(data['q0']['result'].all?{|result| result['@type'] == 'Entity'}).to eq(true)
+            expect(data['q0']['messages']).to eq([{
+              'info' => {
+                'url' => 'https://api.littlesis.org/entities.xml?q=John+Smith',
+              },
+              'status' => '401 Unauthorized',
+              'message' => 'Your request must include a query parameter named "_key" with a valid API key value. To obtain an API key, visit http://api.littlesis.org/register.',
+            }, {
+              'info' => {
+                'url' => 'http://api.poderopedia.org/visualizacion/search?alias=John+Smith&entity=persona',
+              },
+              'status' => '400 Bad Request',
+              'message' => '400 BAD REQUEST',
+            }])
+            expect(last_response.status).to eq(200)
+            expect(last_response.content_type).to eq('application/json')
+          end
         end
       end
 

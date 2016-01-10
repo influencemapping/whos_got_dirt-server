@@ -141,7 +141,8 @@ module WhosGotDirt
           queries[query_id][:count] += result.count
           queries[query_id][:result] += result.to_a
         else
-          queries[query_id][:messages] << {info: {url: r.env.url}, status: status_message(response.status), message: response.body}
+          result = WhosGotDirt::Responses::Entity.const_get(api).new(response)
+          queries[query_id][:messages] << {info: {url: response.env.url}, status: status_message(response.status), message: result.error_message}
         end
       end
 
