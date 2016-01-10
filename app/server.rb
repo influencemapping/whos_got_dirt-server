@@ -24,6 +24,7 @@ module WhosGotDirt
       # @param [String] error_message an error message
       # @return [Array] the status code and error message
       def error(status_code, error_message)
+        content_type 'application/json'
         [status_code, JSON.dump({status: status_message(status_code), messages: [{message: error_message}]})]
       end
 
@@ -109,13 +110,18 @@ module WhosGotDirt
           data.each do |query_id,parameters|
             error_message = validate(parameters)
             if error_message
-              queries[query_id] = {messages: [{message: error_message}]}
+              queries[query_id] = {count: 0, result: [], messages: [{message: error_message}]}
             else
               queries[query_id] = {count: 0, result: [], messages: []}
 
               query = parameters.fetch('query')
-              # @todo limit endpoints https://github.com/influencemapping/whos_got_dirt-server/issues/3
               # @todo queue requests https://github.com/influencemapping/whos_got_dirt-server/issues/4
+              # @todo limit endpoints https://github.com/influencemapping/whos_got_dirt-server/issues/3
+              endpoints = parameters.fetch('endpoints')
+              # TODO `endpoints` is hash where key must match a constant, and the
+              # value is a hash where the only supported key is "key", which gets
+              # prefixed with the underscored constant + "_api_" and merged into
+              # the query. If the key is not a constant, add a message.
               WhosGotDirt::Requests::Entity.constants.each do |api|
                 url = WhosGotDirt::Requests::Entity.const_get(api).new(query).to_s
                 responses << [query_id, api, Faraday.get(url)]
