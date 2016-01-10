@@ -22,13 +22,13 @@ RSpec.describe do
     })
   end
 
-  describe 'GET people' do
+  describe 'entities', vcr: {cassette_name: 'entities'} do
     context 'when successful' do
       it 'should return results for GET request' do
         get '/entities', queries: queries
         expect(data.keys).to eq(['q0'])
-        expect(data['q0'].keys).to eq(['count', 'result', 'error'])
-        expect(data['q0']['error']).to eq([])
+        expect(data['q0'].keys).to eq(['count', 'result', 'messages'])
+        expect(data['q0']['messages']).to eq([])
         expect(data['q0']['result'].all?{|result| result['@type'] == 'Entity'}).to eq(true)
         expect(data['q0']['count']).to be > 100
         expect(last_response.status).to eq(200)
@@ -37,8 +37,8 @@ RSpec.describe do
       it 'should return results for POST request' do
         post '/entities', queries: queries
         expect(data.keys).to eq(['q0'])
-        expect(data['q0'].keys).to eq(['count', 'result', 'error'])
-        expect(data['q0']['error']).to eq([])
+        expect(data['q0'].keys).to eq(['count', 'result', 'messages'])
+        expect(data['q0']['messages']).to eq([])
         expect(data['q0']['result'].all?{|result| result['@type'] == 'Entity'}).to eq(true)
         expect(data['q0']['count']).to be > 100
         expect(last_response.status).to eq(200)
@@ -48,31 +48,31 @@ RSpec.describe do
     context "when validating 'queries' parameter" do
       it "should 422 on missing 'queries'" do
         get '/entities'
-        expect(data).to eq({'error' => {'message' => "parameter 'queries' must be provided"}})
+        expect(data).to eq({'status' => '422 Unprocessable Entity', 'messages' => [{'message' => "parameter 'queries' must be provided"}]})
         expect(last_response.status).to eq(422)
       end
 
       it "should 422 on nil 'queries'" do
         get '/entities?queries'
-        expect(data).to eq({'error' => {'message' => "parameter 'queries' can't be blank"}})
+        expect(data).to eq({'status' => '422 Unprocessable Entity', 'messages' => [{'message' => "parameter 'queries' can't be blank"}]})
         expect(last_response.status).to eq(422)
       end
 
       it "should 422 on empty 'queries'" do
         get '/entities', queries: ''
-        expect(data).to eq({'error' => {'message' => "parameter 'queries' can't be blank"}})
+        expect(data).to eq({'status' => '422 Unprocessable Entity', 'messages' => [{'message' => "parameter 'queries' can't be blank"}]})
         expect(last_response.status).to eq(422)
       end
 
       it 'should 400 on invalid JSON' do
         get '/entities', queries: '['
-        expect(data).to eq({'error' => {'message' => "parameter 'queries' is invalid: invalid JSON: 399: unexpected token at ''"}})
+        expect(data).to eq({'status' => '400 Bad Request', 'messages' => [{'message' => "parameter 'queries' is invalid: invalid JSON: 399: unexpected token at ''"}]})
         expect(last_response.status).to eq(400)
       end
 
       it "should 400 on non-Hash 'queries'" do
         get '/entities', queries: '[]'
-        expect(data).to eq({'error' => {'message' => "parameter 'queries' is invalid: expected Hash, got Array"}})
+        expect(data).to eq({'status' => '422 Unprocessable Entity', 'messages' => [{'message' => "parameter 'queries' is invalid: expected Hash, got Array"}]})
         expect(last_response.status).to eq(422)
       end
     end
@@ -80,19 +80,19 @@ RSpec.describe do
     context "when validating MQL parameters" do
       it "should error on non-Hash query" do
         get '/entities', queries: '{"q0":[]}'
-        expect(data).to eq({'q0' => {'error' => {'message' => "query is invalid: expected Hash, got Array"}}})
+        expect(data).to eq({'q0' => {'messages' => [{'message' => "query is invalid: expected Hash, got Array"}]}})
         expect(last_response.status).to eq(200)
       end
 
       it "should error on missing 'query'" do
         get '/entities', queries: '{"q0":{}}'
-        expect(data).to eq({'q0' => {'error' => {'message' => "'query' must be provided"}}})
+        expect(data).to eq({'q0' => {'messages' => [{'message' => "'query' must be provided"}]}})
         expect(last_response.status).to eq(200)
       end
 
       it "should error on non-Hash 'query'" do
         get '/entities', queries: '{"q0":{"query":[]}}'
-        expect(data).to eq({'q0' => {'error' => {'message' => "'query' is invalid: expected Hash, got Array"}}})
+        expect(data).to eq({'q0' => {'messages' => [{'message' => "'query' is invalid: expected Hash, got Array"}]}})
         expect(last_response.status).to eq(200)
       end
     end

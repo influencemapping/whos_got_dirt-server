@@ -111,6 +111,7 @@ GEM
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.7.1)
+    vcr (3.0.1)
 
 PLATFORMS
   ruby
@@ -127,6 +128,7 @@ DEPENDENCIES
   sinatra-contrib
   sinatra-cross_origin
   typhoeus
+  vcr
   whos_got_dirt!
 
 BUNDLED WITH

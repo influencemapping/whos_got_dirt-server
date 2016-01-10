@@ -24,7 +24,11 @@ module WhosGotDirt
       # @param [String] error_message an error message
       # @return [Array] the status code and error message
       def error(status_code, error_message)
-        [status_code, JSON.dump({error: {message: error_message}})]
+        [status_code, JSON.dump({status: status_message(status_code), messages: [{message: error_message}]})]
+      end
+
+      def status_message(status_code)
+        "#{status_code} #{HTTP_STATUS_CODES.fetch(status_code)}"
       end
 
       # Validates MQL parameters.
@@ -105,9 +109,9 @@ module WhosGotDirt
           data.each do |query_id,parameters|
             error_message = validate(parameters)
             if error_message
-              queries[query_id] = {error: {message: error_message}}
+              queries[query_id] = {messages: [{message: error_message}]}
             else
-              queries[query_id] = {count: 0, result: [], error: []}
+              queries[query_id] = {count: 0, result: [], messages: []}
 
               query = parameters.fetch('query')
               # @todo limit endpoints https://github.com/influencemapping/whos_got_dirt-server/issues/3
@@ -119,7 +123,7 @@ module WhosGotDirt
             end
           end
         rescue Faraday::Error::ClientError => e
-          return [502, {error: {message: e.message}}]
+          return error(502, e.message)
         end
       end
 
@@ -129,7 +133,7 @@ module WhosGotDirt
           queries[query_id][:count] += result.count
           queries[query_id][:result] += result.to_a
         else
-          queries[query_id][:error] << {api: api, message: response.body}
+          queries[query_id][:messages] << {info: {url: r.env.url}, status: status_message(response.status), message: response.body}
         end
       end
 
