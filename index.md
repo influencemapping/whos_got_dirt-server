@@ -12,11 +12,14 @@ The <i>Who's got dirt?</i> API provides a single access point to multiple APIs o
   1. [API security](#api-security)
   1. [API terms & conditions](#api-terms-and-conditions)
 1. [Usage](#usage)
+  1. [Query format](#query-format)
+1. [Endpoints](#endpoints)
   1. [Entities](#entities)
       1. [Ruby example](#entities-example-ruby)
   1. [Relations](#relations)
   1. [Lists](#lists)
-  1. [Notes](#notes)
+  1. [Footnotes](#footnotes)
+1. [Notes](#notes)
   1. [Differences from the Metaweb Query Language (MQL)](#differences-from-mql)
 
 
@@ -95,15 +98,13 @@ Please be aware of each API's terms and conditions:
 
 The <i>Who's got dirt?</i> API's base URL is [https://whosgotdirt.herokuapp.com/](https://whosgotdirt.herokuapp.com/).
 
-Each endpoint ([`/entities`](#entities), for example) accepts a single query string parameter `queries`.
-
-You may use the `POST` HTTP method if the query string is too long.
-
-For the request `GET /entities?queries=<queries>`, `<queries>` may look like:
+Each endpoint ([`/entities`](#entities), for example) accepts a single query string parameter `queries`. For the request `GET /entities?queries=<queries>`, `<queries>` may look like:
 
 {% include request.md %}
 
-You may use any query ID instead of `q0`. You may submit multiple queries with different query IDs.
+You may use any query ID instead of `q0`. You may submit multiple queries with different query IDs. You may use the `POST` HTTP method if the query string is too long.
+
+<h3 id="query-format">Query format</h3>
 
 The format of `query` within each query is inspired from the [Metaweb Query Language](http://mql.freebaseapps.com/index.html). Each property name (`name`, for example) in `query` may be followed by an [MQL operator](http://mql.freebaseapps.com/ch03.html#operators) (`~=`, for example). If no operator follows a property name, the operator is equality. (In the tables below, `=` denotes equality, but you should never append `=` to a property name: for example, use `name`, not `name=`.) The other operators are:
 
@@ -149,8 +150,8 @@ Not all APIs support all parameters (`created_at`, for example) and operators (`
 
 **If a parameter or operator is unsupported, it is silently ignored** ([issue #1](https://github.com/influencemapping/whos_got_dirt-server/issues/1)).
 
-**If an API returns an error, its response is silently ignored** ([issue #2](https://github.com/influencemapping/whos_got_dirt-server/issues/2)).
 
+<h2 id="endpoints">Endpoints</h2>
 
 <h3 id="entities">Entities</h3>
 
@@ -181,7 +182,7 @@ The endpoint is `GET /lists?queries=<queries>`.
 {% include lists_table.md %}
 
 
-<h3 id="notes">Notes</h3>
+<h3 id="footnotes">Footnotes</h3>
 
 <p id="note1">1. Each API has its own API key parameter:</p>
 
@@ -193,6 +194,10 @@ The endpoint is `GET /lists?queries=<queries>`.
 
 <p id="note2">2. Only <code>contact_details</code> with a <code>type</code> of <code>address</code> are supported.</p>
 
+
+<h2 id="notes">Notes</h2>
+
+After performing an initial query – for example, a search for companies – a common use case is to perform a second query using the results of the first query – for example, a search for all officers of those companies. <i>Who's got dirt?</i> does not (yet) support this use case, because such second-level queries are more numerous and variable across APIs ([issue #15](https://github.com/influencemapping/whos_got_dirt-server/issues/15)). However, you may nonetheless use the results of the first <i>Who's got dirt?</i>  query to perform your own API-specific second query.
 
 <h3 id="differences-from-mql">Differences from the Metaweb Query Language (MQL)</h3>
 
