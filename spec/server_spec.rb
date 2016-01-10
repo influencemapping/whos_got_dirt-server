@@ -12,20 +12,22 @@ RSpec.describe do
   describe 'GET people' do
     context 'when successful' do
       it 'should return results for GET request' do
-        get '/entities', queries: '{"q0":{"query":{"type":"Person","name":"John Smith"}}}'
+        get '/entities', queries: '{"q0":{"query":{"name":"John Smith"}}}'
         expect(data.keys).to eq(['q0'])
-        expect(data['q0'].keys).to eq(['count', 'result'])
+        expect(data['q0'].keys).to eq(['count', 'result', 'error'])
+        expect(data['q0']['error']).to eq([])
+        expect(data['q0']['result'].all?{|result| result['@type'] == 'Entity'}).to eq(true)
         expect(data['q0']['count']).to be > 10_000
-        expect(data['q0']['result'].all?{|result| result['@type'] == 'Person'}).to eq(true)
         expect(last_response.status).to eq(200)
       end
 
       it 'should return results for POST request' do
-        post '/entities', queries: '{"q0":{"query":{"type":"Person","name":"John Smith"}}}'
+        post '/entities', queries: '{"q0":{"query":{"name":"John Smith"}}}'
         expect(data.keys).to eq(['q0'])
-        expect(data['q0'].keys).to eq(['count', 'result'])
+        expect(data['q0'].keys).to eq(['count', 'result', 'error'])
+        expect(data['q0']['error']).to eq([])
+        expect(data['q0']['result'].all?{|result| result['@type'] == 'Entity'}).to eq(true)
         expect(data['q0']['count']).to be > 10_000
-        expect(data['q0']['result'].all?{|result| result['@type'] == 'Person'}).to eq(true)
         expect(last_response.status).to eq(200)
       end
     end
@@ -78,24 +80,6 @@ RSpec.describe do
       it "should error on non-Hash 'query'" do
         get '/entities', queries: '{"q0":{"query":[]}}'
         expect(data).to eq({'q0' => {'error' => {'message' => "'query' is invalid: expected Hash, got Array"}}})
-        expect(last_response.status).to eq(200)
-      end
-
-      it "should error on missing 'type'" do
-        get '/entities', queries: '{"q0":{"query":{}}}'
-        expect(data).to eq({'q0' => {'error' => {'message' => "query 'type' must be provided"}}})
-        expect(last_response.status).to eq(200)
-      end
-
-      it "should error on non-String 'type'" do
-        get '/entities', queries: '{"q0":{"query":{"type":[]}}}'
-        expect(data).to eq({'q0' => {'error' => {'message' => "query 'type' is invalid: expected String, got Array"}}})
-        expect(last_response.status).to eq(200)
-      end
-
-      it "should error on unknown 'type'" do
-        get '/entities', queries: '{"q0":{"query":{"type":"Unknown"}}}'
-        expect(data).to eq({'q0' => {'error' => {'message' => "query 'type' is invalid: expected 'Person' or 'Organization', got 'Unknown'"}}})
         expect(last_response.status).to eq(200)
       end
     end

@@ -13,19 +13,6 @@ require 'whos_got_dirt'
 
 module WhosGotDirt
   class Server < Sinatra::Base
-    # Maps a class to the APIs to query.
-    # @todo https://github.com/influencemapping/whos_got_dirt-server/issues/11
-    APIS = {
-      'Person' => [
-        :OpenCorporates,
-        # @todo
-      ],
-      'Organization' => [
-        :OpenCorporates,
-        # @todo
-      ],
-    }
-
     register Sinatra::CrossOrigin
     register Sinatra::MultiRoute
     enable :cross_origin
@@ -51,12 +38,6 @@ module WhosGotDirt
           "'query' must be provided"
         elsif !parameters['query'].is_a?(Hash)
           "'query' is invalid: expected Hash, got #{parameters['query'].class.name}"
-        elsif !parameters['query'].key?('type')
-          "query 'type' must be provided"
-        elsif !parameters['query']['type'].is_a?(String)
-          "query 'type' is invalid: expected String, got #{parameters['query']['type'].class.name}"
-        elsif !%w(Person Organization).include?(parameters['query']['type'])
-          "query 'type' is invalid: expected 'Person' or 'Organization', got '#{parameters['query']['type']}'"
         end
       end
 
@@ -126,15 +107,14 @@ module WhosGotDirt
             if error_message
               queries[query_id] = {error: {message: error_message}}
             else
-              queries[query_id] = {count: 0, result: []}
+              queries[query_id] = {count: 0, result: [], error: []}
 
               query = parameters.fetch('query')
-              type = query.delete('type')
-              # @todo https://github.com/influencemapping/whos_got_dirt-server/issues/3
-              # @todo https://github.com/influencemapping/whos_got_dirt-server/issues/4
-              APIS[type].each do |api|
-                url = WhosGotDirt::Requests.const_get(type).const_get(api).new(query).to_s
-                responses << [query_id, type, api, Faraday.get(url)]
+              # @todo limit endpoints https://github.com/influencemapping/whos_got_dirt-server/issues/3
+              # @todo queue requests https://github.com/influencemapping/whos_got_dirt-server/issues/4
+              WhosGotDirt::Requests::Entity.constants.each do |api|
+                url = WhosGotDirt::Requests::Entity.const_get(api).new(query).to_s
+                responses << [query_id, api, Faraday.get(url)]
               end
             end
           end
@@ -143,13 +123,13 @@ module WhosGotDirt
         end
       end
 
-      responses.each do |query_id,type,api,response|
+      responses.each do |query_id,api,response|
         if response.success?
-          result = WhosGotDirt::Responses.const_get(type).const_get(api).new(response)
+          result = WhosGotDirt::Responses::Entity.const_get(api).new(response)
           queries[query_id][:count] += result.count
           queries[query_id][:result] += result.to_a
         else
-          queries[query_id] = {error: {message: response.body}}
+          queries[query_id][:error] << {message: response.body}
         end
       end
 
