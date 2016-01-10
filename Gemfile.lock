@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/influencemapping/whos_got_dirt-gem.git
-  revision: 4bcf9dd366b33d167c2c491b1aae6183c597a0b2
+  revision: a4462b79b9d45904c2966dd1e248334b18bdea83
   specs:
     whos_got_dirt (0.0.2)
       activesupport (~> 4.2.0)

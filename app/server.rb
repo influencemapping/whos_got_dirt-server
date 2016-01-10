@@ -129,7 +129,7 @@ module WhosGotDirt
           queries[query_id][:count] += result.count
           queries[query_id][:result] += result.to_a
         else
-          queries[query_id][:error] << {message: response.body}
+          queries[query_id][:error] << {api: api, message: response.body}
         end
       end
 
