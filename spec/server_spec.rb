@@ -22,6 +22,17 @@ RSpec.describe do
     })
   end
 
+  it 'should redirect root path' do
+    get '/'
+    expect(last_response.status).to eq(302)
+    expect(last_response.headers['Location']).to eq('https://influencemapping.github.io/whos_got_dirt-server/')
+  end
+
+  it 'should 404 on unknown endpoint' do
+    get '/unknown'
+    expect(last_response.status).to eq(404)
+  end
+
   [:get, :post].each do |method|
     describe 'entities', vcr: {cassette_name: 'entities'} do
       context 'when successful' do
@@ -97,11 +108,6 @@ RSpec.describe do
           expect(last_response.content_type).to eq('application/json')
         end
       end
-    end
-
-    it 'should 404 on unknown endpoint' do
-      send(method, '/unknown')
-      expect(last_response.status).to eq(404)
     end
   end
 end
