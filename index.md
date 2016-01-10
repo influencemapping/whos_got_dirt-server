@@ -6,6 +6,7 @@ The <i>Who's got dirt?</i> API provides a single access point to multiple APIs o
 
 <h1>Documentation</h1>
 
+1. [Basics](#basics)
 1. [Supported APIs](#supported-apis)
   1. [API keys](#api-keys)
   1. [API security](#api-security)
@@ -19,16 +20,34 @@ The <i>Who's got dirt?</i> API provides a single access point to multiple APIs o
   1. [Differences from the Metaweb Query Language (MQL)](#differences-from-mql)
 
 
+<h2 id="basics">Basics</h2>
+
+<i>Who's got dirt?</i> recognizes three types of influence data:
+
+* An **entity** is a person or an organization: for example, a company.
+* A **relation** exists between entities: for example, a person is an officer of a company.
+* A **list** is a listing of entities: for example, the companies within a corporate grouping.
+
+
 <h2 id="supported-apis">Supported APIs</h2>
 
-<i>Who's got dirt?</i> supports these APIs of influence data:
+<i>Who's got dirt?</i> supports these endpoints of these APIs of influence data:
 
 * [CorpWatch](http://corpwatch.org/) ([docs](http://api.corpwatch.org/))
+  * [/companies.json](http://api.corpwatch.org/documentation/api_examples.html#A17) on [`/entities`](#entities)
 * [LittleSis](http://littlesis.org/) ([docs](https://api.littlesis.org/))
-* [OpenCorporates](https://opencorporates.com/)  ([docs](https://api.opencorporates.com/))
+  * [/entities.xml](http://api.littlesis.org/documentation#entities) on [`/entities`](#entities)
+  * [/lists.xml](http://api.littlesis.org/documentation#lists) on [`/lists`](#lists)
+* [OpenCorporates](https://opencorporates.com/) ([docs](https://api.opencorporates.com/))
+  * [/companies/search](https://api.opencorporates.com/documentation/API-Reference) on [`/entities`](#entities)
+  * [/corporate_groupings/search](https://api.opencorporates.com/documentation/API-Reference) on [`/lists`](#lists)
+  * [/officers/search](https://api.opencorporates.com/documentation/API-Reference) on [`/relations`](#relations)
 * [OpenDuka](http://www.openduka.org/) ([docs](http://www.openduka.org/index.php/api/documentation))
+  * [/search](http://www.openduka.org/index.php/api/documentation) on [`/entities`](#entities)
 * [OpenOil](http://openoil.net/) ([docs](http://openoil.net/openoil-api/))
+  * [/concession/search](http://openoil.net/openoil-api/) on [`/relations`](#relations)
 * [Poderopedia](http://www.poderopedia.org/) ([docs](http://api.poderopedia.org/))
+  * [/search](http://api.poderopedia.org/search) on [`/entities`](#entities)
 
 Don't see an API you use? Please request its support in [this issue](https://github.com/influencemapping/whos_got_dirt-gem/issues/3).
 
@@ -76,7 +95,7 @@ Please be aware of each API's terms and conditions:
 
 The <i>Who's got dirt?</i> API's base URL is [https://whosgotdirt.herokuapp.com/](https://whosgotdirt.herokuapp.com/).
 
-Each endpoint (`/entities`, for example) accepts a single query string parameter `queries`.
+Each endpoint ([`/entities`](#entities), for example) accepts a single query string parameter `queries`.
 
 You may use the `POST` HTTP method if the query string is too long.
 
