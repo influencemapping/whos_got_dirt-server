@@ -2,7 +2,6 @@
 {
   "q0": {
     "query": {
-      "type": "Person",
       "name~=": "John Smith",
       "jurisdiction_code|=": ["gb", "ie"],
       "memberships": [{

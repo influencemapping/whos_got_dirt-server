@@ -7,7 +7,6 @@ queries = <<-EOL
 {
   "q0": {
     "query": {
-      "type": "Person",
       "name~=": "John Smith",
       "jurisdiction_code|=": ["gb", "ie"],
       "memberships": [{
@@ -20,18 +19,17 @@ queries = <<-EOL
 EOL
 
 value = JSON.dump(JSON.load(queries))
-#=> {"q0":{"query":{"type":"Person","name~=":"John Smith","jurisdiction_code|=":["gb","ie"],
-#  "memberships":[{"role":"director","inactive":false}]}}}
+#=> {"q0":{"query":{"name~=":"John Smith","jurisdiction_code|=":["gb","ie"],"memberships":
+#  [{"role":"director","inactive":false}]}}}
 
 url = "https://whosgotdirt.herokuapp.com/entities?queries=#{CGI.escape(value)}"
-#=> http://whosgotdirt.herokuapp.com/entities?queries=%7B%22q0%22%3A%7B%22query%22%3A%7B%22type%22%3A%22Person%22%2C%22name%7E%3D%22%3A%...
+#=> https://whosgotdirt.herokuapp.com/entities?queries=%7B%22q0%22%3A%7B%22query%22%3A%7B%22name%7E%3D%22%3A%22John+Smith%22%2C...
 
 results = JSON.load(open(url).read)
 #=> {"q0"=>
 #  {"count"=>3915,
 #   "result"=>
-#    [{"@type"=>"Person",
-#      "name"=>"JOHN SMITH",
+#    [{"name"=>"JOHN SMITH",
 #      "updated_at"=>"2014-10-25T00:34:16+00:00",
 #      "identifiers"=>[{"identifier"=>"46065070", "scheme"=>"OpenCorporates"}],
 #      "contact_details"=>[],

@@ -287,9 +287,9 @@
           <td></td>
         </tr>
         <tr>
-          <td class="parameter"><code>entity</code></td>
+          <td class="parameter"><code>type</code></td>
           <td>Find entities of the class <code>Person</code> or <code>Organization</code>.</td>
-          <td class="example"><pre>"entity": "Person"</pre></td>
+          <td class="example"><pre>"type": "Person"</pre></td>
           <td></td>
           <td></td>
           <td></td>
