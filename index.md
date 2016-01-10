@@ -54,7 +54,7 @@ Don't see an API you use? Please request its support in [this issue](https://git
 
 <h3 id="api-keys">API Keys</h3>
 
-An API key is required to proxy requests to some APIs. You may register for API keys at:
+An API key is **required** to proxy requests to some APIs. You may register for API keys at:
 
 * [CorpWatch](http://api.corpwatch.org/register.php)
 * [LittleSis](http://api.littlesis.org/register) (required)
@@ -157,6 +157,8 @@ Not all APIs support all parameters (`created_at`, for example) and operators (`
 The endpoint is `GET /entities?queries=<queries>`.
 
 This table documents which operators, if any, are supported by each API for each parameter.
+
+*Note: The `type` parameter is **required** by Poderopedia.*
 
 {% include entities_table.md %}
 
