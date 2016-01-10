@@ -22,86 +22,86 @@ RSpec.describe do
     })
   end
 
-  describe 'entities', vcr: {cassette_name: 'entities'} do
-    context 'when successful' do
-      it 'should return results for GET request' do
-        get '/entities', queries: queries
-        expect(data.keys).to eq(['status', 'q0'])
-        expect(data['status']).to eq('200 OK')
-        expect(data['q0'].keys).to eq(['count', 'result', 'messages'])
-        expect(data['q0']['messages']).to eq([])
-        expect(data['q0']['result'].all?{|result| result['@type'] == 'Entity'}).to eq(true)
-        expect(data['q0']['count']).to be > 100
-        expect(last_response.status).to eq(200)
+  [:get, :post].each do |method|
+    describe 'entities', vcr: {cassette_name: 'entities'} do
+      context 'when successful' do
+        it 'should return results' do
+          send(method, '/entities', queries: queries)
+          expect(data.keys).to eq(['status', 'q0'])
+          expect(data['status']).to eq('200 OK')
+          expect(data['q0'].keys).to eq(['count', 'result', 'messages'])
+          expect(data['q0']['messages']).to eq([])
+          expect(data['q0']['result'].all?{|result| result['@type'] == 'Entity'}).to eq(true)
+          expect(data['q0']['count']).to be > 100
+          expect(last_response.status).to eq(200)
+          expect(last_response.content_type).to eq('application/json')
+        end
       end
 
-      it 'should return results for POST request' do
-        post '/entities', queries: queries
-        expect(data.keys).to eq(['status', 'q0'])
-        expect(data['status']).to eq('200 OK')
-        expect(data['q0'].keys).to eq(['count', 'result', 'messages'])
-        expect(data['q0']['messages']).to eq([])
-        expect(data['q0']['result'].all?{|result| result['@type'] == 'Entity'}).to eq(true)
-        expect(data['q0']['count']).to be > 100
-        expect(last_response.status).to eq(200)
+      context "when validating 'queries' parameter" do
+        it "should 422 on missing 'queries'" do
+          send(method, '/entities')
+          expect(data).to eq({'status' => '422 Unprocessable Entity', 'messages' => [{'message' => "parameter 'queries' must be provided"}]})
+          expect(last_response.status).to eq(422)
+          expect(last_response.content_type).to eq('application/json')
+        end
+
+        it "should 422 on nil 'queries'" do
+          send(method, '/entities?queries')
+          expect(data).to eq({'status' => '422 Unprocessable Entity', 'messages' => [{'message' => "parameter 'queries' can't be blank"}]})
+          expect(last_response.status).to eq(422)
+          expect(last_response.content_type).to eq('application/json')
+        end
+
+        it "should 422 on empty 'queries'" do
+          send(method, '/entities', queries: '')
+          expect(data).to eq({'status' => '422 Unprocessable Entity', 'messages' => [{'message' => "parameter 'queries' can't be blank"}]})
+          expect(last_response.status).to eq(422)
+          expect(last_response.content_type).to eq('application/json')
+        end
+
+        it 'should 400 on invalid JSON' do
+          send(method, '/entities', queries: '[')
+          expect(data).to eq({'status' => '400 Bad Request', 'messages' => [{'message' => "parameter 'queries' is invalid: invalid JSON: 399: unexpected token at ''"}]})
+          expect(last_response.status).to eq(400)
+          expect(last_response.content_type).to eq('application/json')
+        end
+
+        it "should 400 on non-Hash 'queries'" do
+          send(method, '/entities', queries: '[]')
+          expect(data).to eq({'status' => '422 Unprocessable Entity', 'messages' => [{'message' => "parameter 'queries' is invalid: expected Hash, got Array"}]})
+          expect(last_response.status).to eq(422)
+          expect(last_response.content_type).to eq('application/json')
+        end
+      end
+
+      context "when validating MQL parameters" do
+        it "should error on non-Hash query" do
+          send(method, '/entities', queries: '{"q0":[]}')
+          expect(data).to eq({'status' => '200 OK', 'q0' => {'count' => 0, 'result' => [], 'messages' => [{'message' => "query is invalid: expected Hash, got Array"}]}})
+          expect(last_response.status).to eq(200)
+          expect(last_response.content_type).to eq('application/json')
+        end
+
+        it "should error on missing 'query'" do
+          send(method, '/entities', queries: '{"q0":{}}')
+          expect(data).to eq({'status' => '200 OK', 'q0' => {'count' => 0, 'result' => [], 'messages' => [{'message' => "'query' must be provided"}]}})
+          expect(last_response.status).to eq(200)
+          expect(last_response.content_type).to eq('application/json')
+        end
+
+        it "should error on non-Hash 'query'" do
+          send(method, '/entities', queries: '{"q0":{"query":[]}}')
+          expect(data).to eq({'status' => '200 OK', 'q0' => {'count' => 0, 'result' => [], 'messages' => [{'message' => "'query' is invalid: expected Hash, got Array"}]}})
+          expect(last_response.status).to eq(200)
+          expect(last_response.content_type).to eq('application/json')
+        end
       end
     end
 
-    context "when validating 'queries' parameter" do
-      it "should 422 on missing 'queries'" do
-        get '/entities'
-        expect(data).to eq({'status' => '422 Unprocessable Entity', 'messages' => [{'message' => "parameter 'queries' must be provided"}]})
-        expect(last_response.status).to eq(422)
-      end
-
-      it "should 422 on nil 'queries'" do
-        get '/entities?queries'
-        expect(data).to eq({'status' => '422 Unprocessable Entity', 'messages' => [{'message' => "parameter 'queries' can't be blank"}]})
-        expect(last_response.status).to eq(422)
-      end
-
-      it "should 422 on empty 'queries'" do
-        get '/entities', queries: ''
-        expect(data).to eq({'status' => '422 Unprocessable Entity', 'messages' => [{'message' => "parameter 'queries' can't be blank"}]})
-        expect(last_response.status).to eq(422)
-      end
-
-      it 'should 400 on invalid JSON' do
-        get '/entities', queries: '['
-        expect(data).to eq({'status' => '400 Bad Request', 'messages' => [{'message' => "parameter 'queries' is invalid: invalid JSON: 399: unexpected token at ''"}]})
-        expect(last_response.status).to eq(400)
-      end
-
-      it "should 400 on non-Hash 'queries'" do
-        get '/entities', queries: '[]'
-        expect(data).to eq({'status' => '422 Unprocessable Entity', 'messages' => [{'message' => "parameter 'queries' is invalid: expected Hash, got Array"}]})
-        expect(last_response.status).to eq(422)
-      end
+    it 'should 404 on unknown endpoint' do
+      send(method, '/unknown')
+      expect(last_response.status).to eq(404)
     end
-
-    context "when validating MQL parameters" do
-      it "should error on non-Hash query" do
-        get '/entities', queries: '{"q0":[]}'
-        expect(data).to eq({'status' => '200 OK', 'q0' => {'count' => 0, 'result' => [], 'messages' => [{'message' => "query is invalid: expected Hash, got Array"}]}})
-        expect(last_response.status).to eq(200)
-      end
-
-      it "should error on missing 'query'" do
-        get '/entities', queries: '{"q0":{}}'
-        expect(data).to eq({'status' => '200 OK', 'q0' => {'count' => 0, 'result' => [], 'messages' => [{'message' => "'query' must be provided"}]}})
-        expect(last_response.status).to eq(200)
-      end
-
-      it "should error on non-Hash 'query'" do
-        get '/entities', queries: '{"q0":{"query":[]}}'
-        expect(data).to eq({'status' => '200 OK', 'q0' => {'count' => 0, 'result' => [], 'messages' => [{'message' => "'query' is invalid: expected Hash, got Array"}]}})
-        expect(last_response.status).to eq(200)
-      end
-    end
-  end
-
-  it 'should 404 on unknown endpoint' do
-    get '/unknown'
-    expect(last_response.status).to eq(404)
   end
 end
