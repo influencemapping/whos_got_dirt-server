@@ -102,7 +102,9 @@ module WhosGotDirt
       end
 
       manager = Typhoeus::Hydra.new
-      queries = {}
+      queries = {
+        status: status_message(200),
+      }
       responses = []
 
       client.in_parallel(manager) do
@@ -117,7 +119,7 @@ module WhosGotDirt
               query = parameters.fetch('query')
               # @todo queue requests https://github.com/influencemapping/whos_got_dirt-server/issues/4
               # @todo limit endpoints https://github.com/influencemapping/whos_got_dirt-server/issues/3
-              endpoints = parameters.fetch('endpoints')
+              # endpoints = parameters.fetch('endpoints')
               # TODO `endpoints` is hash where key must match a constant, and the
               # value is a hash where the only supported key is "key", which gets
               # prefixed with the underscored constant + "_api_" and merged into
