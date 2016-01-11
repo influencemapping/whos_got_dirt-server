@@ -13,6 +13,10 @@ The <i>Who's got dirt?</i> API provides a single access point to multiple APIs o
   1. [API terms & conditions](#api-terms-and-conditions)
 1. [Usage](#usage)
   1. [Query format](#query-format)
+  1. [Error handling](#error-handling)
+    1. [Request errors](#request-errors)
+    1. [Query errors](#query-errors)
+    1. [API errors](#api-errors)
 1. [Endpoints](#endpoints)
   1. [Entities](#entities)
       1. [Ruby example](#entities-example-ruby)
@@ -151,6 +155,77 @@ Not all APIs support all parameters (`created_at`, for example) and operators (`
 **If a parameter or operator is unsupported, it is silently ignored** ([issue #1](https://github.com/influencemapping/whos_got_dirt-server/issues/1)).
 
 
+<h3 id="error-handling">Error handling</h3>
+
+Errors may occur at the **request**, **query** or **response** level.
+
+<h4 id="request-errors">Request errors</h4>
+
+* If the `queries` parameter is invalid JSON, a `400 Bad Request` is returned.
+* If the `queries` parameter is missing, blank, or not a JSON object, a `422 Unprocessable Entity` is returned.
+
+For example, [`GET /entities`](https://whosgotdirt.herokuapp.com/entities) returns:
+
+```json
+{
+  "status": "422 Unprocessable Entity",
+  "messages": [{
+    "message": "parameter 'queries' must be provided"
+  }]
+}
+```
+
+<h4 id="query-errors">Query errors</h4>
+
+* If a query in the `queries` parameter is not a JSON object, has no `query`, or has a `query` that is not a JSON object, an error message is returned for that query.
+
+For example, [`GET /entities?queries={"q0":{}}`](http://whosgotdirt.herokuapp.com/entities?queries={"q0":{}}) returns:
+
+```json
+{
+  "status": "200 OK",
+  "q0": {
+    "count": 0,
+    "result": [],
+    "messages": [{
+      "message": "'query' must be provided"
+    }]
+  }
+}
+```
+
+<h4 id="api-errors">API errors</h4>
+
+* If an API returns an error, an error message is returned for that response.
+
+For example, [`GET /entities?queries={"q0":{"query":{"type":"Person","name":"John Smith"}}}`](http://whosgotdirt.herokuapp.com/entities?queries={"q0":{"query":{"type":"Person","name":"John Smith"}}}) returns:
+
+```json
+{
+  "status": "200 OK",
+  "q0": {
+    "count": 100,
+    "result": [
+      …
+    ],
+    "messages": [{
+      "info": {
+        "url": "https://api.littlesis.org/entities.xml?q=John+Smith"
+      },
+      "status": "401 Unauthorized",
+      "message": "Your request must include a query parameter named "_key" with a valid API key value. To obtain an API key, visit http://api.littlesis.org/register."
+    }, {
+      "info": {
+        "url": "http://api.poderopedia.org/visualizacion/search?alias=John+Smith&entity=persona"
+      },
+      "status": "400 Bad Request",
+      "message": "400 BAD REQUEST"
+    }]
+  }
+}
+```
+
+
 <h2 id="endpoints">Endpoints</h2>
 
 <h3 id="entities">Entities</h3>
@@ -206,4 +281,4 @@ The API's request and response formats are inspired from the [Metaweb Query Lang
 * Does not support [MQL Read](https://developers.google.com/freebase/v1/mqlread) parameters other than `query`.
 * Does not support [MQL directives](http://wiki.freebase.com/wiki/MQL_directives) other than `limit`; instead of [counting results](https://developers.google.com/freebase/mql/ch03#countingresults), returns a new `count` field at the same level as the `result` field.
 * Does not support [asking for values](https://developers.google.com/freebase/mql/ch03#reviewvaluequeries) or [wildcards](https://developers.google.com/freebase/mql/ch03#wildcards); instead returns all fields.
-* Does not return `status` or `code` fields at the query or response levels, because it would need to report the status of many API responses [#2](https://github.com/influencemapping/whos_got_dirt-server/issues/2).
+* Does not return a `status` field at the query level, because it would need to report the status of many responses. Does not return a `code` field.
