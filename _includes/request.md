@@ -8,7 +8,11 @@
         "role": "director",
         "inactive": false
       }]
-    }
+    },
+    "endpoints": [
+      "CorpWatch",
+      "OpenCorporates"
+    ]
   }
 }
 ```

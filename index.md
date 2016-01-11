@@ -108,6 +108,15 @@ Each endpoint ([`/entities`](#entities), for example) accepts a single query str
 
 You may use any query ID instead of `q0`. You may submit multiple queries with different query IDs. You may use the `POST` HTTP method if the query string is too long.
 
+You may use `endpoints` within each query to request the given endpoints only. The valid values for `endpoints` are:
+
+* `CorpWatch`
+* `LittleSis`
+* `OpenCorporates`
+* `OpenDuka`
+* `OpenOil`
+* `Poderopedia`
+
 <h3 id="query-format">Query format</h3>
 
 The format of `query` within each query is inspired from the [Metaweb Query Language](http://mql.freebaseapps.com/index.html). Each property name (`name`, for example) in `query` may be followed by an [MQL operator](http://mql.freebaseapps.com/ch03.html#operators) (`~=`, for example). If no operator follows a property name, the operator is equality. (In the tables below, `=` denotes equality, but you should never append `=` to a property name: for example, use `name`, not `name=`.) The other operators are:
