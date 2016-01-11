@@ -1,0 +1,673 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.corpwatch.org/companies.json?company_name=John+Smith
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      server:
+      - nginx/1.8.0
+      date:
+      - Sun, 10 Jan 2016 23:17:03 GMT
+      content-type:
+      - application/json
+      content-length:
+      - '1034'
+      connection:
+      - close
+      x-powered-by:
+      - PHP/5.5.30
+    body:
+      encoding: UTF-8
+      string: |
+        {"meta":{"success":1,"status":200,"status_string":"Success","total_results":"2","results_complete":1,"api_version":"0.04 (2015-12-14)","parameters":{"company_name":"John Smith","limit":100,"index":0,"year":"most_recent"}},"result":{"companies":{"cw_46942":{"cw_id":"cw_46942","cik":"1378379","company_name":"Clark John Smith II","irs_number":null,"sic_code":null,"industry_name":null,"sic_sector":null,"sector_name":null,"source_type":"filers","raw_address":"1114 AVENUE OF THE AMERICAS, 22ND FLOOR, NEW YORK NY 10036","country_code":"US","subdiv_code":"NY","top_parent_id":"cw_46942","num_parents":"0","num_children":"0","max_year":"2015","min_year":"2006"},"cw_491186":{"cw_id":"cw_491186","cik":"0","company_name":"John Smith Landfill Inc","irs_number":null,"sic_code":null,"industry_name":null,"sic_sector":null,"sector_name":null,"source_type":"relationships","raw_address":"California","country_code":"US","subdiv_code":"CA","top_parent_id":"cw_5997","num_parents":"1","num_children":"0","max_year":"2003","min_year":"2003"}}}}
+    http_version: 
+  recorded_at: Sun, 10 Jan 2016 23:17:03 GMT
+- request:
+    method: get
+    uri: https://api.littlesis.org/entities.xml?_key=bf2ddbf0538a577c3e50ca2e42e6a07384017718&q=John+Smith
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      server:
+      - cloudflare-nginx
+      date:
+      - Sun, 10 Jan 2016 23:17:03 GMT
+      content-type:
+      - application/xml; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - close
+      set-cookie:
+      - __cfduid=d84a0704fcb784d687d3a03954d86ca471452467823; expires=Mon, 09-Jan-17
+        23:17:03 GMT; path=/; domain=.littlesis.org; HttpOnly, symfony=2enuaa4o618tscsoe07ll80994;
+        path=/
+      x-powered-by:
+      - PHP/5.5.9-1ubuntu4.6
+      expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      cache-control:
+      - no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+      pragma:
+      - no-cache
+      ls-execution-time:
+      - '1452468061.258'
+      etag:
+      - '"b85dbe88f94514504d82eb29c52cfae2"'
+      vary:
+      - Accept-Encoding
+      access-control-allow-origin:
+      - "*"
+      cf-ray:
+      - 262c17d9a39f3fad-YUL
+    body:
+      encoding: ASCII-8BIT
+      string: "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Response>\n  <Meta>\n
+        \       <TotalCount>73</TotalCount>\n            <ResultCount>\n          <Entities>20</Entities>
+        \       </ResultCount>\n            <Parameters>\n          <q>John Smith</q>
+        \     \n        </Parameters>\n      </Meta>\n  <Data>\n    <Entities>\n  <Entity><id>55053</id><name>John
+        Smith</name><description>Prospective Parliamentary Candidate for Barrow and
+        Furness</description><summary></summary><start_date></start_date><end_date></end_date><website></website><is_current></is_current><primary_type>Person</primary_type><parent_id></parent_id><updated_at>2010-05-05
+        03:21:47</updated_at><uri>http://littlesis.org/person/55053/John_Smith</uri><api_uri>http://api.littlesis.org/entity/55053.xml</api_uri></Entity>
+        \ <Entity><id>91811</id><name>John Smith</name><description></description><summary></summary><start_date></start_date><end_date></end_date><website></website><is_current></is_current><primary_type>Person</primary_type><parent_id></parent_id><updated_at>2012-01-24
+        16:21:26</updated_at><uri>http://littlesis.org/person/91811/John_Smith</uri><api_uri>http://api.littlesis.org/entity/91811.xml</api_uri></Entity>
+        \ <Entity><id>187854</id><name>John Smith</name><description></description><summary></summary><start_date></start_date><end_date></end_date><website></website><is_current></is_current><primary_type>Person</primary_type><parent_id></parent_id><updated_at>2015-03-18
+        02:08:22</updated_at><uri>http://littlesis.org/person/187854/John_Smith</uri><api_uri>http://api.littlesis.org/entity/187854.xml</api_uri></Entity>
+        \ <Entity><id>187855</id><name>Vicky Hughes &#38; John Smith</name><description></description><summary></summary><start_date></start_date><end_date></end_date><website></website><is_current></is_current><primary_type>Couple</primary_type><parent_id></parent_id><updated_at>2015-03-18
+        02:08:22</updated_at><uri>http://littlesis.org/couple/187855/Vicky_Hughes_&#38;_John_Smith</uri><api_uri>http://api.littlesis.org/entity/187855.xml</api_uri></Entity>
+        \ <Entity><id>17150</id><name>John W Timmons</name><description>Lobbyist at
+        Cormac Group; former staffer for John McCain</description><summary>An attorney,
+        lobbyist and former Congressional aide, John Timmons brings to the cormac
+        group access to political leadership gained over 20 years of experience in
+        Washington, D.C.   At the law firm of Higgins, McGovern &#38; Smith, he specialized
+        in technology, telecommunications, transportation and consumer law.  While
+        there he played a key role in the passage of AIR-21, a revolutionary piece
+        of aviation infrastructure and pro-competitive legislation.  He has led numerous
+        clients successfully through the legislative and regulatory processes and
+        his in depth knowledge on issues such as deregulation enable him to serve
+        as a resource for Senators, Congressman and their staffs.&#13;&#10;&#13;&#10;Prior
+        to his tenure at the firm, he was Senior Managing Director in the Washington,
+        D.C. office of Hill and Knowlton where he counseled numerous business leaders,
+        both national and international, on a variety of crucial corporate matters.
+        \ In his previous position as Vice President of Government Affairs for America
+        West Airlines, he was principal strategist for political achievements at the
+        federal level, and additionally developed and implemented strategies to assist
+        the company realize its state and local public affairs goals.&#13;&#10;&#13;&#10;Formerly,
+        Mr. Timmons was Senior Minority Counsel for the Senate Committee on Commerce,
+        Science and Transportation.  Working with Senate and House counterparts and
+        building consensus, he was the primary minority staffer responsible for drafting
+        and passage of the Airport Noise and Capacity Act, and the Aviation Security
+        Act.  Prior to joining the Committee, he served as Deputy Assistant Secretary
+        for Government Affairs, U.S. Department of Transportation where he was the
+        Department&#226;&#128;&#153;s principal liaison to Congress and the Executive
+        Branch.  Mr. Timmons joined the Department after serving Senator John McCain
+        as Legislative Counsel.  In that capacity, and as Legislative Director, he
+        worked to advance Senator McCain&#226;&#128;&#153;s legislative agenda with
+        particular emphasis on commerce, energy and environmental issues, authoring
+        several bills involving public lands.  His Congressional experience began
+        as he was Legal Counsel to both Congresswoman Marge Roukema and Congressman
+        Mike Oxley. &#13;&#10;&#13;&#10;Mr. Timmons holds a Juris Doctor degree from
+        Washington &#38; Lee University, School of Law, and a B.A. from Albion College.
+        \ He resides is Alexandria, Virginia, with his wife Paula and their two children.</summary><start_date></start_date><end_date></end_date><website></website><is_current>1</is_current><primary_type>Person</primary_type><parent_id></parent_id><updated_at>2015-01-09
+        13:23:37</updated_at><uri>http://littlesis.org/person/17150/John_W_Timmons</uri><api_uri>http://api.littlesis.org/entity/17150.xml</api_uri></Entity>
+        \ <Entity><id>156921</id><name>John H Smith</name><description></description><summary>John
+        H. Smith serves on the Board of Governors of the American Ethnic Science Society,
+        on the Executive Committee for the Environmental Awareness Center at the University
+        of Wisconsin-Madison, and is a faculty intern and project associate in the
+        Department of Landscape Architecture and Environmental Awareness Center and
+        the University of Wisconsin Extension. Mr. Smith is also a member of the D.N.A.
+        Study Committee for the city of Madison, Wisconsin and a member of the University
+        City Coordination Committee for the city of Madison, Wisconsin. &#13;&#10;&#13;&#10;Previously,
+        Mr. Smith was Director of the Institute of Ethnic Science at the University
+        of Wisconsin-Madison, President of the Multicultural Faculty and Staff Association
+        at the University of Wisconsin-Oshkosh, and Vice President and Chief Planner
+        for the Executive Council for Cultural Interaction and Awareness.</summary><start_date></start_date><end_date></end_date><website></website><is_current></is_current><primary_type>Person</primary_type><parent_id></parent_id><updated_at>2015-02-19
+        03:16:47</updated_at><uri>http://littlesis.org/person/156921/John_H_Smith</uri><api_uri>http://api.littlesis.org/entity/156921.xml</api_uri></Entity>
+        \ <Entity><id>78597</id><name>Owen T Smith</name><description>Professor Emeritus,
+        Long Island University</description><summary>Legal scholar Owen T. Smith conducts
+        research on legal and judicial reform as Heritage&#226;&#128;&#153;s visiting
+        fellow. He also helps keep the legal community informed of developments in
+        law enforcement, local government and economic liberty.&#13;&#10;&#13;&#10;For
+        the past 11 years, Smith has served as a law professor at the C.W. Post Campus
+        of Long Island University. During his career he also practiced law with the
+        firm of Marino, Bernstein and LaMarca in Oyster Bay, N.Y. (1968-1997), served
+        as chairman of the New York State Board of Elections (1991-1996), and directed
+        the Center for Long Island Studies at Long Island University (1987-1995).&#13;&#10;&#13;&#10;Smith
+        has also been deputy county executive of Nassau County, N.Y. (1980-1987),
+        chairman of the Nassau County Planning Commission (1976-1980), counsel to
+        the New York Senate Committee on Crime and Correction (1972-1976), and counsel
+        to the New York Senate Committees on Villages, Towns and Counties (1966-1972).&#13;&#10;&#13;&#10;The
+        author or co-author of more than 20 books and dozens of articles in legal
+        journals, Smith earned his law degree from the St. John&#226;&#128;&#153;s
+        School of Law, and a bachelor&#226;&#128;&#153;s degree in economics and government
+        from Trinity College.</summary><start_date></start_date><end_date></end_date><website></website><is_current>1</is_current><primary_type>Person</primary_type><parent_id></parent_id><updated_at>2012-11-18
+        11:16:32</updated_at><uri>http://littlesis.org/person/78597/Owen_T_Smith</uri><api_uri>http://api.littlesis.org/entity/78597.xml</api_uri></Entity>
+        \ <Entity><id>40849</id><name>Karen Conwell Smith</name><description>Lobbyist
+        for Federation of American Hospitals</description><summary>Ms. Smith represents
+        the Federation to Members of Congress and their professional staff, and to
+        members of the Bush Administration, on a wide range of issues of interest
+        to investor- &#13;&#10;owned hospitals.  Prior to joining the Federation,
+        she served as Senior Health Policy Advisor to the U.S. Senate Budget Committee,
+        staffing Senator Judd Gregg (R-NH), the Committee&#226;&#128;&#153;s &#13;&#10;Ranking
+        Member.  Previously, Ms. Smith worked as Senior Director, Government Relations
+        with the National Retail Federation; Assistant Director, Division of Congressional
+        Affairs &#13;&#10;with the American Medical Association; Legislative Specialist
+        with the American Society of Clinical Oncology; Senior Legislative Assistant
+        with former Rep. Sue Kelly (R-NY); &#13;&#10;Legislative Assistant with former
+        Rep. William Martini (R-NJ), and Legislative Correspondent with former Rep.
+        Herbert Bateman (R-VA).   &#13;&#10; &#13;&#10;Ms. Smith began her Capitol
+        Hill career as an intern with Senator John Warner (R-VA).  She &#13;&#10;received
+        a Bachelor of Arts degree in political science from Virginia Polytechnic Institute
+        &#38; State University. </summary><start_date></start_date><end_date></end_date><website></website><is_current></is_current><primary_type>Person</primary_type><parent_id></parent_id><updated_at>2015-02-04
+        19:45:46</updated_at><uri>http://littlesis.org/person/40849/Karen_Conwell_Smith</uri><api_uri>http://api.littlesis.org/entity/40849.xml</api_uri></Entity>
+        \ <Entity><id>59215</id><name>John Barber</name><description>Managing Partner,
+        Cohesive Capital Partners</description><summary>John Barber is the Managing
+        Partner of Cohesive Capital Partners. Prior to Cohesive, Mr. Barber was the
+        Managing Partner of Citi Private Equity (CPE), which he co-founded in 2000.
+        In this role, Mr. Barber managed approximately $13 billion of capital and
+        oversaw the direct equity, direct mezzanine and fund investments globally
+        for CPE and its affiliates while managing a team of 19 investment professionals
+        and 50 total professionals in New York and London. Mr. Barber sat on the Investment
+        Committees of CPE, Citi Alternative Investments, Citi Mezzanine Partners,
+        CCP II, Citi Real Estate Partners and also on the Management Committee of
+        Citi Alternative Investments. Before co-founding CPE in 2000, Mr. Barber served
+        at Salomon Smith Barney as a Managing Director and Deputy Head of the Financial
+        Entrepreneurs Group, Head of the Private Equity Group, a member of the Equity
+        Commitment Committee and as a senior member of the Equity Capital Markets
+        Group. Prior to joining Salomon Smith Barney in 1995, Mr. Barber was a Managing
+        Director at Kidder Peabody &#38; Co. where he was Head of the Equity Capital
+        Markets Group and a member of the firm&#226;&#128;&#153;s Commitment Committee.
+        &#13;&#10;&#13;&#10;Prior to Kidder Peabody, Mr. Barber started his career
+        at Drexel Burnham Lambert where he held various capital markets roles over
+        seven years. &#13;&#10;&#13;&#10;He received a B.A. from Tufts University
+        magna cum laude.</summary><start_date></start_date><end_date></end_date><website></website><is_current></is_current><primary_type>Person</primary_type><parent_id></parent_id><updated_at>2015-10-01
+        15:59:03</updated_at><uri>http://littlesis.org/person/59215/John_Barber</uri><api_uri>http://api.littlesis.org/entity/59215.xml</api_uri></Entity>
+        \ <Entity><id>153713</id><name>Michael S Smith</name><description>Los Angeles
+        based interior designer</description><summary>Michael Smith is considered
+        one of the most original and respected talents in the design industry today.
+        A native of California, Michael studied interior design at Otis College of
+        Art and Design in Los Angeles.  In 1984, he continued his studies at The Victoria
+        and Albert Museum in London, then returned to the U.S. to work under the tutelage
+        of legendary antiques dealer Gep Durenberger.  Next he moved to New York in
+        an association with noted designer John Saladino.  After three years, he was
+        back in California to open a home furnishings store. His design firm, Michael
+        S Smith Inc, was launched in 1990, expanding from projects solely for private
+        clients to his Jasper line of fine furniture and fabrics sold exclusively
+        in multi-line showrooms around the world.&#13;&#10;&#13;&#10;Michael serves
+        on the Board of Trustees of Otis College of Art and Design and has co-chaired
+        the American Friends of the Olympia International Fine Art and Antique Fair.
+        \ He is a member of ASID, the American Society of Interior Designers.  In
+        2010, Michael was appointed by President Obama to the Committee for the Preservation
+        of the White House.</summary><start_date></start_date><end_date></end_date><website></website><is_current></is_current><primary_type>Person</primary_type><parent_id></parent_id><updated_at>2014-05-15
+        10:09:52</updated_at><uri>http://littlesis.org/person/153713/Michael_S_Smith</uri><api_uri>http://api.littlesis.org/entity/153713.xml</api_uri></Entity>
+        \ <Entity><id>41008</id><name>John Denniston</name><description>Partner -
+        Kleiner Perkins Caufield &#38; Byers </description><summary>John Denniston
+        is a Partner with Kleiner Perkins Caufield &#38; Byers. At KPCB, John has
+        worked with a wide variety of portfolio companies, with a primary emphasis
+        on the Greentech industry. John was a member of the KPCB Partner team that
+        many years ago conceptualized and launched KPCB's Greentech investment initiative.
+        Since then, KPCB has been an active investor in the Greentech field, having
+        invested in start-up companies across a wide variety of sectors. John is an
+        active participant in KPCB&#226;&#128;&#153;s Greentech Innovation Network,
+        a network of business, academic and policy leaders who meet regularly to identify,
+        and then pursue, the most important green technology and public policy innovations.
+        &#13;&#10;&#13;&#10;He is actively involved in Greentech public policy issues,
+        having testified before several Congressional committees. John serves on the
+        Board of Advisors of the National Renewable Energy Labs. He is a frequent
+        speaker at Greentech industry conferences.&#13;&#10;&#13;&#10;Prior to joining
+        KPCB, John was a Managing Director and Head of Technology Investment Banking,
+        Western U.S. at Salomon Smith Barney. He also served on the Investment Committees
+        for both Salomon's venture capital direct investment fund and CitiGroup's
+        venture capital fund-of-funds. Before that, he was a Partner at the law firm
+        Brobeck, Phleger &#38; Harrison, where he was the Head of the firm's Venture
+        Capital Practice Group, co-head of its Information Technology Practice Group,
+        and served on the Investment Committee for its venture capital fund. &#13;&#10;</summary><start_date></start_date><end_date></end_date><website></website><is_current>1</is_current><primary_type>Person</primary_type><parent_id></parent_id><updated_at>2010-01-18
+        20:46:03</updated_at><uri>http://littlesis.org/person/41008/John_Denniston</uri><api_uri>http://api.littlesis.org/entity/41008.xml</api_uri></Entity>
+        \ <Entity><id>91115</id><name>John C Kerr</name><description>co-founder of
+        Texas Next Capital</description><summary>John Kerr is a co-founder of Texas
+        Next Capital and its affiliate, Acacia Capital Fund.&#13;&#10;&#13;&#10;He
+        is also a Principal of Moorman Kerr Interests, a family investment office
+        with a diversified investment portfolio, and has extensive experience as an
+        investor and entrepreneur in the biotechnology sector.  He founded and serves
+        as Chairman of Azaya Therapeutics, Inc., which is developing novel anti-cancer
+        drugs, as well as Evestra, Inc., a specialty pharmaceutical company focused
+        on women&#226;&#128;&#153;s healthcare.  John also serves as vice-chair of
+        the Investment Committee of San Antonio Capital &#38; Trust LLC, an asset
+        manager. &#13;&#10;&#13;&#10;John began his career as a securities lawyer,
+        as a partner in the Houston law firm Andrews &#38; Kurth and later with Cox
+        &#38; Smith in San Antonio.  In the 1980s he was Chairman and CEO of American
+        Century Corp., a New York Stock Exchange-listed financial services company.
+        \ In 1990 he formed Kerr Connors &#38; Co., an investment firm, and later
+        worked with Harris Webb &#38; Garrison, an investment banking firm.&#13;&#10;&#13;&#10;John
+        is extensively involved in the non-profit and charitable sector, as a member
+        of the board of trustees of Texas Biomedical Research Institute, where he
+        served as Chairman for nine years and as President from 2006 to 2008. In addition,
+        he serves on the boards of directors of the Admiral Nimitz Foundation, which
+        oversees the National Museum of the Pacific War, the McNay Art Museum, the
+        Menninger Clinic Foundation, the Texas Research &#38; Technology Foundation,
+        and the San Antonio Medical Foundation.  He served as Chairman of the Texas
+        Public Finance Authority, the bond issuing authority for the State of Texas,
+        from 1995 to 1998 and 2000 to 2003.  He a member of the three-person Distribution
+        Committee of the Kronkosky Charitable Foundation, the largest in San Antonio,
+        and is Chair of the Texas Advisory Board of the Environmental Defense Fund.&#13;&#10;&#13;&#10;John
+        is a graduate of Stanford University with an AB in History and received his
+        JD from The University of Texas Law School.</summary><start_date></start_date><end_date></end_date><website></website><is_current>1</is_current><primary_type>Person</primary_type><parent_id></parent_id><updated_at>2014-03-07
+        12:11:54</updated_at><uri>http://littlesis.org/person/91115/John_C_Kerr</uri><api_uri>http://api.littlesis.org/entity/91115.xml</api_uri></Entity>
+        \ <Entity><id>102224</id><name>John M Toomey Jr</name><description></description><summary>John
+        Toomey is a managing director, and he focuses on the Firm's investments in
+        traditional, synthetic, and structured secondary transactions.  He first joined
+        the Firm in 1997 as a member of the direct investment team.  He rejoined HarbourVest
+        in 2001 after business school, and since 2003, he has been a member of the
+        secondary investment team.  John was involved with the initial public offering
+        of HarbourVest Global Private Equity Limited (\"HVPE\") on Euronext Amsterdam
+        and served as Chief Financial Officer from its IPO through September 2008.
+        \ John serves on the advisory boards of a number of private equity partnerships
+        and is the Chairman of Absolute Private Equity, an investment company formerly
+        listed on the Swiss SIX Exchange, which HarbourVest-managed funds acquired
+        in a tender offer in 2011.&#13;&#10;&#13;&#10;John's previous experience includes
+        an analyst role at Smith Barney in the Advisory Group focusing on mergers
+        and acquisitions and corporate restructurings. &#13;&#10;&#13;&#10;John received
+        a BS (cum laude) in Chemistry and Physics from Harvard University in 1995
+        and an MBA from Harvard Business School in 2001, where he was awarded the
+        Loeb Fellowship for outstanding achievement in finance.</summary><start_date></start_date><end_date></end_date><website></website><is_current></is_current><primary_type>Person</primary_type><parent_id></parent_id><updated_at>2013-04-12
+        15:10:11</updated_at><uri>http://littlesis.org/person/102224/John_M_Toomey_Jr</uri><api_uri>http://api.littlesis.org/entity/102224.xml</api_uri></Entity>
+        \ <Entity><id>14340</id><name>Dennis Alan Smith</name><description>US Representative
+        from Oregon</description><summary>(cousin of Steven Douglas Symms), a Representative
+        from Oregon; born in Ontario, Malheur County, Oreg., January 19, 1938; graduated
+        from Grant Union High School, John Day, Oreg., 1956; B.A., Willamette University,
+        Salem, Oreg., 1961; United States Air Force, 1958-1960, 1962-1967; Oregon
+        Air National Guard, 1960-1962; co-pilot/flight engineer, commercial air line,
+        1967-1976; elected as a Republican to the Ninety-seventh and to the four succeeding
+        Congresses (January 3, 1981-January 3, 1991); unsuccessful candidate for reelection
+        to the One Hundred Second Congress in 1990; chairman, Eagle Newspapers, Salem,
+        Oreg.</summary><start_date>1938-01-19</start_date><end_date></end_date><website></website><is_current></is_current><primary_type>Person</primary_type><parent_id></parent_id><updated_at>2011-08-08
+        01:39:00</updated_at><uri>http://littlesis.org/person/14340/Dennis_Alan_Smith</uri><api_uri>http://api.littlesis.org/entity/14340.xml</api_uri></Entity>
+        \ <Entity><id>47114</id><name>Smith W Bagley</name><description>Heir to the
+        R. J. Reynolds tobacco fortune; Democratic party activist</description><summary>Smith
+        Walker Bagley was born on April 1, 1935, in Manhattan and grew up in Greenwich,
+        Conn., the son of Henry and Nancy Reynolds Bagley. His grandfather Richard
+        Joshua Reynolds founded the R. J. Reynolds Tobacco Company in 1875. Mr. Bagley
+        graduated from Washington and Lee University and served as a captain in the
+        United States Army Reserve.&#13;&#10;&#13;&#10;Mr. Bagley, an heir to the
+        R. J. Reynolds tobacco fortune, was chief executive of SBI, a cellular telephone
+        company in Arizona, New Mexico and Colorado that he started in 1989. But much
+        of his time was spent in philanthropic and public affairs work. &#13;&#10;&#13;&#10;Mr.
+        Bagley joined the Democratic Party when he was 17 and made an unsuccessful
+        bid for a North Carolina seat in the House of Representatives in 1968. He
+        later served as vice chairman of finance for the Democratic National Committee.&#13;&#10;&#13;&#10;Among
+        his civic activities, he was president of the Arca Foundation, which focuses
+        on social equity in developing countries, served on the board of the John
+        F. Kennedy Center for the Performing Arts in Washington and was chairman of
+        the board of regents of Catholic University.&#13;&#10;&#13;&#10;In a well-publicized
+        case in 1979, Mr. Bagley and four co-defendants were indicted on charges of
+        conspiring to manipulate the stock of a food and textile conglomerate, the
+        Washington Group, to inflate its price artificially. A federal district court
+        jury in Richmond, Va., acquitted them of the charges.&#13;&#10;&#13;&#10;Besides
+        his wife of 26 years, Mr. Bagley is survived by three sons, Walker, Brett
+        and Conor; three daughters, Nancy Reynolds Bagley, Nicole Ladmer Bagley and
+        Vaughan Elizabeth Bagley; a sister, Susan Bagley Bloom; and five grandchildren.</summary><start_date>1935-04-01</start_date><end_date>2009-01-03</end_date><website></website><is_current></is_current><primary_type>Person</primary_type><parent_id></parent_id><updated_at>2014-01-06
+        12:05:30</updated_at><uri>http://littlesis.org/person/47114/Smith_W_Bagley</uri><api_uri>http://api.littlesis.org/entity/47114.xml</api_uri></Entity>
+        \ <Entity><id>101129</id><name>Gavin Smith</name><description>Fox Pictures
+        executive</description><summary>The Fox veteran of 18 years works in the Calabasas
+        office and had been a 6-foot-6 member of UCLA&#226;&#128;&#153;s 1975 national
+        championship men&#226;&#128;&#153;s basketball team, the last title won by
+        legendary Bruin coach John Wooden. His family has made public pleas for information.
+        Smith, 57, was last seen driving his car, a black 2000 Mercedes 420E sedan
+        with tinted windows and a roof rack, near his home in West Hills in the San
+        Fernando Valley.  He&#226;&#128;&#153;d just returned on the day he disappeared
+        from CinemaCon, the National Association of Theatre Owners convention in Las
+        Vegas.</summary><start_date></start_date><end_date></end_date><website></website><is_current></is_current><primary_type>Person</primary_type><parent_id></parent_id><updated_at>2012-05-10
+        23:39:37</updated_at><uri>http://littlesis.org/person/101129/Gavin_Smith</uri><api_uri>http://api.littlesis.org/entity/101129.xml</api_uri></Entity>
+        \ <Entity><id>47058</id><name>John J Horan</name><description>Former CEO of
+        Merck</description><summary>John Joseph Horan was born July 9, 1920, on Staten
+        Island. He had earlier served as the company's president and chief operating
+        officer. Mr. Horan received an A.B. degree from Manhattan College in 1940
+        and a J.D. degree from Columbia University Law School in 1946.&#13;&#10;&#13;&#10;Mr.
+        Horan joined Merck in 1952 as part of its legal department. In 1957 he became
+        spokesman for the Merck, Sharpe &#38; Dohme research laboratory in North Wales,
+        Pa.&#13;&#10;&#13;&#10;&#13;&#10;Mr. Horan was chief executive from 1976 to
+        1985, a period when Merck introduced a hepatitis B vaccine, as well as new
+        antibiotics and drugs to treat high blood pressure and heart failure. Under
+        his watch, Merck also developed ivermectin, a drug that prevents and treats
+        river blindness.&#13;&#10;&#13;&#10; Following his retirement from management
+        at Merck, Mr. Horan played an active role in the development of the biotech
+        industry, serving as chairman of the board of Myriad Laboratories, chairman
+        of Atrix Laboratories and director of Celgene Laboratories. Mr. Horan's corporate
+        directorships included General Motors Corporation, NCR Corporation, JP Morgan
+        and Co. Inc., and Morgan Guaranty Trust Company of New York, and the Burlington
+        Industries, Inc. &#13;&#10;&#13;&#10;Mr. Horan is survived by his wife of
+        66 years, Julia Fitzgerald; a daughter, Mary Alice Ryan of Spring Lake, N.J.;
+        three sons, Thomas, of Hoboken, John Jr., of Sea Girt, and David, of Armonk,
+        N.Y.; two sisters, Mary Smith of Lakewood, N.J., and Florence Keating of Wall,
+        N.J.; a brother, Eugene, of Monroe, N.J.; and nine grandchildren.</summary><start_date>1920-07-09</start_date><end_date>2011-02-05</end_date><website></website><is_current></is_current><primary_type>Person</primary_type><parent_id></parent_id><updated_at>2014-10-02
+        12:45:59</updated_at><uri>http://littlesis.org/person/47058/John_J_Horan</uri><api_uri>http://api.littlesis.org/entity/47058.xml</api_uri></Entity>
+        \ <Entity><id>78427</id><name>John Quincy Adams</name><description>6th President
+        of the United States; Secretary of State</description><summary>ADAMS, John
+        Quincy, (son of John Adams, father of Charles Francis Adams, brother-in-law
+        of William Stephens Smith), a Senator and a Representative from Massachusetts
+        and 6th President of the United States; born in Braintree, Mass., July 11,
+        1767; acquired his early education in Europe at the University of Leyden;
+        was graduated from Harvard University in 1787; studied law; was admitted to
+        the bar and commenced practice in Boston, Mass.; appointed Minister to Netherlands
+        1794, Minister to Portugal 1796, Minister to Prussia 1797, and served until
+        1801; commissioned to make a commercial treaty with Sweden in 1798; elected
+        to the Massachusetts State senate in 1802; unsuccessful candidate for election
+        to the U.S. House of Representatives in 1802; elected as a Federalist to the
+        United States Senate and served from March 4, 1803, until June 8, 1808, when
+        he resigned, a successor having been elected six months early after Adams
+        broke with the Federalist party; Minister to Russia 1809-1814; member of the
+        commission which negotiated the Treaty of Ghent in 1814; Minister to England
+        1815-1817, assisted in concluding the convention of commerce with Great Britain;
+        Secretary of State in the Cabinet of President James Monroe 1817-1825; decision
+        in the 1824 election of the President of the United States fell, according
+        to the Constitution of the United States, upon the House of Representatives,
+        as none of the candidates had secured a majority of the electors chosen by
+        the states, and Adams, who stood second to Andrew Jackson in the electoral
+        vote, was chosen and served from March 4, 1825, to March 3, 1829; elected
+        as a Republican to the U.S. House of Representatives for the Twenty-second
+        and to the eight succeeding Congresses, becoming a Whig in 1834; served from
+        March 4, 1831, until his death; chairman, Committee on Manufactures (Twenty-second
+        through Twenty-sixth, and Twenty-eighth and Twenty-ninth Congresses), Committee
+        on Indian Affairs (Twenty-seventh Congress), Committee on Foreign Affairs
+        (Twenty-seventh Congress); unsuccessful candidate for Governor of Massachusetts
+        in 1834; died in the U.S. Capitol Building, Washington, D.C., February 23,
+        1848; interment in the family burial ground at Quincy, Mass.; subsequently
+        reinterred in United First Parish Church.</summary><start_date>1767-07-11</start_date><end_date>1848-02-23</end_date><website></website><is_current></is_current><primary_type>Person</primary_type><parent_id></parent_id><updated_at>2016-01-05
+        11:24:28</updated_at><uri>http://littlesis.org/person/78427/John_Quincy_Adams</uri><api_uri>http://api.littlesis.org/entity/78427.xml</api_uri></Entity>
+        \ <Entity><id>166623</id><name>John McWilliams III</name><description></description><summary>Born
+        in Santa Barbara, Calif., on Aug. 27, 1914, son of John and Caro Weston McWilliams,
+        he received his education at Polytechnic Elementary School, Los Alamos Ranch
+        School and Lake Forest, Ill., Academy. &#13;&#10;&#13;&#10;An Army veteran
+        of World War II, he served as a first lieutenant in the Yankee Division in
+        Europe. He was decorated with the Bronze Medal and the Purple Heart. &#13;&#10;&#13;&#10;He
+        was employed by Byron Weston Paper Co. in Dalton and became vice president.
+        He was later vice president of Krofta Engineering Corp. in Lenox until his
+        retirement. Following his retirement, he moved to Reading, Vt., and then to
+        Woodstock, Vt. &#13;&#10;&#13;&#10;He leaves his wife, the former Josephine
+        Gay Smith, whom he married June 26, 1940, in Pasadena, Calif.; two daughters,
+        Carol Gibson of Hartland, Vt., and Patricia Lane of Middletown Springs, Vt.;
+        two sons, John McWilliams of Atlanta and David McWilliams of Stafford, Vt.;
+        two sisters, Julia Child of Santa Barbara, Calif., and Dorothy Cousin of Sausalito,
+        Calif., and eight grandchildren.</summary><start_date>1914-08-27</start_date><end_date>2002-04-24</end_date><website></website><is_current></is_current><primary_type>Person</primary_type><parent_id></parent_id><updated_at>2014-10-21
+        22:00:10</updated_at><uri>http://littlesis.org/person/166623/John_McWilliams_III</uri><api_uri>http://api.littlesis.org/entity/166623.xml</api_uri></Entity>
+        \ <Entity><id>17991</id><name>John D Raffaelli</name><description>Lobbyist,
+        former aide to Senator Lloyd Bentson</description><summary>Mr. Raffaelli spent
+        four years on Capitol Hill as counsel for tax and international trade to Senator
+        Lloyd Bentsen (D-TX). He developed extensive expertise in the tax rules governing
+        depreciation, R&#38;D, insurance, real estate, energy, and other issues and,
+        as a lobbyist, has regularly represented clients before Congress on those
+        issues.&#10;&#10;Before founding Capitol Counsel, Mr. Raffaelli was a founder
+        and former chairman of The Washington Group, a government relations firm in
+        Washington, D.C., where he represented a wide variety of business, tax, and
+        trade clients on Capitol Hill and before executive branch agencies. Prior
+        to serving with The Washington Group and its predecessor firm, Raffaelli,
+        Spees, Springer, and Smith, Mr. Raffaelli was a partner in the Washington
+        law firm of Bishop, Cook, Purcell, and Reynolds.&#10;&#10;Before serving on
+        Senator Bentsen&#226;&#128;&#153;s staff in the Senate, Mr. Raffaelli served
+        as attorney advisor to then Chief Judge Samuel Sterrett of the U.S. Tax Court.
+        He also served as staff assistant to Congressman Wright Patman (D-TX).&#10;&#10;Mr.
+        Raffaelli has served as a managing trustee of the Democratic National Committee.
+        He was also actively involved in the 1992 Clinton for president campaign,
+        served on the 1996 Clinton-Gore national finance committee, and served as
+        vice chair of the Kerry for president campaign. He is active each year in
+        many House and Senate campaigns. Mr. Raffaelli also served on the President&#226;&#128;&#153;s
+        advisory committee on the arts for the John F. Kennedy Center in Washington,
+        D.C.&#10;&#10;Mr. Raffaelli holds an L.L.M. degree in taxation from New York
+        University Law School, a J.D. degree from the University of Arkansas Law School,
+        and a B.S. degree in Business Administration from American University.</summary><start_date></start_date><end_date></end_date><website></website><is_current></is_current><primary_type>Person</primary_type><parent_id></parent_id><updated_at>2015-02-04
+        13:26:30</updated_at><uri>http://littlesis.org/person/17991/John_D_Raffaelli</uri><api_uri>http://api.littlesis.org/entity/17991.xml</api_uri></Entity></Entities>\n\n
+        \ </Data>\n</Response>"
+    http_version: 
+  recorded_at: Sun, 10 Jan 2016 23:17:03 GMT
+- request:
+    method: get
+    uri: https://api.opencorporates.com/companies/search?order=score&q=John+Smith
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-type:
+      - application/json;charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - close
+      status:
+      - 200 OK
+      x-content-type-options:
+      - nosniff
+      date:
+      - Sun, 10 Jan 2016 23:17:04 GMT
+      x-powered-by:
+      - Phusion Passenger 5.0.20
+      server:
+      - nginx/1.8.0 + Phusion Passenger 5.0.20
+      access-control-allow-origin:
+      - 'null'
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET
+      access-control-allow-headers:
+      - DNT,X-Mx-ReqToken,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type
+    body:
+      encoding: ASCII-8BIT
+      string: '{"api_version":"0.4.1","results":{"companies":[{"company":{"name":"JOHN
+        SMITH","company_number":"2260987567","jurisdiction_code":"ca_qc","incorporation_date":"2002-08-22","dissolution_date":null,"company_type":"Entreprise
+        individuelle","registry_url":null,"branch_status":null,"inactive":true,"current_status":"Radi\u00e9e
+        D''office Suite \u00e0 La Non Production De Deux D\u00e9clarations De Mise
+        \u00e0 Jour Annuelles Cons\u00e9cutives","created_at":"2012-10-15T06:49:31+00:00","updated_at":"2015-10-12T20:35:09+00:00","retrieved_at":"2015-10-08T03:33:50+00:00","opencorporates_url":"https://opencorporates.com/companies/ca_qc/2260987567","previous_names":[],"source":{"publisher":"Quebec
+        Registraire des entreprises","url":"http://www.registreentreprises.gouv.qc.ca","retrieved_at":"2015-10-08T03:33:50+00:00"},"registered_address_in_full":"3250,
+        HAIG KIRKLAND                            QC H9H1V8"}},{"company":{"name":"JOHN
+        SMITH","company_number":"2263430334","jurisdiction_code":"ca_qc","incorporation_date":"2006-01-09","dissolution_date":null,"company_type":"Entreprise
+        individuelle","registry_url":null,"branch_status":null,"inactive":false,"current_status":"Immatricul\u00e9e","created_at":"2012-10-15T12:56:14+00:00","updated_at":"2015-10-25T23:23:48+00:00","retrieved_at":"2015-10-23T04:10:30+00:00","opencorporates_url":"https://opencorporates.com/companies/ca_qc/2263430334","previous_names":[],"source":{"publisher":"Quebec
+        Registraire des entreprises","url":"http://www.registreentreprises.gouv.qc.ca","retrieved_at":"2015-10-23T04:10:30+00:00"},"registered_address_in_full":"705,
+        24E AVENUE, APP. 6 MONTR\u00c9AL (QU\u00c9BEC) H8S3W4"}},{"company":{"name":"JOHN
+        B. SMITH, P.S.C.","company_number":"0225893","jurisdiction_code":"us_ky","incorporation_date":"1987-02-20","dissolution_date":null,"company_type":"Kentucky
+        Professional Services Corp","registry_url":"https://app.sos.ky.gov/ftshow/(S(1mwjwruhcdaiihbdnrvmhmqo))/default.aspx?path=ftsearch&id=0225893&ct=09&cs=99999","branch_status":null,"inactive":true,"current_status":"I   Inactive","created_at":"2015-06-20T01:38:55+00:00","updated_at":"2015-06-20T01:38:55+00:00","retrieved_at":"2015-06-18T16:06:05+00:00","opencorporates_url":"https://opencorporates.com/companies/us_ky/0225893","previous_names":[],"source":{"publisher":"Kentucky
+        Secretary Of State","url":"https://app.sos.ky.gov/ftshow/(S(1mwjwruhcdaiihbdnrvmhmqo))/default.aspx?path=ftsearch&id=0225893&ct=09&cs=99999","retrieved_at":"2015-06-18T16:06:05+00:00"},"registered_address_in_full":null}},{"company":{"name":"JOHN
+        SMITH FOODS LIMITED","company_number":"692041","jurisdiction_code":"nz","incorporation_date":"1995-08-15","dissolution_date":"2012-04-18","company_type":"NZ
+        Limited Company","registry_url":"http://www.business.govt.nz/companies/app/ui/pages/companies/692041/detail","branch_status":null,"inactive":true,"current_status":"Struck
+        Off","created_at":"2011-06-16T02:53:03+00:00","updated_at":"2015-06-20T09:29:44+00:00","retrieved_at":"2015-06-20T09:29:38+00:00","opencorporates_url":"https://opencorporates.com/companies/nz/692041","previous_names":[],"source":{"publisher":"New
+        Zealand Companies Office","url":"http://www.business.govt.nz/companies/app/ui/pages/companies/692041/detail","retrieved_at":"2015-06-20T09:29:38+00:00"},"registered_address_in_full":"C/-deloitte,
+        80 Queen Street, Auckland 1010"}},{"company":{"name":"RENDEMENT (JOHN SMITH)
+        LIMITED","company_number":"01220593","jurisdiction_code":"gb","incorporation_date":"1975-07-24","dissolution_date":"2002-10-22","company_type":"Private
+        Limited Company","registry_url":"http://data.companieshouse.gov.uk/doc/company/01220593","branch_status":null,"inactive":true,"current_status":"Dissolved","created_at":"2011-05-01T11:37:07+00:00","updated_at":"2015-12-22T02:17:39+00:00","retrieved_at":"2011-06-29T16:22:56+00:00","opencorporates_url":"https://opencorporates.com/companies/gb/01220593","previous_names":[],"source":{"publisher":"UK
+        Companies House","url":"http://xmlgw.companieshouse.gov.uk/","terms":"UK Crown
+        Copyright","retrieved_at":"2011-06-29T16:22:56+00:00"},"registered_address_in_full":"THE
+        COMMON, MELBOURNE, DERBYSHIRE, DE73 1DH"}},{"company":{"name":"JOHN SMITH
+        BUILDERS LIMITED","company_number":"04726376","jurisdiction_code":"gb","incorporation_date":"2003-04-08","dissolution_date":"2010-10-12","company_type":"Private
+        Limited Company","registry_url":"http://data.companieshouse.gov.uk/doc/company/04726376","branch_status":null,"inactive":true,"current_status":"Dissolved","created_at":"2010-10-22T13:54:25+00:00","updated_at":"2015-12-17T00:39:20+00:00","retrieved_at":"2015-04-27T11:57:33+00:00","opencorporates_url":"https://opencorporates.com/companies/gb/04726376","previous_names":[],"source":{"publisher":"UK
+        Companies House","url":"http://xmlgw.companieshouse.gov.uk/","terms":"UK Crown
+        Copyright","retrieved_at":"2015-04-27T11:57:33+00:00"},"registered_address_in_full":"1
+        BELMONT VILLAS, THOMPSON TERRACE, ASKERN, DONCASTER, SOUTH YORKSHIRE, DN6
+        0JN"}},{"company":{"name":"John Ryan Smith, LLC","company_number":"20131067043","jurisdiction_code":"us_co","incorporation_date":"2013-01-29","dissolution_date":null,"company_type":"Limited
+        Liability Company","registry_url":null,"branch_status":null,"inactive":false,"current_status":"Delinquent","created_at":"2015-09-17T16:23:27+00:00","updated_at":"2015-09-17T16:23:27+00:00","retrieved_at":"2015-09-05T09:01:17+00:00","opencorporates_url":"https://opencorporates.com/companies/us_co/20131067043","previous_names":[],"source":{"publisher":"Oregon
+        Secretary of State","url":"http://egov.sos.state.or.us/br/pkg_web_name_srch_inq.login","retrieved_at":"2015-09-05T09:01:17+00:00"},"registered_address_in_full":null}},{"company":{"name":"John
+        Smith LLC","company_number":"20141609287","jurisdiction_code":"us_co","incorporation_date":"2014-10-03","dissolution_date":null,"company_type":"Limited
+        Liability Company","registry_url":null,"branch_status":null,"inactive":false,"current_status":"Good
+        Standing","created_at":"2015-09-18T08:46:52+00:00","updated_at":"2015-09-18T08:46:52+00:00","retrieved_at":"2015-09-05T09:20:04+00:00","opencorporates_url":"https://opencorporates.com/companies/us_co/20141609287","previous_names":[],"source":{"publisher":"Oregon
+        Secretary of State","url":"http://egov.sos.state.or.us/br/pkg_web_name_srch_inq.login","retrieved_at":"2015-09-05T09:20:04+00:00"},"registered_address_in_full":null}},{"company":{"name":"JOHN
+        SMITH ENTERPRISES, LLC","company_number":"4299637","jurisdiction_code":"us_de","incorporation_date":"2007-02-12","dissolution_date":null,"company_type":"Limited
+        Liability Company","registry_url":null,"branch_status":null,"inactive":null,"current_status":null,"created_at":"2015-09-16T04:29:16+00:00","updated_at":"2015-10-16T00:13:54+00:00","retrieved_at":"2015-10-10T22:24:03+00:00","opencorporates_url":"https://opencorporates.com/companies/us_de/4299637","previous_names":[],"source":{"publisher":"Delaware
+        Department of State: Division of Corporations","url":"http://www.corp.delaware.gov/","retrieved_at":"2015-10-10T22:24:03+00:00"},"registered_address_in_full":null}},{"company":{"name":"JOHN
+        PATRICK SMITH","company_number":"2262822549","jurisdiction_code":"ca_qc","incorporation_date":"2005-03-03","dissolution_date":null,"company_type":"Entreprise
+        individuelle","registry_url":null,"branch_status":null,"inactive":true,"current_status":"Radi\u00e9e
+        D''office Suite \u00e0 La Non Production De Deux D\u00e9clarations De Mise
+        \u00e0 Jour Annuelles Cons\u00e9cutives","created_at":"2012-10-15T11:29:01+00:00","updated_at":"2015-10-25T21:51:51+00:00","retrieved_at":"2015-10-22T11:58:42+00:00","opencorporates_url":"https://opencorporates.com/companies/ca_qc/2262822549","previous_names":[],"source":{"publisher":"Quebec
+        Registraire des entreprises","url":"http://www.registreentreprises.gouv.qc.ca","retrieved_at":"2015-10-22T11:58:42+00:00"},"registered_address_in_full":"417,
+        PAGANAKOMIN MIKAN BO\u00ceTE POSTALE 472 MANIWAKI                            QC
+        J9E3B1"}},{"company":{"name":"JOHN SMITH ETC LIMITED","company_number":"06137134","jurisdiction_code":"gb","incorporation_date":"2007-03-05","dissolution_date":null,"company_type":"Private
+        Limited Company","registry_url":"http://data.companieshouse.gov.uk/doc/company/06137134","branch_status":null,"inactive":false,"current_status":"Active   Proposal
+        To Strike Off","created_at":"2010-10-22T13:54:26+00:00","updated_at":"2015-12-17T19:33:01+00:00","retrieved_at":"2015-09-07T14:09:34+00:00","opencorporates_url":"https://opencorporates.com/companies/gb/06137134","previous_names":[],"source":{"publisher":"UK
+        Companies House","url":"http://xmlgw.companieshouse.gov.uk/","terms":"UK Crown
+        Copyright","retrieved_at":"2015-09-07T14:09:34+00:00"},"registered_address_in_full":"SANDERSON
+        HOUSE, STATION ROAD, HORSFORTH, LEEDS, LS18 5NT"}},{"company":{"name":"JOHN
+        SMITH PTY LIMITED","company_number":"086994167","jurisdiction_code":"au","incorporation_date":"1999-04-06","dissolution_date":null,"company_type":"Australian
+        Proprietary Company, Limited by Shares","registry_url":"https://connectonline.asic.gov.au/RegistrySearch/faces/landing/panelSearch.jspx?searchTab=search&searchType=OrgAndBusNm&searchText=086994167&_adf.ctrl-state=13cs8h575n_4","branch_status":null,"inactive":false,"current_status":"Registered","created_at":"2014-10-18T12:50:07+00:00","updated_at":"2015-12-17T11:43:40+00:00","retrieved_at":"2015-12-03T12:26:00+00:00","opencorporates_url":"https://opencorporates.com/companies/au/086994167","previous_names":[],"source":{"publisher":"Australian
+        Securities & Investments Commission","url":"https://connectonline.asic.gov.au/RegistrySearch/faces/landing/panelSearch.jspx?searchTab=search&searchType=OrgAndBusNm&searchText=086994167&_adf.ctrl-state=13cs8h575n_4","retrieved_at":"2015-12-03T12:26:00+00:00"},"registered_address_in_full":null}},{"company":{"name":"JOHN
+        SMITH CONSTRUCTION, INC.","company_number":"09005582","jurisdiction_code":"us_ga","incorporation_date":"2009-01-23","dissolution_date":"2011-08-28","company_type":"Domestic
+        Profit Corporation","registry_url":"https://ecorp.sos.ga.gov/BusinessSearch/BusinessInformation?businessId=1417476&businessType=","branch_status":null,"inactive":true,"current_status":"Admin.
+        Dissolved","created_at":"2011-10-01T21:01:02+00:00","updated_at":"2015-12-11T18:01:39+00:00","retrieved_at":"2015-11-16T18:54:54+00:00","opencorporates_url":"https://opencorporates.com/companies/us_ga/09005582","previous_names":[],"source":{"publisher":"Georgia
+        Secretary of State","url":"https://ecorp.sos.ga.gov/BusinessSearch/BusinessInformation?businessId=1417476&businessType=","retrieved_at":"2015-11-16T18:54:54+00:00"},"registered_address_in_full":"1252
+        Daniel Lane, Lawrenceville, GA, 30045, USA"}},{"company":{"name":"JOHN E.
+        SMITH, INC.","company_number":"1299165","jurisdiction_code":"us_oh","incorporation_date":"2002-02-15","dissolution_date":null,"company_type":"CORPORATION
+        FOR PROFIT","registry_url":"http://www2.sos.state.oh.us/pls/bsqry/f?p=100:7:281502142893::NO:7:P7_CHARTER_NUM:1299165","branch_status":null,"inactive":true,"current_status":"Cancelled","created_at":"2011-08-24T04:55:26+00:00","updated_at":"2015-12-04T20:14:46+00:00","retrieved_at":"2015-11-22T13:13:14+00:00","opencorporates_url":"https://opencorporates.com/companies/us_oh/1299165","previous_names":[],"source":{"publisher":"Ohio
+        Secretary of State","url":"http://www2.sos.state.oh.us/pls/bsqry/f?p=100:7:281502142893::NO:7:P7_CHARTER_NUM:1299165","retrieved_at":"2015-11-22T13:13:14+00:00"},"registered_address_in_full":"FRANKLIN,
+        PORTAGE"}},{"company":{"name":"JOHN H. SMITH, INC.","company_number":"A303112","jurisdiction_code":"us_ga","incorporation_date":"1963-09-11","dissolution_date":null,"company_type":"Domestic
+        Profit Corporation","registry_url":"https://ecorp.sos.ga.gov/BusinessSearch/BusinessInformation?businessId=458411&businessType=","branch_status":null,"inactive":false,"current_status":"Active/Compliance","created_at":"2011-10-01T02:28:58+00:00","updated_at":"2015-12-05T17:05:29+00:00","retrieved_at":"2015-11-16T16:13:29+00:00","opencorporates_url":"https://opencorporates.com/companies/us_ga/A303112","previous_names":[],"source":{"publisher":"Georgia
+        Secretary of State","url":"https://ecorp.sos.ga.gov/BusinessSearch/BusinessInformation?businessId=458411&businessType=","retrieved_at":"2015-11-16T16:13:29+00:00"},"registered_address_in_full":"1215
+        HIGHTOWER TRAIL, #B100, ATLANTA, GA, 30315"}},{"company":{"name":"JOHN SMITH
+        HAULAGE LTD","company_number":"05776011","jurisdiction_code":"gb","incorporation_date":"2006-04-10","dissolution_date":null,"company_type":"Private
+        Limited Company","registry_url":"http://data.companieshouse.gov.uk/doc/company/05776011","branch_status":null,"inactive":false,"current_status":"Active","created_at":"2010-10-22T13:56:09+00:00","updated_at":"2015-12-22T07:59:19+00:00","retrieved_at":"2015-12-22T07:59:15+00:00","opencorporates_url":"https://opencorporates.com/companies/gb/05776011","previous_names":[{"company_name":"JOHN
+        W SMITH LTD","start_date":"2006-04-10","end_date":"2010-11-15"}],"source":{"publisher":"UK
+        Companies House","url":"http://xmlgw.companieshouse.gov.uk/","terms":"UK Crown
+        Copyright","retrieved_at":"2015-12-22T07:59:15+00:00"},"registered_address_in_full":"Heath
+        Road\nWarboys, Cambridgeshire, PE28 2UU"}},{"company":{"name":"TONY JOHN SMITH","company_number":"981756576","jurisdiction_code":"no","incorporation_date":"2000-04-12","dissolution_date":null,"company_type":"Enkeltmannsforetak","registry_url":"http://w2.brreg.no/enhet/sok/detalj.jsp?orgnr=981756576","branch_status":null,"inactive":null,"current_status":null,"created_at":"2015-07-31T12:11:59+00:00","updated_at":"2016-01-06T22:14:02+00:00","retrieved_at":"2016-01-05T15:52:24+00:00","opencorporates_url":"https://opencorporates.com/companies/no/981756576","previous_names":[],"source":{"publisher":"Br\u00f8nn\u00f8ysundregistrene","terms":"Norwegian
+        Open Data Licence (NDOL)","terms_url":"http://data.norge.no/nlod/no/1.0","url":"http://data.brreg.no/","retrieved_at":"2016-01-05T15:52:24+00:00"},"registered_address_in_full":"Klypevegen
+        11, HAUGESUND, 5517"}},{"company":{"name":"JOHN W. SMITH BOOKS","company_number":"115874","jurisdiction_code":"ca_pe","incorporation_date":"1986-08-25","dissolution_date":null,"company_type":null,"registry_url":"http://www.gov.pe.ca/corporations/index.php?txtSearchType=2&txtRegNum=115874&REF=115874&action=Search","branch_status":null,"inactive":null,"current_status":null,"created_at":"2015-06-26T16:47:37+00:00","updated_at":"2016-01-06T03:51:13+00:00","retrieved_at":"2016-01-06T01:17:59+00:00","opencorporates_url":"https://opencorporates.com/companies/ca_pe/115874","previous_names":[],"source":{"publisher":"Prince
+        Edward Island Corporate/Business Names Registry","url":"http://www.gov.pe.ca/corporations/index.php","retrieved_at":"2016-01-06T01:17:59+00:00"},"registered_address_in_full":null}},{"company":{"name":"JOHN
+        SMITH CHIPPIE LIMITED","company_number":"08836103","jurisdiction_code":"gb","incorporation_date":"2014-01-08","dissolution_date":"2014-12-02","company_type":"Private
+        Limited Company","registry_url":"http://data.companieshouse.gov.uk/doc/company/08836103","branch_status":null,"inactive":true,"current_status":"Dissolved","created_at":"2014-01-08T09:07:31+00:00","updated_at":"2015-12-21T15:08:59+00:00","retrieved_at":"2014-12-07T01:41:03+00:00","opencorporates_url":"https://opencorporates.com/companies/gb/08836103","previous_names":[],"source":{"publisher":"UK
+        Companies House","url":"http://xmlgw.companieshouse.gov.uk/","terms":"UK Crown
+        Copyright","retrieved_at":"2014-12-07T01:41:03+00:00"},"registered_address_in_full":"838
+        ECCLESALL ROAD, SHEFFIELD, ENGLAND, S11 8TD"}},{"company":{"name":"JOHN L
+        SMITH INC","company_number":"71658687","jurisdiction_code":"us_or","incorporation_date":null,"dissolution_date":null,"company_type":"Domestic
+        Business Corporation","registry_url":"http://egov.sos.state.or.us/br/pkg_web_name_srch_inq.do_name_srch?p_name=&p_regist_nbr=71658687&p_srch=PHASE1&p_print=FALSE&p_entity_status=ACTINA","branch_status":null,"inactive":true,"current_status":"Inactive","created_at":"2013-05-01T08:11:07+00:00","updated_at":"2013-05-17T14:31:50+00:00","retrieved_at":"2013-04-30T03:11:34+00:00","opencorporates_url":"https://opencorporates.com/companies/us_or/71658687","previous_names":[],"source":{"publisher":"Oregon
+        Secretary of State (Corporation Division)","url":"http://egov.sos.state.or.us/br/pkg_web_name_srch_inq.do_name_srch?p_name=&p_regist_nbr=71658687&p_srch=PHASE1&p_print=FALSE&p_entity_status=ACTINA","retrieved_at":"2013-04-30T03:11:34+00:00"},"registered_address_in_full":null}},{"company":{"name":"JOHN
+        SMITH TRUCKING, INC.","company_number":"K923586","jurisdiction_code":"us_ga","incorporation_date":"1999-06-04","dissolution_date":null,"company_type":"Domestic
+        Profit Corporation","registry_url":"https://ecorp.sos.ga.gov/BusinessSearch/BusinessInformation?businessId=1120916&businessType=","branch_status":null,"inactive":false,"current_status":"Active/Noncompliance","created_at":"2011-10-01T15:03:06+00:00","updated_at":"2015-12-11T09:32:50+00:00","retrieved_at":"2015-11-16T18:03:00+00:00","opencorporates_url":"https://opencorporates.com/companies/us_ga/K923586","previous_names":[],"source":{"publisher":"Georgia
+        Secretary of State","url":"https://ecorp.sos.ga.gov/BusinessSearch/BusinessInformation?businessId=1120916&businessType=","retrieved_at":"2015-11-16T18:03:00+00:00"},"registered_address_in_full":"2236
+        SOUTH VAN WERT RD., VILLA RICA, GA, 30180"}},{"company":{"name":"JOHN SMITH
+        SERVICES","company_number":"996068307","jurisdiction_code":"no","incorporation_date":"2010-10-18","dissolution_date":null,"company_type":"Norsk
+        avdeling av utenlandsk foretak","registry_url":"http://w2.brreg.no/enhet/sok/detalj.jsp?orgnr=996068307","branch_status":"branch
+        of an out-of-jurisdiction company","inactive":null,"current_status":null,"created_at":"2015-07-28T23:11:53+00:00","updated_at":"2015-10-07T06:25:01+00:00","retrieved_at":"2015-10-07T02:03:00+00:00","opencorporates_url":"https://opencorporates.com/companies/no/996068307","previous_names":[],"source":{"publisher":"Br\u00f8nn\u00f8ysundregistrene","terms":"Norwegian
+        Open Data Licence (NDOL)","terms_url":"http://data.norge.no/nlod/no/1.0","url":"http://data.brreg.no/","retrieved_at":"2015-10-07T02:03:00+00:00"},"registered_address_in_full":null}},{"company":{"name":"John
+        Smith Construction, Inc","company_number":"893306","jurisdiction_code":"us_ms","incorporation_date":"2006-06-05","dissolution_date":null,"company_type":"Profit
+        Corporation","registry_url":"https://business.sos.state.ms.us/corp/soskb/Corp.asp?422334","branch_status":null,"inactive":true,"current_status":"Dissolved","created_at":"2012-01-10T13:10:42+00:00","updated_at":"2015-11-13T12:43:57+00:00","retrieved_at":"2015-06-09T03:45:24+00:00","opencorporates_url":"https://opencorporates.com/companies/us_ms/893306","previous_names":[],"source":{"publisher":"Mississippi
+        Secretary of State","url":"https://business.sos.state.ms.us/corp/soskb/Corp.asp?422334","retrieved_at":"2015-06-09T03:45:24+00:00"},"registered_address_in_full":null}},{"company":{"name":"INVESTISSEMENTS
+        JOHN SMITH LLC","company_number":"4904169","jurisdiction_code":"us_de","incorporation_date":"2010-11-29","dissolution_date":null,"company_type":"Limited
+        Liability Company","registry_url":null,"branch_status":null,"inactive":null,"current_status":null,"created_at":"2015-09-15T14:24:27+00:00","updated_at":"2015-10-16T09:04:32+00:00","retrieved_at":"2015-10-11T01:54:41+00:00","opencorporates_url":"https://opencorporates.com/companies/us_de/4904169","previous_names":[],"source":{"publisher":"Delaware
+        Department of State: Division of Corporations","url":"http://www.corp.delaware.gov/","retrieved_at":"2015-10-11T01:54:41+00:00"},"registered_address_in_full":null}},{"company":{"name":"John
+        Smith Insurance, Inc.","company_number":"057-961","jurisdiction_code":"us_al","incorporation_date":"1979-08-31","dissolution_date":null,"company_type":"Domestic
+        Corporation","registry_url":"http://arc-sos.state.al.us/cgi/corpdetail.mbr/detail?corp=057961","branch_status":null,"inactive":false,"current_status":"Exists","created_at":"2015-06-19T16:38:09+00:00","updated_at":"2015-12-19T03:11:41+00:00","retrieved_at":"2015-12-16T20:23:10+00:00","opencorporates_url":"https://opencorporates.com/companies/us_al/057-961","previous_names":[{"company_name":"Smith-Stanford
+        Insurance, Inc.","end_date":"1983-01-03"}],"source":{"publisher":"Alabama
+        Secretary of State","url":"http://arc-sos.state.al.us/cgi/corpdetail.mbr/detail?corp=057961","retrieved_at":"2015-12-16T20:23:10+00:00"},"registered_address_in_full":null}},{"company":{"name":"John
+        Henry Smith Insurance","company_number":"1988-000249196","jurisdiction_code":"us_wy","incorporation_date":"1988-07-08","dissolution_date":"2009-03-14","company_type":"Profit
+        Corporation","registry_url":"https://wyobiz.wy.gov/Business/FilingDetails.aspx?eFNum=205094217159126166232219115151202068208094200046","branch_status":"branch
+        of an out-of-jurisdiction company","inactive":true,"current_status":"Inactive   Revoked
+        (Tax)","created_at":"2011-04-24T21:51:56+00:00","updated_at":"2015-12-24T13:01:44+00:00","retrieved_at":"2015-12-24T03:36:30+00:00","opencorporates_url":"https://opencorporates.com/companies/us_wy/1988-000249196","previous_names":[],"source":{"publisher":"Wyoming
+        Secretary of State''s Office","url":"https://wyobiz.wy.gov/Business/FilingDetails.aspx?eFNum=205094217159126166232219115151202068208094200046","retrieved_at":"2015-12-24T03:36:30+00:00"},"registered_address_in_full":"601
+        E. 2100 S.\nSalt Lake City, UT 84106 USA"}},{"company":{"name":"HELSEPORTAL
+        David John Smith","company_number":"981457196","jurisdiction_code":"no","incorporation_date":"2000-01-21","dissolution_date":null,"company_type":"Enkeltmannsforetak","registry_url":"http://w2.brreg.no/enhet/sok/detalj.jsp?orgnr=981457196","branch_status":null,"inactive":null,"current_status":null,"created_at":"2015-07-30T16:10:18+00:00","updated_at":"2016-01-06T11:33:38+00:00","retrieved_at":"2016-01-05T11:42:55+00:00","opencorporates_url":"https://opencorporates.com/companies/no/981457196","previous_names":[],"source":{"publisher":"Br\u00f8nn\u00f8ysundregistrene","terms":"Norwegian
+        Open Data Licence (NDOL)","terms_url":"http://data.norge.no/nlod/no/1.0","url":"http://data.brreg.no/","retrieved_at":"2016-01-05T11:42:55+00:00"},"registered_address_in_full":"Granalleen
+        18, H\u00d8VIK, 1363"}},{"company":{"name":"John Smith B.V.","company_number":"62132490","jurisdiction_code":"nl","incorporation_date":null,"dissolution_date":null,"company_type":"Besloten
+        Vennootschap","registry_url":"https://server.db.kvk.nl/TST-BIN/FU/TSWS001@?BUTT=62132490","branch_status":null,"inactive":null,"current_status":null,"created_at":"2015-05-07T16:17:26+00:00","updated_at":"2015-05-10T16:11:43+00:00","retrieved_at":"2015-05-10T16:11:43+00:00","opencorporates_url":"https://opencorporates.com/companies/nl/62132490","previous_names":[],"source":{"publisher":"OpenKVK.nl","url":"https://openkvk.nl/kvk/62132490","retrieved_at":"2015-05-10T16:11:43+00:00"},"registered_address_in_full":null}},{"company":{"name":"JOHN
+        SMITH CANVASSING LIMITED","company_number":"01938913","jurisdiction_code":"gb","incorporation_date":null,"dissolution_date":null,"company_type":null,"registry_url":"http://data.companieshouse.gov.uk/doc/company/01938913","branch_status":null,"inactive":true,"current_status":"Dissolved","created_at":"2011-04-28T23:12:31+00:00","updated_at":"2015-12-13T22:18:07+00:00","retrieved_at":null,"opencorporates_url":"https://opencorporates.com/companies/gb/01938913","previous_names":[],"source":{"publisher":"UK
+        Companies House","url":"http://xmlgw.companieshouse.gov.uk/","terms":"UK Crown
+        Copyright","retrieved_at":null},"registered_address_in_full":null}},{"company":{"name":"JOHN
+        SMITH (JEWELLERS) LIMITED","company_number":"01625088","jurisdiction_code":"gb","incorporation_date":null,"dissolution_date":null,"company_type":null,"registry_url":"http://data.companieshouse.gov.uk/doc/company/01625088","branch_status":null,"inactive":true,"current_status":"Dissolved","created_at":"2011-04-28T23:12:32+00:00","updated_at":"2013-04-25T15:08:21+00:00","retrieved_at":null,"opencorporates_url":"https://opencorporates.com/companies/gb/01625088","previous_names":[],"source":{"publisher":"UK
+        Companies House","url":"http://xmlgw.companieshouse.gov.uk/","terms":"UK Crown
+        Copyright","retrieved_at":null},"registered_address_in_full":null}}],"page":1,"per_page":30,"total_pages":21,"total_count":621}}'
+    http_version: 
+  recorded_at: Sun, 10 Jan 2016 23:17:04 GMT
+- request:
+    method: get
+    uri: http://www.openduka.org/index.php/api/search?term=John+Smith
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      date:
+      - Sun, 10 Jan 2016 23:17:05 GMT
+      server:
+      - Apache
+      set-cookie:
+      - ci_session=a%3A5%3A%7Bs%3A10%3A%22session_id%22%3Bs%3A32%3A%2201696d1d52cbe483d728b42d090f6b31%22%3Bs%3A10%3A%22ip_address%22%3Bs%3A14%3A%22198.48.204.118%22%3Bs%3A10%3A%22user_agent%22%3Bs%3A14%3A%22Faraday+v0.9.2%22%3Bs%3A13%3A%22last_activity%22%3Bi%3A1452467825%3Bs%3A9%3A%22user_data%22%3Bs%3A0%3A%22%22%3B%7D0afcb334a9ec293aecb605a5d7de673f;
+        expires=Mon, 11-Jan-2016 01:17:05 GMT; Max-Age=7200; path=/
+      vary:
+      - Accept-Encoding
+      content-length:
+      - '62'
+      connection:
+      - close
+      content-type:
+      - text/html
+    body:
+      encoding: ASCII-8BIT
+      string: '{"error":"missing key and or search term"}'
+    http_version: 
+  recorded_at: Sun, 10 Jan 2016 23:17:05 GMT
+- request:
+    method: get
+    uri: http://api.poderopedia.org/visualizacion/search?alias=John+Smith&entity=persona&user_key=dd88190daab4754b60b77c5db71b4e96
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      date:
+      - Sun, 10 Jan 2016 23:17:05 GMT
+      server:
+      - Apache/2.2.15 (CentOS)
+      x-powered-by:
+      - web2py
+      expires:
+      - Sun, 10 Jan 2016 23:17:05 GMT
+      pragma:
+      - no-cache
+      cache-control:
+      - no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+      set-cookie:
+      - session_id_api=198.48.204.118-185c0620-472e-4b39-a5b6-4fc547525ac2; Path=/
+      content-length:
+      - '15'
+      connection:
+      - close
+      content-type:
+      - text/html; charset=utf-8
+    body:
+      encoding: UTF-8
+      string: |
+        {"person": []}
+    http_version: 
+  recorded_at: Sun, 10 Jan 2016 23:17:05 GMT
+recorded_with: VCR 3.0.1
