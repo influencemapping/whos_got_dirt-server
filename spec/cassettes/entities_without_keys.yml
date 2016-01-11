@@ -17,7 +17,7 @@ http_interactions:
       server:
       - nginx/1.8.0
       date:
-      - Mon, 11 Jan 2016 00:56:04 GMT
+      - Mon, 11 Jan 2016 02:08:04 GMT
       content-type:
       - application/json
       content-length:
@@ -31,7 +31,7 @@ http_interactions:
       string: |
         {"meta":{"success":1,"status":200,"status_string":"Success","total_results":"2","results_complete":1,"api_version":"0.04 (2015-12-14)","parameters":{"company_name":"John Smith","limit":100,"index":0,"year":"most_recent"}},"result":{"companies":{"cw_46942":{"cw_id":"cw_46942","cik":"1378379","company_name":"Clark John Smith II","irs_number":null,"sic_code":null,"industry_name":null,"sic_sector":null,"sector_name":null,"source_type":"filers","raw_address":"1114 AVENUE OF THE AMERICAS, 22ND FLOOR, NEW YORK NY 10036","country_code":"US","subdiv_code":"NY","top_parent_id":"cw_46942","num_parents":"0","num_children":"0","max_year":"2015","min_year":"2006"},"cw_491186":{"cw_id":"cw_491186","cik":"0","company_name":"John Smith Landfill Inc","irs_number":null,"sic_code":null,"industry_name":null,"sic_sector":null,"sector_name":null,"source_type":"relationships","raw_address":"California","country_code":"US","subdiv_code":"CA","top_parent_id":"cw_5997","num_parents":"1","num_children":"0","max_year":"2003","min_year":"2003"}}}}
     http_version: 
-  recorded_at: Mon, 11 Jan 2016 00:56:04 GMT
+  recorded_at: Mon, 11 Jan 2016 02:08:04 GMT
 - request:
     method: get
     uri: https://api.opencorporates.com/companies/search?order=score&q=John+Smith
@@ -57,7 +57,7 @@ http_interactions:
       x-content-type-options:
       - nosniff
       date:
-      - Mon, 11 Jan 2016 00:56:05 GMT
+      - Mon, 11 Jan 2016 02:08:05 GMT
       x-powered-by:
       - Phusion Passenger 5.0.20
       server:
@@ -83,69 +83,7 @@ http_interactions:
         individuelle","registry_url":null,"branch_status":null,"inactive":false,"current_status":"Immatricul\u00e9e","created_at":"2012-10-15T12:56:14+00:00","updated_at":"2015-10-25T23:23:48+00:00","retrieved_at":"2015-10-23T04:10:30+00:00","opencorporates_url":"https://opencorporates.com/companies/ca_qc/2263430334","previous_names":[],"source":{"publisher":"Quebec
         Registraire des entreprises","url":"http://www.registreentreprises.gouv.qc.ca","retrieved_at":"2015-10-23T04:10:30+00:00"},"registered_address_in_full":"705,
         24E AVENUE, APP. 6 MONTR\u00c9AL (QU\u00c9BEC) H8S3W4"}},{"company":{"name":"JOHN
-        F. SMITH LTD.","company_number":"340576","jurisdiction_code":"us_ny","incorporation_date":"1974-04-08","dissolution_date":"1985-08-30","company_type":"DOMESTIC
-        BUSINESS CORPORATION","registry_url":"https://appext20.dos.ny.gov/corp_public/CORPSEARCH.ENTITY_INFORMATION?p_nameid=0&p_corpid=340576&p_entity_name=dummy&p_name_type=%25&p_search_type=BEGINS&p_srch_results_page=0","branch_status":null,"inactive":true,"current_status":"Inactive   Dissolution","created_at":"2013-08-31T16:32:46+00:00","updated_at":"2013-08-31T16:32:46+00:00","retrieved_at":null,"opencorporates_url":"https://opencorporates.com/companies/us_ny/340576","previous_names":[],"source":{"publisher":"New
-        York Department of State","url":"https://data.ny.gov/Economic-Development/Active-Corporations-Beginning-1800/n9v6-gdp6","retrieved_at":null},"registered_address_in_full":"JOHN
-        F. SMITH LTD., 29 E. 61ST ST., NEW YORK, NEW YORK, 10021"}},{"company":{"name":"\"JOHN
-        SMITH WORKMANSCHIP SRL\"","company_number":"30776284","jurisdiction_code":"ro","incorporation_date":null,"dissolution_date":null,"company_type":null,"registry_url":null,"branch_status":null,"inactive":null,"current_status":null,"created_at":"2014-03-16T10:42:12+00:00","updated_at":"2014-05-22T03:33:54+00:00","retrieved_at":null,"opencorporates_url":"https://opencorporates.com/companies/ro/30776284","previous_names":[],"source":{"publisher":"Oficiul
-        Na\u021bional al Registrului Comer\u021bului","url":"http://data.gov.ro/","retrieved_at":null,"terms":"Romanian
-        Open Government Licence (OGL-ROU-1.0)","terms_url":"http://data.gov.ro/base/images/logoinst/OGL-ROU-1.0.pdf"},"registered_address_in_full":"\"Bucure\u015fti\",
-        \"Bucure\u015fti Sectorul 2\""}},{"company":{"name":"JOHN M. SMITH, INC.","company_number":"043496634","jurisdiction_code":"us_ma","incorporation_date":"2000-01-04","dissolution_date":"2005-06-17","company_type":"Domestic
-        Profit Corporation","registry_url":"http://corp.sec.state.ma.us/CorpWeb/CorpSearch/CorpSummary.aspx?FEIN=043496634","branch_status":null,"inactive":true,"current_status":null,"created_at":"2012-01-14T12:09:46+00:00","updated_at":"2015-04-27T09:52:44+00:00","retrieved_at":"2015-04-15T15:22:12+00:00","opencorporates_url":"https://opencorporates.com/companies/us_ma/043496634","previous_names":[],"source":{"publisher":"Massachusetts
-        Secretary of the Commonwealth, Corporations Division","url":"http://corp.sec.state.ma.us/CorpWeb/CorpSearch/CorpSummary.aspx?FEIN=043496634","retrieved_at":"2015-04-15T15:22:12+00:00"},"registered_address_in_full":"22
-        SUMMER ST., STOUGHTON,, MA, 02027"}},{"company":{"name":"JOHN GARCIA SMITH","company_number":"2248550255","jurisdiction_code":"ca_qc","incorporation_date":"1999-05-11","dissolution_date":null,"company_type":"Entreprise
-        individuelle","registry_url":null,"branch_status":null,"inactive":true,"current_status":"Radi\u00e9e
-        D''office Suite \u00e0 La Non Production De Deux D\u00e9clarations De Mise
-        \u00e0 Jour Annuelles Cons\u00e9cutives","created_at":"2012-09-30T05:00:14+00:00","updated_at":"2015-06-27T08:24:50+00:00","retrieved_at":"2015-06-25T08:38:01+00:00","opencorporates_url":"https://opencorporates.com/companies/ca_qc/2248550255","previous_names":[],"source":{"publisher":"Quebec
-        Registraire des entreprises","url":"http://www.registreentreprises.gouv.qc.ca","retrieved_at":"2015-06-25T08:38:01+00:00"},"registered_address_in_full":"335
-        rue Tait Montr\u00e9al (Qu\u00e9bec) H4M2K4 Canada"}},{"company":{"name":"JOHN
-        W. SMITH, INC.","company_number":"D02901809","jurisdiction_code":"us_md","incorporation_date":"1989-11-13","dissolution_date":null,"company_type":null,"registry_url":"http://sdatcert3.resiusa.org/UCC-Charter/DisplayEntity_b.aspx?EntityID=D02901809&EntityName=JOHN+W.+SMITH%2c+INC.++++++++++++++++++++++++++++++++++++++++&TabNum=1","branch_status":null,"inactive":true,"current_status":"Forfeited","created_at":"2012-03-04T10:01:23+00:00","updated_at":"2015-08-01T08:39:54+00:00","retrieved_at":"2015-07-08T20:28:20+00:00","opencorporates_url":"https://opencorporates.com/companies/us_md/D02901809","previous_names":[],"source":{"publisher":"Maryland
-        Department of Assessments & Taxation","url":"http://sdatcert3.resiusa.org/UCC-Charter/DisplayEntity_b.aspx?EntityID=D02901809&EntityName=JOHN+W.+SMITH%2c+INC.++++++++++++++++++++++++++++++++++++++++&TabNum=1","retrieved_at":"2015-07-08T20:28:20+00:00"},"registered_address_in_full":"14506
-        BARKWOOD DRIVE\nROCKVILLE, MD 20853"}},{"company":{"name":"JOHN R. SMITH,
-        INC.","company_number":"D00685719","jurisdiction_code":"us_md","incorporation_date":"1980-02-08","dissolution_date":null,"company_type":null,"registry_url":"http://sdatcert3.resiusa.org/UCC-Charter/DisplayEntity_b.aspx?EntityID=D00685719&EntityName=JOHN+R.+SMITH%2c+INC.++++++++++++++++++++++++++++++++++++++++&TabNum=1","branch_status":null,"inactive":true,"current_status":"Forfeited","created_at":"2012-03-04T09:54:56+00:00","updated_at":"2015-08-07T18:37:29+00:00","retrieved_at":"2015-08-07T13:32:17+00:00","opencorporates_url":"https://opencorporates.com/companies/us_md/D00685719","previous_names":[],"source":{"publisher":"Maryland
-        Department of Assessments & Taxation","url":"http://sdatcert3.resiusa.org/UCC-Charter/DisplayEntity_b.aspx?EntityID=D00685719&EntityName=JOHN+R.+SMITH%2c+INC.++++++++++++++++++++++++++++++++++++++++&TabNum=1","retrieved_at":"2015-08-07T13:32:17+00:00"},"registered_address_in_full":"NO
-        ADDRESS FOUND"}},{"company":{"name":"JOHN SMITH REALTY, LLC","company_number":"L07000092158","jurisdiction_code":"us_fl","incorporation_date":"2007-09-07","dissolution_date":null,"company_type":"Florida
-        Limited Liability","registry_url":null,"branch_status":null,"inactive":true,"current_status":"Inactive","created_at":"2012-04-02T13:21:39+00:00","updated_at":"2015-11-28T03:23:13+00:00","retrieved_at":"2015-11-01T00:00:00+00:00","opencorporates_url":"https://opencorporates.com/companies/us_fl/L07000092158","previous_names":[],"source":{"publisher":"Florida
-        Department of State Division of Corporations","url":"http://www.sunbiz.org","retrieved_at":"2015-11-01T00:00:00+00:00"},"registered_address_in_full":null}},{"company":{"name":"JOHN
-        SMITH FLOORING, LLC","company_number":"L03000052501","jurisdiction_code":"us_fl","incorporation_date":"2003-12-12","dissolution_date":null,"company_type":"Florida
-        Limited Liability","registry_url":null,"branch_status":null,"inactive":true,"current_status":"Inactive","created_at":"2012-02-19T09:41:56+00:00","updated_at":"2015-12-04T12:36:04+00:00","retrieved_at":"2015-11-01T00:00:00+00:00","opencorporates_url":"https://opencorporates.com/companies/us_fl/L03000052501","previous_names":[],"source":{"publisher":"Florida
-        Department of State Division of Corporations","url":"http://www.sunbiz.org","retrieved_at":"2015-11-01T00:00:00+00:00"},"registered_address_in_full":null}},{"company":{"name":"JOHN
-        WAYNE SMITH INC.","company_number":"1167585091","jurisdiction_code":"ca_qc","incorporation_date":"2011-08-15","dissolution_date":null,"company_type":"Soci\u00e9t\u00e9
-        par actions ou compagnie","registry_url":null,"branch_status":null,"inactive":false,"current_status":"Immatricul\u00e9e","created_at":"2012-09-28T05:12:11+00:00","updated_at":"2015-10-12T10:06:04+00:00","retrieved_at":"2015-10-11T13:09:05+00:00","opencorporates_url":"https://opencorporates.com/companies/ca_qc/1167585091","previous_names":[],"source":{"publisher":"Quebec
-        Registraire des entreprises","url":"http://www.registreentreprises.gouv.qc.ca","retrieved_at":"2015-10-11T13:09:05+00:00"},"registered_address_in_full":"660
-        ch. Moulton Hill Sherbrooke (Qu\u00e9bec) J1M0A8 Canada"}},{"company":{"name":"JOHN
-        SMITH, LLC","company_number":"5070353","jurisdiction_code":"us_de","incorporation_date":"2011-11-23","dissolution_date":null,"company_type":"Limited
-        Liability Company","registry_url":null,"branch_status":null,"inactive":null,"current_status":null,"created_at":"2015-09-14T01:39:02+00:00","updated_at":"2015-10-16T11:45:00+00:00","retrieved_at":"2015-10-11T02:53:15+00:00","opencorporates_url":"https://opencorporates.com/companies/us_de/5070353","previous_names":[],"source":{"publisher":"Delaware
-        Department of State: Division of Corporations","url":"http://www.corp.delaware.gov/","retrieved_at":"2015-10-11T02:53:15+00:00"},"registered_address_in_full":null}},{"company":{"name":"JOHN
-        SMITH ELECTRIC CO.","company_number":"C0527843","jurisdiction_code":"us_ca","incorporation_date":"1967-06-07","dissolution_date":null,"company_type":"Domestic
-        Stock","registry_url":"https://businessfilings.sos.ca.gov/frmDetail.asp?CorpID=00527843","branch_status":null,"inactive":true,"current_status":"Dissolved","created_at":"2011-09-14T23:09:57+00:00","updated_at":"2015-11-20T13:26:19+00:00","retrieved_at":"2015-10-27T05:47:54+00:00","opencorporates_url":"https://opencorporates.com/companies/us_ca/C0527843","previous_names":[],"source":{"publisher":"California
-        Secretary of State","url":"http://kepler.sos.ca.gov/","retrieved_at":"2015-10-27T05:47:54+00:00"},"registered_address_in_full":"5028
-        MISSION STREET,\nSAN FRANCISCO, CA 94112"}},{"company":{"name":"JOHN G. SMITH,
-        INC.","company_number":"C1901787","jurisdiction_code":"us_ca","incorporation_date":"1996-04-25","dissolution_date":null,"company_type":"Domestic
-        Stock","registry_url":"https://businessfilings.sos.ca.gov/frmDetail.asp?CorpID=01901787","branch_status":null,"inactive":true,"current_status":"Ftb
-        Suspended","created_at":"2011-09-16T16:34:20+00:00","updated_at":"2015-11-20T13:06:00+00:00","retrieved_at":"2015-10-27T05:46:21+00:00","opencorporates_url":"https://opencorporates.com/companies/us_ca/C1901787","previous_names":[],"source":{"publisher":"California
-        Secretary of State","url":"http://kepler.sos.ca.gov/","retrieved_at":"2015-10-27T05:46:21+00:00"},"registered_address_in_full":"972
-        GARNET AVE,\nSAN DIEGO, CA 92109"}},{"company":{"name":"SMITH ST. JOHN, INC.","company_number":"2844455","jurisdiction_code":"us_de","incorporation_date":"1998-01-09","dissolution_date":null,"company_type":"Corporation","registry_url":null,"branch_status":null,"inactive":null,"current_status":null,"created_at":"2015-10-14T15:29:54+00:00","updated_at":"2015-10-21T07:48:45+00:00","retrieved_at":"2015-10-10T14:41:12+00:00","opencorporates_url":"https://opencorporates.com/companies/us_de/2844455","previous_names":[],"source":{"publisher":"Delaware
-        Department of State: Division of Corporations","url":"http://www.corp.delaware.gov/","retrieved_at":"2015-10-10T14:41:12+00:00"},"registered_address_in_full":null}},{"company":{"name":"JOHN
-        WAYNE SMITH, INC.","company_number":"L63323","jurisdiction_code":"us_fl","incorporation_date":"1990-04-02","dissolution_date":null,"company_type":"Domestic
-        for Profit","registry_url":null,"branch_status":null,"inactive":true,"current_status":"Inactive","created_at":"2012-03-01T19:40:38+00:00","updated_at":"2015-12-15T14:47:01+00:00","retrieved_at":"2015-11-01T00:00:00+00:00","opencorporates_url":"https://opencorporates.com/companies/us_fl/L63323","previous_names":[],"source":{"publisher":"Florida
-        Department of State Division of Corporations","url":"http://www.sunbiz.org","retrieved_at":"2015-11-01T00:00:00+00:00"},"registered_address_in_full":null}},{"company":{"name":"JOHN
-        SMITH (BLACKHEATH) LIMITED","company_number":"00869464","jurisdiction_code":"gb","incorporation_date":"1966-01-21","dissolution_date":null,"company_type":"Private
-        Limited Company","registry_url":"http://data.companieshouse.gov.uk/doc/company/00869464","branch_status":null,"inactive":false,"current_status":"Active","created_at":"2010-10-22T13:54:25+00:00","updated_at":"2015-12-22T07:03:46+00:00","retrieved_at":"2015-12-22T07:03:45+00:00","opencorporates_url":"https://opencorporates.com/companies/gb/00869464","previous_names":[],"source":{"publisher":"UK
-        Companies House","url":"http://xmlgw.companieshouse.gov.uk/","terms":"UK Crown
-        Copyright","retrieved_at":"2015-12-22T07:03:45+00:00"},"registered_address_in_full":"404
-        Lodge Road\nHockley, Birmingham, B18 5PW"}},{"company":{"name":"JOHN SAUMAREZ
-        SMITH LIMITED","company_number":"06624380","jurisdiction_code":"gb","incorporation_date":"2008-06-19","dissolution_date":null,"company_type":"Private
-        Limited Company","registry_url":"http://data.companieshouse.gov.uk/doc/company/06624380","branch_status":null,"inactive":false,"current_status":"Active","created_at":"2010-10-22T13:54:07+00:00","updated_at":"2015-12-22T06:54:28+00:00","retrieved_at":"2015-12-22T06:54:24+00:00","opencorporates_url":"https://opencorporates.com/companies/gb/06624380","previous_names":[],"source":{"publisher":"UK
-        Companies House","url":"http://xmlgw.companieshouse.gov.uk/","terms":"UK Crown
-        Copyright","retrieved_at":"2015-12-22T06:54:24+00:00"},"registered_address_in_full":"28
-        Canonbury Place, London, N1 2NY"}},{"company":{"name":"ANDY JOHN SMITH LIMITED","company_number":"03337886","jurisdiction_code":"gb","incorporation_date":"1997-03-21","dissolution_date":null,"company_type":"Private
-        Limited Company","registry_url":"http://data.companieshouse.gov.uk/doc/company/03337886","branch_status":null,"inactive":false,"current_status":"Active","created_at":"2010-10-21T14:22:16+00:00","updated_at":"2015-12-31T05:05:11+00:00","retrieved_at":"2015-12-31T05:05:11+00:00","opencorporates_url":"https://opencorporates.com/companies/gb/03337886","previous_names":[{"company_name":"ALPHA
-        FIRE SYSTEMS LIMITED","start_date":"1997-03-21","end_date":"2015-06-24"}],"source":{"publisher":"UK
-        Companies House","url":"http://xmlgw.companieshouse.gov.uk/","terms":"UK Crown
-        Copyright","retrieved_at":"2015-12-31T05:05:11+00:00"},"registered_address_in_full":"30
-        Star Hill\nRochester, Kent, ME1 1XB"}},{"company":{"name":"JOHN B. SMITH,
-        P.S.C.","company_number":"0225893","jurisdiction_code":"us_ky","incorporation_date":"1987-02-20","dissolution_date":null,"company_type":"Kentucky
+        B. SMITH, P.S.C.","company_number":"0225893","jurisdiction_code":"us_ky","incorporation_date":"1987-02-20","dissolution_date":null,"company_type":"Kentucky
         Professional Services Corp","registry_url":"https://app.sos.ky.gov/ftshow/(S(1mwjwruhcdaiihbdnrvmhmqo))/default.aspx?path=ftsearch&id=0225893&ct=09&cs=99999","branch_status":null,"inactive":true,"current_status":"I   Inactive","created_at":"2015-06-20T01:38:55+00:00","updated_at":"2015-06-20T01:38:55+00:00","retrieved_at":"2015-06-18T16:06:05+00:00","opencorporates_url":"https://opencorporates.com/companies/us_ky/0225893","previous_names":[],"source":{"publisher":"Kentucky
         Secretary Of State","url":"https://app.sos.ky.gov/ftshow/(S(1mwjwruhcdaiihbdnrvmhmqo))/default.aspx?path=ftsearch&id=0225893&ct=09&cs=99999","retrieved_at":"2015-06-18T16:06:05+00:00"},"registered_address_in_full":null}},{"company":{"name":"JOHN
         SMITH FOODS LIMITED","company_number":"692041","jurisdiction_code":"nz","incorporation_date":"1995-08-15","dissolution_date":"2012-04-18","company_type":"NZ
@@ -188,45 +126,70 @@ http_interactions:
         SMITH PTY LIMITED","company_number":"086994167","jurisdiction_code":"au","incorporation_date":"1999-04-06","dissolution_date":null,"company_type":"Australian
         Proprietary Company, Limited by Shares","registry_url":"https://connectonline.asic.gov.au/RegistrySearch/faces/landing/panelSearch.jspx?searchTab=search&searchType=OrgAndBusNm&searchText=086994167&_adf.ctrl-state=13cs8h575n_4","branch_status":null,"inactive":false,"current_status":"Registered","created_at":"2014-10-18T12:50:07+00:00","updated_at":"2015-12-17T11:43:40+00:00","retrieved_at":"2015-12-03T12:26:00+00:00","opencorporates_url":"https://opencorporates.com/companies/au/086994167","previous_names":[],"source":{"publisher":"Australian
         Securities & Investments Commission","url":"https://connectonline.asic.gov.au/RegistrySearch/faces/landing/panelSearch.jspx?searchTab=search&searchType=OrgAndBusNm&searchText=086994167&_adf.ctrl-state=13cs8h575n_4","retrieved_at":"2015-12-03T12:26:00+00:00"},"registered_address_in_full":null}},{"company":{"name":"JOHN
-        SMITH CONSTRUCTION, INC.","company_number":"09005582","jurisdiction_code":"us_ga","incorporation_date":"2009-01-23","dissolution_date":"2011-08-28","company_type":"Domestic
+        H. SMITH, INC.","company_number":"A303112","jurisdiction_code":"us_ga","incorporation_date":"1963-09-11","dissolution_date":null,"company_type":"Domestic
+        Profit Corporation","registry_url":"https://ecorp.sos.ga.gov/BusinessSearch/BusinessInformation?businessId=458411&businessType=","branch_status":null,"inactive":false,"current_status":"Active/Compliance","created_at":"2011-10-01T02:28:58+00:00","updated_at":"2015-12-05T17:05:29+00:00","retrieved_at":"2015-11-16T16:13:29+00:00","opencorporates_url":"https://opencorporates.com/companies/us_ga/A303112","previous_names":[],"source":{"publisher":"Georgia
+        Secretary of State","url":"https://ecorp.sos.ga.gov/BusinessSearch/BusinessInformation?businessId=458411&businessType=","retrieved_at":"2015-11-16T16:13:29+00:00"},"registered_address_in_full":"1215
+        HIGHTOWER TRAIL, #B100, ATLANTA, GA, 30315"}},{"company":{"name":"JOHN E.
+        SMITH, INC.","company_number":"1299165","jurisdiction_code":"us_oh","incorporation_date":"2002-02-15","dissolution_date":null,"company_type":"CORPORATION
+        FOR PROFIT","registry_url":"http://www2.sos.state.oh.us/pls/bsqry/f?p=100:7:281502142893::NO:7:P7_CHARTER_NUM:1299165","branch_status":null,"inactive":true,"current_status":"Cancelled","created_at":"2011-08-24T04:55:26+00:00","updated_at":"2015-12-04T20:14:46+00:00","retrieved_at":"2015-11-22T13:13:14+00:00","opencorporates_url":"https://opencorporates.com/companies/us_oh/1299165","previous_names":[],"source":{"publisher":"Ohio
+        Secretary of State","url":"http://www2.sos.state.oh.us/pls/bsqry/f?p=100:7:281502142893::NO:7:P7_CHARTER_NUM:1299165","retrieved_at":"2015-11-22T13:13:14+00:00"},"registered_address_in_full":"FRANKLIN,
+        PORTAGE"}},{"company":{"name":"JOHN SMITH CONSTRUCTION, INC.","company_number":"09005582","jurisdiction_code":"us_ga","incorporation_date":"2009-01-23","dissolution_date":"2011-08-28","company_type":"Domestic
         Profit Corporation","registry_url":"https://ecorp.sos.ga.gov/BusinessSearch/BusinessInformation?businessId=1417476&businessType=","branch_status":null,"inactive":true,"current_status":"Admin.
         Dissolved","created_at":"2011-10-01T21:01:02+00:00","updated_at":"2015-12-11T18:01:39+00:00","retrieved_at":"2015-11-16T18:54:54+00:00","opencorporates_url":"https://opencorporates.com/companies/us_ga/09005582","previous_names":[],"source":{"publisher":"Georgia
         Secretary of State","url":"https://ecorp.sos.ga.gov/BusinessSearch/BusinessInformation?businessId=1417476&businessType=","retrieved_at":"2015-11-16T18:54:54+00:00"},"registered_address_in_full":"1252
-        Daniel Lane, Lawrenceville, GA, 30045, USA"}}],"page":1,"per_page":30,"total_pages":21,"total_count":621}}'
+        Daniel Lane, Lawrenceville, GA, 30045, USA"}},{"company":{"name":"JOHN SMITH
+        HAULAGE LTD","company_number":"05776011","jurisdiction_code":"gb","incorporation_date":"2006-04-10","dissolution_date":null,"company_type":"Private
+        Limited Company","registry_url":"http://data.companieshouse.gov.uk/doc/company/05776011","branch_status":null,"inactive":false,"current_status":"Active","created_at":"2010-10-22T13:56:09+00:00","updated_at":"2015-12-22T07:59:19+00:00","retrieved_at":"2015-12-22T07:59:15+00:00","opencorporates_url":"https://opencorporates.com/companies/gb/05776011","previous_names":[{"company_name":"JOHN
+        W SMITH LTD","start_date":"2006-04-10","end_date":"2010-11-15"}],"source":{"publisher":"UK
+        Companies House","url":"http://xmlgw.companieshouse.gov.uk/","terms":"UK Crown
+        Copyright","retrieved_at":"2015-12-22T07:59:15+00:00"},"registered_address_in_full":"Heath
+        Road\nWarboys, Cambridgeshire, PE28 2UU"}},{"company":{"name":"TONY JOHN SMITH","company_number":"981756576","jurisdiction_code":"no","incorporation_date":"2000-04-12","dissolution_date":null,"company_type":"Enkeltmannsforetak","registry_url":"http://w2.brreg.no/enhet/sok/detalj.jsp?orgnr=981756576","branch_status":null,"inactive":null,"current_status":null,"created_at":"2015-07-31T12:11:59+00:00","updated_at":"2016-01-06T22:14:02+00:00","retrieved_at":"2016-01-05T15:52:24+00:00","opencorporates_url":"https://opencorporates.com/companies/no/981756576","previous_names":[],"source":{"publisher":"Br\u00f8nn\u00f8ysundregistrene","terms":"Norwegian
+        Open Data Licence (NDOL)","terms_url":"http://data.norge.no/nlod/no/1.0","url":"http://data.brreg.no/","retrieved_at":"2016-01-05T15:52:24+00:00"},"registered_address_in_full":"Klypevegen
+        11, HAUGESUND, 5517"}},{"company":{"name":"JOHN W. SMITH BOOKS","company_number":"115874","jurisdiction_code":"ca_pe","incorporation_date":"1986-08-25","dissolution_date":null,"company_type":null,"registry_url":"http://www.gov.pe.ca/corporations/index.php?txtSearchType=2&txtRegNum=115874&REF=115874&action=Search","branch_status":null,"inactive":null,"current_status":null,"created_at":"2015-06-26T16:47:37+00:00","updated_at":"2016-01-06T03:51:13+00:00","retrieved_at":"2016-01-06T01:17:59+00:00","opencorporates_url":"https://opencorporates.com/companies/ca_pe/115874","previous_names":[],"source":{"publisher":"Prince
+        Edward Island Corporate/Business Names Registry","url":"http://www.gov.pe.ca/corporations/index.php","retrieved_at":"2016-01-06T01:17:59+00:00"},"registered_address_in_full":null}},{"company":{"name":"John
+        Smith B.V.","company_number":"62132490","jurisdiction_code":"nl","incorporation_date":null,"dissolution_date":null,"company_type":"Besloten
+        Vennootschap","registry_url":"https://server.db.kvk.nl/TST-BIN/FU/TSWS001@?BUTT=62132490","branch_status":null,"inactive":null,"current_status":null,"created_at":"2015-05-07T16:17:26+00:00","updated_at":"2015-05-10T16:11:43+00:00","retrieved_at":"2015-05-10T16:11:43+00:00","opencorporates_url":"https://opencorporates.com/companies/nl/62132490","previous_names":[],"source":{"publisher":"OpenKVK.nl","url":"https://openkvk.nl/kvk/62132490","retrieved_at":"2015-05-10T16:11:43+00:00"},"registered_address_in_full":null}},{"company":{"name":"JOHN
+        SMITH CANVASSING LIMITED","company_number":"01938913","jurisdiction_code":"gb","incorporation_date":null,"dissolution_date":null,"company_type":null,"registry_url":"http://data.companieshouse.gov.uk/doc/company/01938913","branch_status":null,"inactive":true,"current_status":"Dissolved","created_at":"2011-04-28T23:12:31+00:00","updated_at":"2015-12-13T22:18:07+00:00","retrieved_at":null,"opencorporates_url":"https://opencorporates.com/companies/gb/01938913","previous_names":[],"source":{"publisher":"UK
+        Companies House","url":"http://xmlgw.companieshouse.gov.uk/","terms":"UK Crown
+        Copyright","retrieved_at":null},"registered_address_in_full":null}},{"company":{"name":"JOHN
+        SMITH (JEWELLERS) LIMITED","company_number":"01625088","jurisdiction_code":"gb","incorporation_date":null,"dissolution_date":null,"company_type":null,"registry_url":"http://data.companieshouse.gov.uk/doc/company/01625088","branch_status":null,"inactive":true,"current_status":"Dissolved","created_at":"2011-04-28T23:12:32+00:00","updated_at":"2013-04-25T15:08:21+00:00","retrieved_at":null,"opencorporates_url":"https://opencorporates.com/companies/gb/01625088","previous_names":[],"source":{"publisher":"UK
+        Companies House","url":"http://xmlgw.companieshouse.gov.uk/","terms":"UK Crown
+        Copyright","retrieved_at":null},"registered_address_in_full":null}},{"company":{"name":"JOHN
+        SMITH DESIGN, INC.","company_number":"00282530","jurisdiction_code":"us_mo","incorporation_date":"1985-11-15","dissolution_date":null,"company_type":"Gen.
+        Business - For Profit","registry_url":"https://bsd.sos.mo.gov/BusinessEntity/BusinessEntityDetail.aspx?page=beSearch&ID=253986","branch_status":null,"inactive":false,"current_status":"Forfeited","created_at":"2011-04-30T13:53:20+00:00","updated_at":"2015-07-23T02:56:09+00:00","retrieved_at":"2015-07-12T22:25:07+00:00","opencorporates_url":"https://opencorporates.com/companies/us_mo/00282530","previous_names":[],"source":{"publisher":"Missouri
+        Secretary of State","url":"https://bsd.sos.mo.gov/BusinessEntity/BusinessEntityDetail.aspx?page=beSearch&ID=253986","retrieved_at":"2015-07-12T22:25:07+00:00"},"registered_address_in_full":"22
+        NORTH HILLVIEW\nST. PETERS, MO 63376"}},{"company":{"name":"JOHN SMITH REALTY,
+        INC.","company_number":"D04278537","jurisdiction_code":"us_md","incorporation_date":"1995-12-04","dissolution_date":null,"company_type":null,"registry_url":"http://sdatcert3.resiusa.org/UCC-Charter/DisplayEntity_b.aspx?EntityID=D04278537&EntityName=JOHN+SMITH+REALTY%2c+INC.++++++++++++++++++++++++++++++++++++&TabNum=1","branch_status":null,"inactive":true,"current_status":"Dissolved","created_at":"2012-03-04T09:56:05+00:00","updated_at":"2015-08-07T21:01:06+00:00","retrieved_at":"2015-08-07T14:11:53+00:00","opencorporates_url":"https://opencorporates.com/companies/us_md/D04278537","previous_names":[],"source":{"publisher":"Maryland
+        Department of Assessments & Taxation","url":"http://sdatcert3.resiusa.org/UCC-Charter/DisplayEntity_b.aspx?EntityID=D04278537&EntityName=JOHN+SMITH+REALTY%2c+INC.++++++++++++++++++++++++++++++++++++&TabNum=1","retrieved_at":"2015-08-07T14:11:53+00:00"},"registered_address_in_full":"1630CASTLETON
+        ROAD\nDARLINGTON, MD 21034"}},{"company":{"name":"JOHN SMITH CORPORATION","company_number":"C2104438","jurisdiction_code":"us_ca","incorporation_date":"1998-04-02","dissolution_date":null,"company_type":"Domestic
+        Stock","registry_url":"https://businessfilings.sos.ca.gov/frmDetail.asp?CorpID=02104438","branch_status":null,"inactive":true,"current_status":"Merged
+        Out","created_at":"2011-09-20T18:05:51+00:00","updated_at":"2015-11-20T23:09:30+00:00","retrieved_at":"2015-10-27T06:10:34+00:00","opencorporates_url":"https://opencorporates.com/companies/us_ca/C2104438","previous_names":[],"source":{"publisher":"California
+        Secretary of State","url":"http://kepler.sos.ca.gov/","retrieved_at":"2015-10-27T06:10:34+00:00"},"registered_address_in_full":"2049
+        CENTURY PARK EAST STE 2800,\nLOS ANGELES, CA 90065"}},{"company":{"name":"SMITH
+        ST. JOHN, INC.","company_number":"2577583","jurisdiction_code":"us_ks","incorporation_date":"1998-02-13","dissolution_date":null,"company_type":"FOREIGN
+        FOR PROFIT","registry_url":null,"branch_status":"branch of an out-of-jurisdiction
+        company","inactive":true,"current_status":"Withdrawn","created_at":"2014-06-19T13:32:16+00:00","updated_at":"2015-11-30T06:43:00+00:00","retrieved_at":"2015-11-30T04:49:21+00:00","opencorporates_url":"https://opencorporates.com/companies/us_ks/2577583","previous_names":[{"company_name":"SSJ
+        ACQUISITION, INC."}],"source":{"publisher":"Kansas Business Center","url":"http://www.kansas.gov/businesscenter/","retrieved_at":"2015-11-30T04:49:21+00:00"},"registered_address_in_full":"DIR/CORP.
+        TAX DEPT - - 1222 OZARK, NORTH KANSAS CITY, MO 64116"}},{"company":{"name":"JOHN
+        DAVID SMITH","company_number":"2240717183","jurisdiction_code":"ca_qc","incorporation_date":"1994-07-05","dissolution_date":null,"company_type":"Entreprise
+        individuelle","registry_url":null,"branch_status":null,"inactive":false,"current_status":"Immatricul\u00e9e","created_at":"2012-09-28T11:52:33+00:00","updated_at":"2015-10-12T13:54:11+00:00","retrieved_at":"2015-10-10T17:51:16+00:00","opencorporates_url":"https://opencorporates.com/companies/ca_qc/2240717183","previous_names":[],"source":{"publisher":"Quebec
+        Registraire des entreprises","url":"http://www.registreentreprises.gouv.qc.ca","retrieved_at":"2015-10-10T17:51:16+00:00"},"registered_address_in_full":"176
+        rue Dupont E Ch\u00e2teauguay (Qu\u00e9bec) J6J1H1 Canada"}},{"company":{"name":"JOHN
+        SMITH LIMITED","company_number":"101714","jurisdiction_code":"nz","incorporation_date":"1977-09-29","dissolution_date":"1977-09-29","company_type":"NZ
+        Limited Company","registry_url":"http://www.business.govt.nz/companies/app/ui/pages/companies/101714/detail","branch_status":null,"inactive":true,"current_status":"Struck
+        Off","created_at":"2011-06-16T00:43:10+00:00","updated_at":"2015-11-07T22:41:58+00:00","retrieved_at":"2015-11-07T22:41:53+00:00","opencorporates_url":"https://opencorporates.com/companies/nz/101714","previous_names":[],"source":{"publisher":"New
+        Zealand Companies Office","url":"http://www.business.govt.nz/companies/app/ui/pages/companies/101714/detail","retrieved_at":"2015-11-07T22:41:53+00:00"},"registered_address_in_full":"27
+        Taylors Road, Morningside, Auckland"}},{"company":{"name":"JOHN P SMITH INC","company_number":"333069","jurisdiction_code":"us_pa","incorporation_date":"1921-01-01","dissolution_date":null,"company_type":"Business
+        Corporation - Domestic","registry_url":"https://www.corporations.state.pa.us/corp/soskb/corp.asp?315945","branch_status":null,"inactive":false,"current_status":"Active","created_at":"2011-11-04T16:59:02+00:00","updated_at":"2016-01-01T18:20:24+00:00","retrieved_at":"2015-12-02T10:17:11+00:00","opencorporates_url":"https://opencorporates.com/companies/us_pa/333069","previous_names":[],"source":{"publisher":"Pennsylvania
+        Department of State","url":"https://www.corporations.state.pa.us/corp/soskb/corp.asp?315945","retrieved_at":"2015-12-02T10:17:11+00:00"},"registered_address_in_full":"PA\n0
+        -0"}},{"company":{"name":"JOHN SMITH SECURITY LTD","company_number":"09162896","jurisdiction_code":"gb","incorporation_date":"2014-08-05","dissolution_date":null,"company_type":"Private
+        Limited Company","registry_url":"http://data.companieshouse.gov.uk/doc/company/09162896","branch_status":null,"inactive":false,"current_status":"Active","created_at":"2014-08-05T13:57:39+00:00","updated_at":"2016-01-09T20:44:21+00:00","retrieved_at":"2016-01-09T20:16:23+00:00","opencorporates_url":"https://opencorporates.com/companies/gb/09162896","previous_names":[],"source":{"publisher":"UK
+        Companies House","url":"http://xmlgw.companieshouse.gov.uk/","terms":"UK Crown
+        Copyright","retrieved_at":"2016-01-09T20:16:23+00:00"},"registered_address_in_full":"243a
+        London, Croydon, England, CR0 2RL"}},{"company":{"name":"JOHN F. SMITH LTD.","company_number":"340576","jurisdiction_code":"us_ny","incorporation_date":"1974-04-08","dissolution_date":"1985-08-30","company_type":"DOMESTIC
+        BUSINESS CORPORATION","registry_url":"https://appext20.dos.ny.gov/corp_public/CORPSEARCH.ENTITY_INFORMATION?p_nameid=0&p_corpid=340576&p_entity_name=dummy&p_name_type=%25&p_search_type=BEGINS&p_srch_results_page=0","branch_status":null,"inactive":true,"current_status":"Inactive   Dissolution","created_at":"2013-08-31T16:32:46+00:00","updated_at":"2013-08-31T16:32:46+00:00","retrieved_at":null,"opencorporates_url":"https://opencorporates.com/companies/us_ny/340576","previous_names":[],"source":{"publisher":"New
+        York Department of State","url":"https://data.ny.gov/Economic-Development/Active-Corporations-Beginning-1800/n9v6-gdp6","retrieved_at":null},"registered_address_in_full":"JOHN
+        F. SMITH LTD., 29 E. 61ST ST., NEW YORK, NEW YORK, 10021"}}],"page":1,"per_page":30,"total_pages":21,"total_count":621}}'
     http_version: 
-  recorded_at: Mon, 11 Jan 2016 00:56:05 GMT
-- request:
-    method: get
-    uri: http://www.openduka.org/index.php/api/search?term=John+Smith
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Faraday v0.9.2
-  response:
-    status:
-      code: 200
-      message: 
-    headers:
-      date:
-      - Mon, 11 Jan 2016 00:56:05 GMT
-      server:
-      - Apache
-      set-cookie:
-      - ci_session=a%3A5%3A%7Bs%3A10%3A%22session_id%22%3Bs%3A32%3A%22af56949c1070393fc93c7bee3aafc6ed%22%3Bs%3A10%3A%22ip_address%22%3Bs%3A14%3A%22198.48.204.118%22%3Bs%3A10%3A%22user_agent%22%3Bs%3A14%3A%22Faraday+v0.9.2%22%3Bs%3A13%3A%22last_activity%22%3Bi%3A1452473765%3Bs%3A9%3A%22user_data%22%3Bs%3A0%3A%22%22%3B%7D4682e2a325b7129377dc52a57538fc29;
-        expires=Mon, 11-Jan-2016 02:56:05 GMT; Max-Age=7200; path=/
-      vary:
-      - Accept-Encoding
-      content-length:
-      - '62'
-      connection:
-      - close
-      content-type:
-      - text/html
-    body:
-      encoding: ASCII-8BIT
-      string: '{"error":"missing key and or search term"}'
-    http_version: 
-  recorded_at: Mon, 11 Jan 2016 00:56:05 GMT
+  recorded_at: Mon, 11 Jan 2016 02:08:05 GMT
 recorded_with: VCR 3.0.1

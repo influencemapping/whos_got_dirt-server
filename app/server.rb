@@ -86,6 +86,21 @@ module WhosGotDirt
     end
 
     route :get, :post, '/entities' do
+      handle_with(:Entity)
+    end
+
+    route :get, :post, '/relations' do
+      handle_with(:Relation)
+    end
+
+    route :get, :post, '/lists' do
+      handle_with(:List)
+    end
+
+    def handle_with(mod)
+      request_module = WhosGotDirt::Requests.const_get(mod)
+      response_module = WhosGotDirt::Responses.const_get(mod)
+
       if !params.key?('queries')
         return error(422, "parameter 'queries' must be provided")
       end
@@ -122,18 +137,18 @@ module WhosGotDirt
                 endpoints = []
                 parameters['endpoints'].each do |constant|
                   # Raises "NameError: wrong constant name" if `constant` isn't capitalized.
-                  if (WhosGotDirt::Requests::Entity.const_defined?(constant) rescue false)
+                  if (request_module.const_defined?(constant) rescue false)
                     endpoints << constant
                   else
                     queries[query_id][:messages] << {message: "endpoint '#{constant}' is not recognized"}
                   end
                 end
               else
-                endpoints = WhosGotDirt::Requests::Entity.constants
+                endpoints = request_module.constants
               end
 
               endpoints.each do |api|
-                url = WhosGotDirt::Requests::Entity.const_get(api).new(query).to_s
+                url = request_module.const_get(api).new(query).to_s
                 responses << [query_id, api, Faraday.get(url)]
               end
             end
@@ -144,17 +159,17 @@ module WhosGotDirt
       end
 
       responses.each do |query_id,api,response|
-        if response.success?
-          result = WhosGotDirt::Responses::Entity.const_get(api).new(response)
+        result = response_module.const_get(api).new(response)
+
+        if result.success?
           queries[query_id][:count] += result.count
           queries[query_id][:result] += result.to_a
         else
-          result = WhosGotDirt::Responses::Entity.const_get(api).new(response)
           queries[query_id][:messages] << {
             info: {
-              url: response.env.url,
+              url: result.env.url,
             },
-            status: status_message(response.status),
+            status: status_message(result.status),
             message: result.error_message,
           }
         end
