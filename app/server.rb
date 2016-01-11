@@ -117,14 +117,22 @@ module WhosGotDirt
               queries[query_id] = {count: 0, result: [], messages: []}
 
               query = parameters.fetch('query')
-              # @todo queue requests https://github.com/influencemapping/whos_got_dirt-server/issues/4
-              # @todo limit endpoints https://github.com/influencemapping/whos_got_dirt-server/issues/3
-              # endpoints = parameters.fetch('endpoints')
-              # TODO `endpoints` is hash where key must match a constant, and the
-              # value is a hash where the only supported key is "key", which gets
-              # prefixed with the underscored constant + "_api_" and merged into
-              # the query. If the key is not a constant, add a message.
-              WhosGotDirt::Requests::Entity.constants.each do |api|
+
+              if parameters.key?('endpoints')
+                endpoints = []
+                parameters['endpoints'].each do |constant|
+                  # Raises "NameError: wrong constant name" if `constant` isn't capitalized.
+                  if (WhosGotDirt::Requests::Entity.const_defined?(constant) rescue false)
+                    endpoints << constant
+                  else
+                    queries[query_id][:messages] << {message: "endpoint '#{constant}' is not recognized"}
+                  end
+                end
+              else
+                endpoints = WhosGotDirt::Requests::Entity.constants
+              end
+
+              endpoints.each do |api|
                 url = WhosGotDirt::Requests::Entity.const_get(api).new(query).to_s
                 responses << [query_id, api, Faraday.get(url)]
               end
@@ -142,7 +150,13 @@ module WhosGotDirt
           queries[query_id][:result] += result.to_a
         else
           result = WhosGotDirt::Responses::Entity.const_get(api).new(response)
-          queries[query_id][:messages] << {info: {url: response.env.url}, status: status_message(response.status), message: result.error_message}
+          queries[query_id][:messages] << {
+            info: {
+              url: response.env.url,
+            },
+            status: status_message(response.status),
+            message: result.error_message,
+          }
         end
       end
 

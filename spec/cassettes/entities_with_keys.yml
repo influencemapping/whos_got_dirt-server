@@ -17,7 +17,7 @@ http_interactions:
       server:
       - nginx/1.8.0
       date:
-      - Sun, 10 Jan 2016 23:17:03 GMT
+      - Mon, 11 Jan 2016 00:56:02 GMT
       content-type:
       - application/json
       content-length:
@@ -31,7 +31,7 @@ http_interactions:
       string: |
         {"meta":{"success":1,"status":200,"status_string":"Success","total_results":"2","results_complete":1,"api_version":"0.04 (2015-12-14)","parameters":{"company_name":"John Smith","limit":100,"index":0,"year":"most_recent"}},"result":{"companies":{"cw_46942":{"cw_id":"cw_46942","cik":"1378379","company_name":"Clark John Smith II","irs_number":null,"sic_code":null,"industry_name":null,"sic_sector":null,"sector_name":null,"source_type":"filers","raw_address":"1114 AVENUE OF THE AMERICAS, 22ND FLOOR, NEW YORK NY 10036","country_code":"US","subdiv_code":"NY","top_parent_id":"cw_46942","num_parents":"0","num_children":"0","max_year":"2015","min_year":"2006"},"cw_491186":{"cw_id":"cw_491186","cik":"0","company_name":"John Smith Landfill Inc","irs_number":null,"sic_code":null,"industry_name":null,"sic_sector":null,"sector_name":null,"source_type":"relationships","raw_address":"California","country_code":"US","subdiv_code":"CA","top_parent_id":"cw_5997","num_parents":"1","num_children":"0","max_year":"2003","min_year":"2003"}}}}
     http_version: 
-  recorded_at: Sun, 10 Jan 2016 23:17:03 GMT
+  recorded_at: Mon, 11 Jan 2016 00:56:02 GMT
 - request:
     method: get
     uri: https://api.littlesis.org/entities.xml?_key=bf2ddbf0538a577c3e50ca2e42e6a07384017718&q=John+Smith
@@ -49,7 +49,7 @@ http_interactions:
       server:
       - cloudflare-nginx
       date:
-      - Sun, 10 Jan 2016 23:17:03 GMT
+      - Mon, 11 Jan 2016 00:56:02 GMT
       content-type:
       - application/xml; charset=utf-8
       transfer-encoding:
@@ -57,8 +57,8 @@ http_interactions:
       connection:
       - close
       set-cookie:
-      - __cfduid=d84a0704fcb784d687d3a03954d86ca471452467823; expires=Mon, 09-Jan-17
-        23:17:03 GMT; path=/; domain=.littlesis.org; HttpOnly, symfony=2enuaa4o618tscsoe07ll80994;
+      - __cfduid=d4c6dff89803ab17f45dab35ad08867ad1452473762; expires=Tue, 10-Jan-17
+        00:56:02 GMT; path=/; domain=.littlesis.org; HttpOnly, symfony=v1pb6ap2bssq1ockm5gokq7ht1;
         path=/
       x-powered-by:
       - PHP/5.5.9-1ubuntu4.6
@@ -69,7 +69,7 @@ http_interactions:
       pragma:
       - no-cache
       ls-execution-time:
-      - '1452468061.258'
+      - '1452474000.2434'
       etag:
       - '"b85dbe88f94514504d82eb29c52cfae2"'
       vary:
@@ -77,7 +77,7 @@ http_interactions:
       access-control-allow-origin:
       - "*"
       cf-ray:
-      - 262c17d9a39f3fad-YUL
+      - 262ca8d756eb3f83-YUL
     body:
       encoding: ASCII-8BIT
       string: "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Response>\n  <Meta>\n
@@ -436,7 +436,7 @@ http_interactions:
         13:26:30</updated_at><uri>http://littlesis.org/person/17991/John_D_Raffaelli</uri><api_uri>http://api.littlesis.org/entity/17991.xml</api_uri></Entity></Entities>\n\n
         \ </Data>\n</Response>"
     http_version: 
-  recorded_at: Sun, 10 Jan 2016 23:17:03 GMT
+  recorded_at: Mon, 11 Jan 2016 00:56:02 GMT
 - request:
     method: get
     uri: https://api.opencorporates.com/companies/search?order=score&q=John+Smith
@@ -462,7 +462,7 @@ http_interactions:
       x-content-type-options:
       - nosniff
       date:
-      - Sun, 10 Jan 2016 23:17:04 GMT
+      - Mon, 11 Jan 2016 00:56:03 GMT
       x-powered-by:
       - Phusion Passenger 5.0.20
       server:
@@ -531,18 +531,18 @@ http_interactions:
         SMITH PTY LIMITED","company_number":"086994167","jurisdiction_code":"au","incorporation_date":"1999-04-06","dissolution_date":null,"company_type":"Australian
         Proprietary Company, Limited by Shares","registry_url":"https://connectonline.asic.gov.au/RegistrySearch/faces/landing/panelSearch.jspx?searchTab=search&searchType=OrgAndBusNm&searchText=086994167&_adf.ctrl-state=13cs8h575n_4","branch_status":null,"inactive":false,"current_status":"Registered","created_at":"2014-10-18T12:50:07+00:00","updated_at":"2015-12-17T11:43:40+00:00","retrieved_at":"2015-12-03T12:26:00+00:00","opencorporates_url":"https://opencorporates.com/companies/au/086994167","previous_names":[],"source":{"publisher":"Australian
         Securities & Investments Commission","url":"https://connectonline.asic.gov.au/RegistrySearch/faces/landing/panelSearch.jspx?searchTab=search&searchType=OrgAndBusNm&searchText=086994167&_adf.ctrl-state=13cs8h575n_4","retrieved_at":"2015-12-03T12:26:00+00:00"},"registered_address_in_full":null}},{"company":{"name":"JOHN
-        SMITH CONSTRUCTION, INC.","company_number":"09005582","jurisdiction_code":"us_ga","incorporation_date":"2009-01-23","dissolution_date":"2011-08-28","company_type":"Domestic
-        Profit Corporation","registry_url":"https://ecorp.sos.ga.gov/BusinessSearch/BusinessInformation?businessId=1417476&businessType=","branch_status":null,"inactive":true,"current_status":"Admin.
-        Dissolved","created_at":"2011-10-01T21:01:02+00:00","updated_at":"2015-12-11T18:01:39+00:00","retrieved_at":"2015-11-16T18:54:54+00:00","opencorporates_url":"https://opencorporates.com/companies/us_ga/09005582","previous_names":[],"source":{"publisher":"Georgia
-        Secretary of State","url":"https://ecorp.sos.ga.gov/BusinessSearch/BusinessInformation?businessId=1417476&businessType=","retrieved_at":"2015-11-16T18:54:54+00:00"},"registered_address_in_full":"1252
-        Daniel Lane, Lawrenceville, GA, 30045, USA"}},{"company":{"name":"JOHN E.
+        H. SMITH, INC.","company_number":"A303112","jurisdiction_code":"us_ga","incorporation_date":"1963-09-11","dissolution_date":null,"company_type":"Domestic
+        Profit Corporation","registry_url":"https://ecorp.sos.ga.gov/BusinessSearch/BusinessInformation?businessId=458411&businessType=","branch_status":null,"inactive":false,"current_status":"Active/Compliance","created_at":"2011-10-01T02:28:58+00:00","updated_at":"2015-12-05T17:05:29+00:00","retrieved_at":"2015-11-16T16:13:29+00:00","opencorporates_url":"https://opencorporates.com/companies/us_ga/A303112","previous_names":[],"source":{"publisher":"Georgia
+        Secretary of State","url":"https://ecorp.sos.ga.gov/BusinessSearch/BusinessInformation?businessId=458411&businessType=","retrieved_at":"2015-11-16T16:13:29+00:00"},"registered_address_in_full":"1215
+        HIGHTOWER TRAIL, #B100, ATLANTA, GA, 30315"}},{"company":{"name":"JOHN E.
         SMITH, INC.","company_number":"1299165","jurisdiction_code":"us_oh","incorporation_date":"2002-02-15","dissolution_date":null,"company_type":"CORPORATION
         FOR PROFIT","registry_url":"http://www2.sos.state.oh.us/pls/bsqry/f?p=100:7:281502142893::NO:7:P7_CHARTER_NUM:1299165","branch_status":null,"inactive":true,"current_status":"Cancelled","created_at":"2011-08-24T04:55:26+00:00","updated_at":"2015-12-04T20:14:46+00:00","retrieved_at":"2015-11-22T13:13:14+00:00","opencorporates_url":"https://opencorporates.com/companies/us_oh/1299165","previous_names":[],"source":{"publisher":"Ohio
         Secretary of State","url":"http://www2.sos.state.oh.us/pls/bsqry/f?p=100:7:281502142893::NO:7:P7_CHARTER_NUM:1299165","retrieved_at":"2015-11-22T13:13:14+00:00"},"registered_address_in_full":"FRANKLIN,
-        PORTAGE"}},{"company":{"name":"JOHN H. SMITH, INC.","company_number":"A303112","jurisdiction_code":"us_ga","incorporation_date":"1963-09-11","dissolution_date":null,"company_type":"Domestic
-        Profit Corporation","registry_url":"https://ecorp.sos.ga.gov/BusinessSearch/BusinessInformation?businessId=458411&businessType=","branch_status":null,"inactive":false,"current_status":"Active/Compliance","created_at":"2011-10-01T02:28:58+00:00","updated_at":"2015-12-05T17:05:29+00:00","retrieved_at":"2015-11-16T16:13:29+00:00","opencorporates_url":"https://opencorporates.com/companies/us_ga/A303112","previous_names":[],"source":{"publisher":"Georgia
-        Secretary of State","url":"https://ecorp.sos.ga.gov/BusinessSearch/BusinessInformation?businessId=458411&businessType=","retrieved_at":"2015-11-16T16:13:29+00:00"},"registered_address_in_full":"1215
-        HIGHTOWER TRAIL, #B100, ATLANTA, GA, 30315"}},{"company":{"name":"JOHN SMITH
+        PORTAGE"}},{"company":{"name":"JOHN SMITH CONSTRUCTION, INC.","company_number":"09005582","jurisdiction_code":"us_ga","incorporation_date":"2009-01-23","dissolution_date":"2011-08-28","company_type":"Domestic
+        Profit Corporation","registry_url":"https://ecorp.sos.ga.gov/BusinessSearch/BusinessInformation?businessId=1417476&businessType=","branch_status":null,"inactive":true,"current_status":"Admin.
+        Dissolved","created_at":"2011-10-01T21:01:02+00:00","updated_at":"2015-12-11T18:01:39+00:00","retrieved_at":"2015-11-16T18:54:54+00:00","opencorporates_url":"https://opencorporates.com/companies/us_ga/09005582","previous_names":[],"source":{"publisher":"Georgia
+        Secretary of State","url":"https://ecorp.sos.ga.gov/BusinessSearch/BusinessInformation?businessId=1417476&businessType=","retrieved_at":"2015-11-16T18:54:54+00:00"},"registered_address_in_full":"1252
+        Daniel Lane, Lawrenceville, GA, 30045, USA"}},{"company":{"name":"JOHN SMITH
         HAULAGE LTD","company_number":"05776011","jurisdiction_code":"gb","incorporation_date":"2006-04-10","dissolution_date":null,"company_type":"Private
         Limited Company","registry_url":"http://data.companieshouse.gov.uk/doc/company/05776011","branch_status":null,"inactive":false,"current_status":"Active","created_at":"2010-10-22T13:56:09+00:00","updated_at":"2015-12-22T07:59:19+00:00","retrieved_at":"2015-12-22T07:59:15+00:00","opencorporates_url":"https://opencorporates.com/companies/gb/05776011","previous_names":[{"company_name":"JOHN
         W SMITH LTD","start_date":"2006-04-10","end_date":"2010-11-15"}],"source":{"publisher":"UK
@@ -595,7 +595,7 @@ http_interactions:
         Companies House","url":"http://xmlgw.companieshouse.gov.uk/","terms":"UK Crown
         Copyright","retrieved_at":null},"registered_address_in_full":null}}],"page":1,"per_page":30,"total_pages":21,"total_count":621}}'
     http_version: 
-  recorded_at: Sun, 10 Jan 2016 23:17:04 GMT
+  recorded_at: Mon, 11 Jan 2016 00:56:03 GMT
 - request:
     method: get
     uri: http://www.openduka.org/index.php/api/search?term=John+Smith
@@ -611,12 +611,12 @@ http_interactions:
       message: 
     headers:
       date:
-      - Sun, 10 Jan 2016 23:17:05 GMT
+      - Mon, 11 Jan 2016 00:56:03 GMT
       server:
       - Apache
       set-cookie:
-      - ci_session=a%3A5%3A%7Bs%3A10%3A%22session_id%22%3Bs%3A32%3A%2201696d1d52cbe483d728b42d090f6b31%22%3Bs%3A10%3A%22ip_address%22%3Bs%3A14%3A%22198.48.204.118%22%3Bs%3A10%3A%22user_agent%22%3Bs%3A14%3A%22Faraday+v0.9.2%22%3Bs%3A13%3A%22last_activity%22%3Bi%3A1452467825%3Bs%3A9%3A%22user_data%22%3Bs%3A0%3A%22%22%3B%7D0afcb334a9ec293aecb605a5d7de673f;
-        expires=Mon, 11-Jan-2016 01:17:05 GMT; Max-Age=7200; path=/
+      - ci_session=a%3A5%3A%7Bs%3A10%3A%22session_id%22%3Bs%3A32%3A%22dbe7df06256becb888c7b865db36c313%22%3Bs%3A10%3A%22ip_address%22%3Bs%3A14%3A%22198.48.204.118%22%3Bs%3A10%3A%22user_agent%22%3Bs%3A14%3A%22Faraday+v0.9.2%22%3Bs%3A13%3A%22last_activity%22%3Bi%3A1452473763%3Bs%3A9%3A%22user_data%22%3Bs%3A0%3A%22%22%3B%7D378ee7fa990d734fad50c780530e1a84;
+        expires=Mon, 11-Jan-2016 02:56:03 GMT; Max-Age=7200; path=/
       vary:
       - Accept-Encoding
       content-length:
@@ -629,7 +629,7 @@ http_interactions:
       encoding: ASCII-8BIT
       string: '{"error":"missing key and or search term"}'
     http_version: 
-  recorded_at: Sun, 10 Jan 2016 23:17:05 GMT
+  recorded_at: Mon, 11 Jan 2016 00:56:03 GMT
 - request:
     method: get
     uri: http://api.poderopedia.org/visualizacion/search?alias=John+Smith&entity=persona&user_key=dd88190daab4754b60b77c5db71b4e96
@@ -645,19 +645,19 @@ http_interactions:
       message: 
     headers:
       date:
-      - Sun, 10 Jan 2016 23:17:05 GMT
+      - Mon, 11 Jan 2016 00:56:03 GMT
       server:
       - Apache/2.2.15 (CentOS)
       x-powered-by:
       - web2py
       expires:
-      - Sun, 10 Jan 2016 23:17:05 GMT
+      - Mon, 11 Jan 2016 00:56:04 GMT
       pragma:
       - no-cache
       cache-control:
       - no-store, no-cache, must-revalidate, post-check=0, pre-check=0
       set-cookie:
-      - session_id_api=198.48.204.118-185c0620-472e-4b39-a5b6-4fc547525ac2; Path=/
+      - session_id_api=198.48.204.118-f0285dd1-48b7-4f6a-976c-a6aa6e39cd3d; Path=/
       content-length:
       - '15'
       connection:
@@ -669,5 +669,5 @@ http_interactions:
       string: |
         {"person": []}
     http_version: 
-  recorded_at: Sun, 10 Jan 2016 23:17:05 GMT
+  recorded_at: Mon, 11 Jan 2016 00:56:04 GMT
 recorded_with: VCR 3.0.1

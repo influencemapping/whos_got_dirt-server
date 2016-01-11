@@ -39,24 +39,65 @@ RSpec.describe do
       context 'when successful' do
         it 'should return results' do
           VCR.use_cassette('entities_with_keys') do
-            send(method, '/entities', queries: JSON.dump(q0: {query: query_with_keys}))
+            send(method, '/entities', queries: JSON.dump(q0: {
+              query: query_with_keys,
+            }))
+
+            # Status and headers
+            expect(last_response.status).to eq(200)
+            expect(last_response.content_type).to eq('application/json')
+
+            # Structure
             expect(data.keys).to eq(['status', 'q0'])
-            expect(data['status']).to eq('200 OK')
             expect(data['q0'].keys).to eq(['count', 'result', 'messages'])
+
+            # Values
+            expect(data['status']).to eq('200 OK')
             expect(data['q0']['count']).to be > 100
             expect(data['q0']['result'].all?{|result| result['@type'] == 'Entity'}).to eq(true)
             expect(data['q0']['messages']).to eq([])
-            expect(last_response.status).to eq(200)
-            expect(last_response.content_type).to eq('application/json')
           end
         end
 
-        it 'should return results and errors' do
+        it 'should return results for given endpoints' do
           VCR.use_cassette('entities_without_keys') do
-            send(method, '/entities', queries: JSON.dump(q0: {query: query_without_keys}))
+            send(method, '/entities', queries: JSON.dump(q0: {
+              query: query_without_keys,
+              endpoints: %w(CorpWatch OpenCorporates OpenDuka),
+            }))
+
+            # Status and headers
+            expect(last_response.status).to eq(200)
+            expect(last_response.content_type).to eq('application/json')
+
+            # Structure
             expect(data.keys).to eq(['status', 'q0'])
-            expect(data['status']).to eq('200 OK')
             expect(data['q0'].keys).to eq(['count', 'result', 'messages'])
+
+            # Values
+            expect(data['status']).to eq('200 OK')
+            expect(data['q0']['count']).to be > 100
+            expect(data['q0']['result'].all?{|result| result['@type'] == 'Entity'}).to eq(true)
+            expect(data['q0']['messages']).to eq([])
+          end
+        end
+
+        it 'should return results and errors if keys are missing' do
+          VCR.use_cassette('entities_without_keys_error') do
+            send(method, '/entities', queries: JSON.dump(q0: {
+              query: query_without_keys,
+            }))
+
+            # Status and headers
+            expect(last_response.status).to eq(200)
+            expect(last_response.content_type).to eq('application/json')
+
+            # Structure
+            expect(data.keys).to eq(['status', 'q0'])
+            expect(data['q0'].keys).to eq(['count', 'result', 'messages'])
+
+            # Values
+            expect(data['status']).to eq('200 OK')
             expect(data['q0']['count']).to be > 100
             expect(data['q0']['result'].all?{|result| result['@type'] == 'Entity'}).to eq(true)
             expect(data['q0']['messages']).to eq([{
@@ -72,8 +113,6 @@ RSpec.describe do
               'status' => '400 Bad Request',
               'message' => '400 BAD REQUEST',
             }])
-            expect(last_response.status).to eq(200)
-            expect(last_response.content_type).to eq('application/json')
           end
         end
       end
