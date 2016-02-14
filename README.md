@@ -22,6 +22,8 @@ See the [Ruby gem](https://github.com/influencemapping/whos_got_dirt-gem) for te
 
 The API is a simple Ruby Sinatra app. You may deploy on Heroku (below) or your own infrastructure.
 
+This API performs no access control. If you would like to add access control to your deployment, please use an `api_key` parameter to control access.
+
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
 
 ```
