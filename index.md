@@ -294,6 +294,8 @@ The [Relation schema](https://github.com/influencemapping/whos_got_dirt-gem/blob
 
 The [List schema](https://github.com/influencemapping/whos_got_dirt-gem/blob/master/schemas/schema.json#L213) is a JSON Schema version of [Schema.org](http://schema.org/)'s [ItemList](http://schema.org/ItemList), with a few additional properties shared with other Popolo models.
 
+Note that the schema are based entirely on what the APIs publish, and therefore do not fulfill all the use cases an influence data project is likely to encounter. However, they may serve as a starting point for future work in that direction.
+
 
 <h2 id="notes">Notes</h2>
 
