@@ -9,6 +9,7 @@ The <i>Who's got dirt?</i> API provides a single access point to multiple APIs o
 1. [Basics](#basics)
 1. [Supported APIs](#supported-apis)
   1. [API keys](#api-keys)
+  1. [API limits](#api-limits)
   1. [API security](#api-security)
   1. [API terms & conditions](#api-terms-and-conditions)
 1. [Usage](#usage)
@@ -70,6 +71,11 @@ An API key is **required** to proxy requests to some APIs. You may register for 
 * [OpenDuka](http://www.openduka.org/index.php/api) (required)
 * [OpenOil](http://openoil.net/openoil-api/) (required)
 * [Poderopedia](https://poderopedia.3scale.net/login) (required)
+
+
+<h3 id="api-limits">API limits</h3>
+
+APIs limit the number of results returned per page. <i>Who's got dirt?</i> will, by default, return the maximum number of results for each API, but will not paginate ([issue #6](https://github.com/influencemapping/whos_got_dirt-server/issues/6)).
 
 
 <h3 id="api-security">API Security</h3>
