@@ -23,6 +23,7 @@ The <i>Who's got dirt?</i> API provides a single access point to multiple APIs o
   1. [Relations](#relations)
   1. [Lists](#lists)
   1. [Footnotes](#footnotes)
+1. [Response formats](#response-formats)
 1. [Notes](#notes)
   1. [Differences from the Metaweb Query Language (MQL)](#differences-from-mql)
 
@@ -38,22 +39,22 @@ The <i>Who's got dirt?</i> API provides a single access point to multiple APIs o
 
 <h2 id="supported-apis">Supported APIs</h2>
 
-<i>Who's got dirt?</i> supports these endpoints of these APIs of influence data:
+<i>Who's got dirt?</i> supports the following endpoints of these APIs of influence data:
 
-* [CorpWatch](http://corpwatch.org/) ([docs](http://api.corpwatch.org/))
+* [CorpWatch](http://corpwatch.org/) has information on public companies and their subsidiaries, based on SEC filings. ([docs](http://api.corpwatch.org/))
   * [/companies.json](http://api.corpwatch.org/documentation/api_examples.html#A17), queried via [`/entities`](#entities)
-* [LittleSis](http://littlesis.org/) ([docs](https://api.littlesis.org/))
+* [LittleSis](http://littlesis.org/) has information on American people and organizations in business and government, and the relationships between them. ([docs](https://api.littlesis.org/))
   * [/entities.xml](http://api.littlesis.org/documentation#entities), queried via[`/entities`](#entities)
   * [/lists.xml](http://api.littlesis.org/documentation#lists), queried via[`/lists`](#lists)
-* [OpenCorporates](https://opencorporates.com/) ([docs](https://api.opencorporates.com/))
+* [OpenCorporates](https://opencorporates.com/) has information on over 90 million companies around the world. ([docs](https://api.opencorporates.com/))
   * [/companies/search](https://api.opencorporates.com/documentation/API-Reference), queried via[`/entities`](#entities)
   * [/corporate_groupings/search](https://api.opencorporates.com/documentation/API-Reference), queried via[`/lists`](#lists)
   * [/officers/search](https://api.opencorporates.com/documentation/API-Reference), queried via[`/relations`](#relations)
-* [OpenDuka](http://www.openduka.org/) ([docs](http://www.openduka.org/index.php/api/documentation))
+* [OpenDuka](http://www.openduka.org/) has information on Kenyan people and organizations. ([docs](http://www.openduka.org/index.php/api/documentation))
   * [/search](http://www.openduka.org/index.php/api/documentation), queried via[`/entities`](#entities)
-* [OpenOil](http://openoil.net/) ([docs](http://openoil.net/openoil-api/))
+* [OpenOil](http://openoil.net/) has information on oil concessions around the world. ([docs](http://openoil.net/openoil-api/))
   * [/concession/search](http://openoil.net/openoil-api/), queried via[`/relations`](#relations)
-* [Poderopedia](http://www.poderopedia.org/) ([docs](http://api.poderopedia.org/))
+* [Poderopedia](http://www.poderopedia.org/) has information on Chilean organizations and people in business and politics. ([docs](http://api.poderopedia.org/))
   * [/search](http://api.poderopedia.org/search), queried via[`/entities`](#entities)
 
 Don't see an API you use? Please request its support in [this issue](https://github.com/influencemapping/whos_got_dirt-gem/issues/3).
@@ -161,7 +162,7 @@ The format of `query` within each query is inspired from the [Metaweb Query Lang
 
 Not all APIs support all parameters (`created_at`, for example) and operators (`|=`, for example). See the tables below for each API's support for parameters and operators.
 
-**If a parameter or operator is unsupported, it is silently ignored** ([issue #1](https://github.com/influencemapping/whos_got_dirt-server/issues/1)).
+**If a parameter or operator is unsupported by an API, it is silently ignored**.
 
 
 <h3 id="error-handling">Error handling</h3>
@@ -205,7 +206,7 @@ For example, [`GET /entities?queries={"q0":{}}`](http://whosgotdirt.herokuapp.co
 
 <h4 id="api-errors">API errors</h4>
 
-* If an API returns an error, an error message is returned for that response.
+* If an API returns an error, an error message is returned for that response. <i>Who's got dirt?</i> returns the API's original error message, however cryptic.
 
 For example, [`GET /entities?queries={"q0":{"query":{"type":"Person","name":"John Smith"}}}`](http://whosgotdirt.herokuapp.com/entities?queries={"q0":{"query":{"type":"Person","name":"John Smith"}}}) returns:
 
@@ -222,7 +223,7 @@ For example, [`GET /entities?queries={"q0":{"query":{"type":"Person","name":"Joh
         "url": "https://api.littlesis.org/entities.xml?q=John+Smith"
       },
       "status": "401 Unauthorized",
-      "message": "Your request must include a query parameter named "_key" with a valid API key value. To obtain an API key, visit http://api.littlesis.org/register."
+      "message": "Your request must include a query parameter named \"_key\" with a valid API key value. To obtain an API key, visit http://api.littlesis.org/register."
     }, {
       "info": {
         "url": "http://api.poderopedia.org/visualizacion/search?alias=John+Smith&entity=persona"
@@ -241,9 +242,9 @@ For example, [`GET /entities?queries={"q0":{"query":{"type":"Person","name":"Joh
 
 The endpoint is `GET /entities?queries=<queries>`.
 
-This table documents which operators, if any, are supported by each API for each parameter.
+This table documents which operators, if any, are supported by each API for each parameter. You may need to scroll the table to the right to see all columns.
 
-*Note: The `type` parameter is **required** by Poderopedia.*
+Note: The `type` parameter is **required** by Poderopedia.
 
 {% include entities_table.md %}
 
@@ -278,6 +279,20 @@ The endpoint is `GET /lists?queries=<queries>`.
 
 <p id="note2">2. Only <code>contact_details</code> with a <code>type</code> of <code>address</code> are supported.</p>
 
+
+<h2 id="response-formats">Response formats</h2>
+
+A set of JSON Schema describe the response formats of:
+
+* [Entities](https://github.com/influencemapping/whos_got_dirt-gem/blob/master/schemas/schema.json#L4)
+* [Relations](https://github.com/influencemapping/whos_got_dirt-gem/blob/master/schemas/schema.json#L132)
+* [Lists](https://github.com/influencemapping/whos_got_dirt-gem/blob/master/schemas/schema.json#L213)
+
+The [Entity schema](https://github.com/influencemapping/whos_got_dirt-gem/blob/master/schemas/schema.json#L4) is a combination of the Person and Organization models in [Popolo](http://www.popoloproject.com/), a format used by dozens of civil society organizations, businesses and governments to model government and legislative data.
+
+The [Relation schema](https://github.com/influencemapping/whos_got_dirt-gem/blob/master/schemas/schema.json#L132) combines terms from RDF and Schema.org, with a few additional properties shared with other Popolo models.
+
+The [List schema](https://github.com/influencemapping/whos_got_dirt-gem/blob/master/schemas/schema.json#L213) is a JSON Schema version of [Schema.org](http://schema.org/)'s [ItemList](http://schema.org/ItemList), with a few additional properties shared with other Popolo models.
 
 <h2 id="notes">Notes</h2>
 
