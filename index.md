@@ -294,6 +294,7 @@ The [Relation schema](https://github.com/influencemapping/whos_got_dirt-gem/blob
 
 The [List schema](https://github.com/influencemapping/whos_got_dirt-gem/blob/master/schemas/schema.json#L213) is a JSON Schema version of [Schema.org](http://schema.org/)'s [ItemList](http://schema.org/ItemList), with a few additional properties shared with other Popolo models.
 
+
 <h2 id="notes">Notes</h2>
 
 After performing an initial query – for example, a search for companies – a common use case is to perform a second query using the results of the first query – for example, a search for all officers of those companies. <i>Who's got dirt?</i> does not (yet) support this use case, because such second-level queries are more numerous and variable across APIs ([issue #15](https://github.com/influencemapping/whos_got_dirt-server/issues/15)). However, you may nonetheless use the results of the first <i>Who's got dirt?</i>  query to perform your own API-specific second query.
