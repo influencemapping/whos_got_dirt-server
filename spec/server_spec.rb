@@ -101,10 +101,6 @@ RSpec.describe do
                 query: query_with_keys,
               }))
 
-              # Status and headers
-              expect(last_response.status).to eq(200)
-              expect(last_response.content_type).to eq('application/json')
-
               # Structure
               expect(data.keys).to eq(['status', 'q0'])
               expect(data['q0'].keys).to eq(['count', 'result', 'messages'])
@@ -114,6 +110,10 @@ RSpec.describe do
               expect(data['q0']['count']).to be >= count
               expect(data['q0']['result'].all?{|result| result['@type'] == type}).to eq(true)
               expect(data['q0']['messages']).to eq([])
+
+              # Status and headers
+              expect(last_response.status).to eq(200)
+              expect(last_response.content_type).to eq('application/json')
             end
           end
 
@@ -124,10 +124,6 @@ RSpec.describe do
                 endpoints: endpoints,
               }))
 
-              # Status and headers
-              expect(last_response.status).to eq(200)
-              expect(last_response.content_type).to eq('application/json')
-
               # Structure
               expect(data.keys).to eq(['status', 'q0'])
               expect(data['q0'].keys).to eq(['count', 'result', 'messages'])
@@ -137,6 +133,10 @@ RSpec.describe do
               expect(data['q0']['count']).to be >= count
               expect(data['q0']['result'].all?{|result| result['@type'] == type}).to eq(true)
               expect(data['q0']['messages']).to eq([])
+
+              # Status and headers
+              expect(last_response.status).to eq(200)
+              expect(last_response.content_type).to eq('application/json')
             end
           end
 
@@ -145,10 +145,6 @@ RSpec.describe do
               send(method, "/#{endpoint}", queries: JSON.dump(q0: {
                 query: query_without_keys,
               }))
-
-              # Status and headers
-              expect(last_response.status).to eq(200)
-              expect(last_response.content_type).to eq('application/json')
 
               # Structure
               expect(data.keys).to eq(['status', 'q0'])
@@ -159,6 +155,10 @@ RSpec.describe do
               expect(data['q0']['count']).to be >= count
               expect(data['q0']['result'].all?{|result| result['@type'] == type}).to eq(true)
               expect(data['q0']['messages']).to eq(messages)
+
+              # Status and headers
+              expect(last_response.status).to eq(200)
+              expect(last_response.content_type).to eq('application/json')
             end
           end
         end
