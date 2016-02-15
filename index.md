@@ -60,7 +60,7 @@ The <i>Who's got dirt?</i> API provides a single access point to multiple APIs o
 
 Don't see an API you use? Please request its support in [this issue](https://github.com/influencemapping/whos_got_dirt-gem/issues/3).
 
-The <i>Who's got dirt?</i> API's request format supports all filters of the supported APIs, and its response format returns all data from the supported APIs. In other words, there is no loss of functionality in using the <i>Who's got dirt?</i> API.
+The <i>Who's got dirt?</i> API's request format supports all filters of the supported APIs, and its response format returns all data from the supported APIs. In other words, there is **no loss of functionality** in using the <i>Who's got dirt?</i> API.
 
 
 <h3 id="api-keys">API Keys</h3>
