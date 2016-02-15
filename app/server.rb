@@ -165,6 +165,7 @@ module WhosGotDirt
           begin
             queries[query_id][:result] += result.to_a
             queries[query_id][:count] += result.count
+          # ArgumentError if e.g. Integer() fails in `integer_formatter`
           rescue WhosGotDirt::ValidationError, ArgumentError => e
             queries[query_id][:messages] << {
               info: {
