@@ -107,9 +107,9 @@ RSpec.describe do
 
               # Values
               expect(data['status']).to eq('200 OK')
+              expect(data['q0']['messages']).to eq([])
               expect(data['q0']['count']).to be >= count
               expect(data['q0']['result'].all?{|result| result['@type'] == type}).to eq(true)
-              expect(data['q0']['messages']).to eq([])
 
               # Status and headers
               expect(last_response.status).to eq(200)
@@ -130,9 +130,9 @@ RSpec.describe do
 
               # Values
               expect(data['status']).to eq('200 OK')
+              expect(data['q0']['messages']).to eq([])
               expect(data['q0']['count']).to be >= count
               expect(data['q0']['result'].all?{|result| result['@type'] == type}).to eq(true)
-              expect(data['q0']['messages']).to eq([])
 
               # Status and headers
               expect(last_response.status).to eq(200)
@@ -152,9 +152,9 @@ RSpec.describe do
 
               # Values
               expect(data['status']).to eq('200 OK')
+              expect(data['q0']['messages']).to eq(messages)
               expect(data['q0']['count']).to be >= count
               expect(data['q0']['result'].all?{|result| result['@type'] == type}).to eq(true)
-              expect(data['q0']['messages']).to eq(messages)
 
               # Status and headers
               expect(last_response.status).to eq(200)
