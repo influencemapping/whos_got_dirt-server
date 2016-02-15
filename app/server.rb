@@ -162,8 +162,18 @@ module WhosGotDirt
         result = response_module.const_get(api).new(response)
 
         if result.success?
-          queries[query_id][:count] += result.count
-          queries[query_id][:result] += result.to_a
+          begin
+            queries[query_id][:result] += result.to_a
+            queries[query_id][:count] += result.count
+          rescue WhosGotDirt::ValidationError, ArgumentError => e
+            queries[query_id][:messages] << {
+              info: {
+                url: result.env.url,
+              },
+              status: status_message(500),
+              message: "Who's got dirt? Error: #{e.message}",
+            }
+          end
         else
           queries[query_id][:messages] << {
             info: {

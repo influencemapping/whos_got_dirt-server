@@ -1,8 +1,8 @@
 GIT
   remote: https://github.com/influencemapping/whos_got_dirt-gem.git
-  revision: 6718bfffaf032b23d8ca11317a2252421cca4b73
+  revision: 514bebd6adef702826fd6a3bebfbebac176bca7a
   specs:
-    whos_got_dirt (0.0.3)
+    whos_got_dirt (0.0.4)
       activesupport (~> 4.2.0)
       json-pointer
       json-schema (~> 2.3)
