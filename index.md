@@ -60,6 +60,8 @@ The <i>Who's got dirt?</i> API provides a single access point to multiple APIs o
 
 Don't see an API you use? Please request its support in [this issue](https://github.com/influencemapping/whos_got_dirt-gem/issues/3).
 
+The <i>Who's got dirt?</i> API's request format supports all filters of the supported APIs, and its response format returns all data from the supported APIs. In other words, there is no loss of functionality in using the <i>Who's got dirt?</i> API.
+
 
 <h3 id="api-keys">API Keys</h3>
 
@@ -296,11 +298,13 @@ A set of JSON Schema describe the response formats of:
 
 The [Entity schema](https://github.com/influencemapping/whos_got_dirt-gem/blob/master/schemas/schema.json#L4) is a combination of the Person and Organization models in [Popolo](http://www.popoloproject.com/), a format used by dozens of civil society organizations, businesses and governments to model government and legislative data.
 
-The [Relation schema](https://github.com/influencemapping/whos_got_dirt-gem/blob/master/schemas/schema.json#L132) combines terms from RDF and Schema.org, with a few additional properties shared with other Popolo models.
+The [Relation schema](https://github.com/influencemapping/whos_got_dirt-gem/blob/master/schemas/schema.json#L132) combines terms from RDF and [Schema.org](http://schema.org/), with a few additional properties shared with other Popolo models.
 
-The [List schema](https://github.com/influencemapping/whos_got_dirt-gem/blob/master/schemas/schema.json#L213) is a JSON Schema version of [Schema.org](http://schema.org/)'s [ItemList](http://schema.org/ItemList), with a few additional properties shared with other Popolo models.
+The [List schema](https://github.com/influencemapping/whos_got_dirt-gem/blob/master/schemas/schema.json#L213) is a JSON Schema version of Schema.org's [ItemList](http://schema.org/ItemList), with a few additional properties shared with other Popolo models.
 
-Note that the schema are based entirely on what the APIs publish, and therefore do not fulfill all the use cases an influence data project is likely to encounter. However, they may serve as a starting point for future work in that direction.
+Each API may return additional properties not modeled in the schema.
+
+These schema are based entirely on what the APIs publish, and therefore do not fulfill all use cases an influence data project may encounter. However, they may serve as a starting point for future work in that direction.
 
 
 <h2 id="notes">Notes</h2>
