@@ -9,7 +9,7 @@ The <i>Who's got dirt?</i> API provides a single access point to multiple APIs o
 1. [Basics](#basics)
 1. [Supported APIs](#supported-apis)
     1. [API keys](#api-keys)
-    1. [API limits](#api-limits)
+    1. [API limits & pagination](#api-limits)
     1. [API security](#api-security)
     1. [API terms & conditions](#api-terms-and-conditions)
 1. [Usage](#usage)
@@ -75,9 +75,18 @@ An API key is **required** to proxy requests to some APIs. You may register for 
 * [Poderopedia](https://poderopedia.3scale.net/login) (required)
 
 
-<h3 id="api-limits">API limits</h3>
+<h3 id="api-limits">API Limits &amp; Pagination</h3>
 
-APIs limit the number of results returned per page. <i>Who's got dirt?</i> will, by default, return the maximum number of results for each API, but will not paginate ([issue #6](https://github.com/influencemapping/whos_got_dirt-server/issues/6)).
+APIs limit the number of results returned per page:
+
+* CorpWatch: maximum 5000 per page
+* LittleSis: maximum 1000 per page for entities and 100 per page for lists
+* OpenCorporates: maximum 30 per page without API key or 100 per page with API key
+* OpenDuka: no pagination, all results returned
+* OpenOil: no maximum per page
+* Poderopedia: no pagination, 10 results returned
+
+To change the number of results returned per page, use the `limit` parameter. To paginate, use the `page` parameter.
 
 
 <h3 id="api-security">API Security</h3>
