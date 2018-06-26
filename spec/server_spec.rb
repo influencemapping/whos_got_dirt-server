@@ -187,7 +187,7 @@ RSpec.describe do
 
           it 'should 400 on invalid JSON' do
             send(method, "/#{endpoint}", queries: '[')
-            expect(data).to eq({'status' => '400 Bad Request', 'messages' => [{'message' => "parameter 'queries' is invalid: invalid JSON: 399: unexpected token at ''"}]})
+            expect(data).to eq({'status' => '400 Bad Request', 'messages' => [{'message' => "parameter 'queries' is invalid: invalid JSON: 419: unexpected token at ''"}]})
             expect(last_response.status).to eq(400)
             expect(last_response.content_type).to eq('application/json')
           end
